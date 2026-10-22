@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Single 3-input positive-NOR gate, 1.65–5.5 V supply, 5.5 V-tolerant inputs, Ioff
+- **BOM v1 lines:** 98 (MaskROM combo NOR gate)
 - **Package:** SC70-6 (DCK), 0.65 mm pitch
 - **Datasheet:** SN74LVC1G27, SCES488E (September 2003, revised December 2013), sha256 `52eba79ea5ba…` in `manifest.toml`
-- **BOM v1 line:** 98
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -82,7 +83,7 @@ DCK pin numbers (top view, p. 1):
 
 Outline DCK0006A (drawing 4214835/D, p. 13): body 1.85–2.15 × 1.1–1.4 mm, lead span 1.8–2.4 mm, 0.65 mm pitch, 1.1 mm maximum height; JEDEC MO-203 variation AB. MSL Level-1-260C-UNLIM, NiPdAu or Sn, −40 to 125 °C, reel 3000 (p. 9).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DCK0006A example board layout (p. 14, drawing 4214835/D): 6 pads 0.9 × 0.4 mm (reference), 0.65 mm pitch, 2.2 mm between pad-column centres (reference); non-solder-mask-defined preferred, 0.07 mm maximum mask clearance. Stencil on p. 15. This is the same outline and drawing as the SN74AXC1T45DCKR.
 
@@ -114,7 +115,7 @@ At −40 to 125 °C and CL = 30 or 50 pF, the maximum at 1.8 V is 23.3 ns (p. 5)
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS model for this device is **UNVERIFIED**.
 

@@ -1,12 +1,11 @@
-# LBES5PL2EL-923 (Murata Type 2EL)
-
-> **Datasheet not downloaded.** The manifest URL (Murata product page, now redirecting to `pim.murata.com`) returned no datasheet in this session; Murata's module datasheets were not reachable without an account. Every value below comes from the BOM or is marked **UNVERIFIED**.
+# LBES5PL2EL-923
 
 - **Manufacturer:** Murata
-- **Function:** Pre-certified Wi-Fi 6 + Bluetooth 5.4 module, NXP IW612 (BOM v1 line 55)
-- **Package:** LGA module; dimensions, pad count and pinout **UNVERIFIED**
-- **Datasheet:** not in the cache; revision and sha256 unknown
+- **Function:** Murata Type 2EL, pre-certified Wi-Fi 6 + Bluetooth 5.4 module, NXP IW612 (BOM v1 line 55)
 - **BOM v1 lines:** 55 (module), 56 (U.FL antenna connectors), 57 (antennas), 58 (matching networks), 103 (item tracking baseline)
+- **Package:** LGA module; dimensions, pad count and pinout **UNVERIFIED**
+- **Datasheet:** Not in the cache; revision and sha256 unknown
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL (Murata product page, now redirecting to `pim.murata.com`) returned no datasheet in this session; Murata's module datasheets were not reachable without an account. Every value below comes from the BOM or is marked **UNVERIFIED**.
 
 ## Summary
 
@@ -32,7 +31,7 @@ Murata Type 2EL is a pre-certified wireless module built on the NXP IW612 (BOM v
 
 **UNVERIFIED.** The number of RF pins (one shared or separate Wi-Fi/BT antenna ports) is not confirmed. BOM line 56 provisions two U.FL connectors, "one per module antenna pin".
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 **UNVERIFIED.** Take it only from Murata's datasheet or hardware design guide for Type 2EL. Keep-out and ground requirements under the module are unknown.
 
@@ -60,7 +59,7 @@ SDIO bus speed modes and UART baud rates supported by the module: **UNVERIFIED**
 - Bluetooth: mainline `btnxpuart` (Kconfig `BT_NXPUART`), not set in Debian's trixie-backports 7.2 config, so DKMS (BOM v1 §3). Devicetree compatible for IW612 under `btnxpuart` **UNVERIFIED**.
 - Firmware: NXP firmware blobs for IW612 (`linux-firmware` packaging **UNVERIFIED**).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

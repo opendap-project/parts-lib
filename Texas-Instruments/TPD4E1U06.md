@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 4-channel unidirectional TVS ESD protection, 0.8 pF
+- **BOM v1 lines:** §4.1 (ESD capacitance budget, CSI-2 row); no BOM line of its own
 - **Package:** SC70-6 (DCK, TPD4E1U06DCKR) or SOT-23-6 (DBV, TPD4E1U06DBVR); the T1 has not picked an orderable
 - **Datasheet:** TPD4E1U06, TPD4E1U06-G4, SLVSBQ9E (December 2012, revised October 2026), sha256 `aaf78b3eda25…` in `manifest.toml`
-- **BOM v1:** §4.1 (ESD capacitance budget, CSI-2 row); no BOM line of its own
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -64,7 +65,7 @@ DCK and DBV share one pinout (Table 4-1, p. 3):
 
 Outline DCK0006A (drawing 4214835/D 11/2024, PDF p. 20): body 1.1–1.4 × 1.85–2.15 mm, 1.8–2.4 mm over leads, 1.1 mm maximum height, 0.65 mm pitch. DBV0006A (SOT-23-6, 1.45 mm maximum height) drawings are on PDF pp. 17–19. Reels of 3000 (package option addendum, p. 14).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DCK0006A example board layout (PDF p. 21): six pads 0.9 × 0.4 mm (reference), 0.65 mm pitch, 2.2 mm (reference) pad-row spacing; non-solder-mask-defined preferred, 0.07 mm maximum clearance. DBV0006A land pattern on PDF p. 18.
 
@@ -80,7 +81,7 @@ Not applicable (no logic interface).
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. IBIS or SPICE availability is **UNVERIFIED**.
 

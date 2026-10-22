@@ -1,9 +1,11 @@
-# Texas Instruments TPS61169DCKR
+# TPS61169DCKR
 
-- **Function:** boost white-LED driver, 40 V / 1.8 A integrated switch, 204 mV feedback, PWM-controlled analog dimming
-- **T1 use:** board BOM v1 line 51 (Power), panel backlight; inductor line 52, rectifier line 53; status Proposed
-- **Datasheet:** TPS61169 38V High Current-Boost WLED Driver With PWM Control, SNVSA40B (October 2014, revised June 2024), <https://www.ti.com/lit/ds/symlink/tps61169.pdf>
+- **Manufacturer:** Texas Instruments
+- **Function:** Boost white-LED driver, 40 V / 1.8 A integrated switch, 204 mV feedback, PWM-controlled analog dimming
+- **BOM v1 lines:** 51 (Power), panel backlight; inductor line 52, rectifier line 53; status Proposed
 - **Package:** SC70 5-pin (DCK, drawing DCK0005A), 2.00 × 1.25 mm nominal body
+- **Datasheet:** TPS61169 38V High Current-Boost WLED Driver With PWM Control, SNVSA40B (October 2014, revised June 2024), <https://www.ti.com/lit/ds/symlink/tps61169.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -66,7 +68,7 @@ Shutdown leaves a DC path VIN → inductor → diode → LEDs; the LED string's 
 
 Source: SNVSA40B p. 3, Table 4-1. Marking SZL, MSL 1 at 260 °C (p. 18). SC70, 1.1 mm maximum height (p. 21, DCK0005A). Tape 8 mm, 4 mm pitch, pin 1 in Q3, 3000 per reel (p. 19).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 TI example board layout DCK0005A (SNVSA40B p. 22): five pads 0.95 × 0.4 mm, pitch 0.65 mm (pins 1–3 side), 1.3 mm between pins 1 and 3 centres, 2.2 mm between pad-row centres, corner radius 0.05 mm, non-solder-mask-defined preferred (0.07 mm mask clearance). Stencil example on p. 23. Board layout example: Figure 7-15 (p. 16).
 
@@ -99,7 +101,7 @@ TI example board layout DCK0005A (SNVSA40B p. 22): five pads 0.95 × 0.4 mm, pit
 
 `pwm-backlight` (Kconfig `BACKLIGHT_PWM`, enabled as a module in Debian per BOM v1) driving CTRL from a SoC PWM; the TPS61169 itself has no register interface. A `power-supply` or `enable-gpios` property is not needed because CTRL is both enable and dimming input. Mainline driver presence is from the BOM driver column; the DT binding details are **UNVERIFIED** for this board.
 
-## Simulation models available
+## Simulation models
 
 No model is listed in `manifest.toml`. A TI PSpice or TINA model is **UNVERIFIED** (not checked).
 

@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 4-bit dual-supply bus transceiver with an independent direction pin per bit, 0.65–3.6 V on each port, tri-state outputs
+- **BOM v1 lines:** 95 (I2S-A path)
 - **Package:** TSSOP-16 (PW), 0.65 mm pitch
 - **Datasheet:** SN74AXC4T774, SCES898C (July 2019, revised May 2022), `sn74axc4t774.pdf`, sha256 `d2dffb7067c38d8602b5f66acd639269564b1abae4e9e4794f022cef620cb430` (downloaded 2026-10-22 from <https://www.ti.com/lit/ds/symlink/sn74axc4t774.pdf>). The `manifest.toml` entry for this MPN currently points at the SN74AXC8T245 datasheet (sha256 `6cf4003c438c…`)
-- **BOM v1 line:** 95 (I2S-A path)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -93,7 +94,7 @@ PW pin numbers (Figure 4-1, Table 4-1, p. 3):
 
 Outline PW0016A (drawing 4220204/B, p. 36): body 4.9–5.1 × 4.3–4.5 mm, lead span 6.2–6.6 mm, 0.65 mm pitch, leads 0.17–0.30 mm, 1.2 mm maximum height; JEDEC MO-153. MSL Level-1-260C-UNLIM, NiPdAu or Sn, −40 to 125 °C, reel 2000 (p. 28).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 PW0016A example board layout (p. 37, drawing 4220204/B, scale 10:1): 16 pads 1.5 × 0.45 mm (reference), 0.65 mm pitch, 5.8 mm between pad-row centres (reference); non-solder-mask-defined preferred, 0.05 mm maximum mask clearance. Stencil example on p. 38.
 
@@ -133,7 +134,7 @@ Minimum tpd in all cases is 0.5 ns.
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml` (and the manifest datasheet entry for this MPN points at the wrong document, see header). Whether TI publishes an IBIS model is **UNVERIFIED**.
 

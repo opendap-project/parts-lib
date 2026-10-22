@@ -2,9 +2,10 @@
 
 - **Manufacturer:** C&K
 - **Function:** Microminiature top-actuated SMT tactile switch, SPST normally open, 180 gf
+- **BOM v1 lines:** 77 (Power, Vol+, Vol−; quantity 3)
 - **Package:** PTS 815 series, 4.2 × 3.2 mm, 2.5 mm height, J-bend SMT terminals (4)
 - **Datasheet:** PTS 815 Series catalog pages B–43 and B–44, dated 8 April 2021 (copy obtained from the LCSC datasheet mirror; the manifest URL returned an HTML page)
-- **BOM v1 line:** 77 (Power, Vol+, Vol−; quantity 3)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -45,7 +46,7 @@ Outline (p. B–44): body 4.2 ± 0.2 mm × 3.20 ± 0.2 mm, 4.6 ± 0.2 mm over th
 
 Packaging: reels of 3,000 pieces, EIA 481B, 330 mm reel, 12 mm tape, 8 mm pocket pitch (pp. B–43, B–44).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 P.C.B land dimension (p. B–44):
 
@@ -64,7 +65,7 @@ Not applicable. Bounce time ≤ 10 ms (p. B–43) sets the minimum debounce inte
 
 From BOM v1 line 77: Power through `rk805-pwrkey` (RK809 PWRON, mainline + Debian); Vol+ and Vol− through `adc-keys` (`KEYBOARD_ADC=m`) on `rockchip-saradc` (`ROCKCHIP_SARADC=m`). No device-specific driver.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

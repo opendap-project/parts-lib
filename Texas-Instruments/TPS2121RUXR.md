@@ -1,9 +1,11 @@
-# Texas Instruments TPS2121RUXR
+# TPS2121RUXR
 
+- **Manufacturer:** Texas Instruments
 - **Function:** 2.8–22 V dual-input, single-output priority power multiplexer with seamless switchover, 4.5 A
-- **T1 use:** board BOM v1 line 45 (Power), USB-C IN1 priority and powerbank HAT IN2 into the charger, status Proposed
-- **Datasheet:** TPS212x 2.8-V to 22-V Priority Power MUX with Seamless Switchover, SLVSEA3F (August 2018, revised August 2020), <https://www.ti.com/lit/ds/symlink/tps2121.pdf>
+- **BOM v1 lines:** 45 (Power), USB-C IN1 priority and powerbank HAT IN2 into the charger, status Proposed
 - **Package:** VQFN-HR 12-pin, 2.0 mm × 2.5 mm (RUX, drawing RUX0012A)
+- **Datasheet:** TPS212x 2.8-V to 22-V Priority Power MUX with Seamless Switchover, SLVSEA3F (August 2018, revised August 2020), <https://www.ti.com/lit/ds/symlink/tps2121.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -85,7 +87,7 @@ The front page quotes 200 µA typical from the enabled input and 10 µA from the
 
 Source: SLVSEA3F p. 4–5, Figure 6-2, Pin Functions table; ST behaviour p. 18, §9.5. Marking 2121, MSL 1 at 260 °C, 3000 per reel (p. 41, Package Option Addendum).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 - Package outline, example board layout and stencil: drawing RUX0012A (4224010/A), SLVSEA3F p. 38–40. Pad pitch 0.5 mm (6× 0.5 on the drawing), stencil example based on 0.1 mm thickness (p. 40). The drawing shows vias under the power pads ("VIA TYP", p. 39). Exact pad sizes are to be taken from the drawing, not from extracted text (**UNVERIFIED** until the KiCad footprint is checked against p. 39).
 - Use short, wide traces for IN1, IN2 and OUT; for high current place vias under the input and output pins (p. 33, §12.1–12.2).
@@ -126,7 +128,7 @@ Source selection (p. 18, Table 9-3): an input is invalid when it is below UV or 
 
 None. The device has no digital bus. ST can be read on a GPIO to report the active input; the kernel consumer for it (for example a `gpio` power-supply or `extcon` node) is **UNVERIFIED** and is OpenDAP's choice, not a datasheet statement.
 
-## Simulation models available
+## Simulation models
 
 No model is listed in `manifest.toml`. A TI PSpice model is **UNVERIFIED**.
 

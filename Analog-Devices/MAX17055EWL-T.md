@@ -1,11 +1,11 @@
-# Analog Devices MAX17055EWL+T
+# MAX17055EWL+T
 
-> **Datasheet not downloaded.** The manifest URL timed out from this host on 2026-10-22 (curl and WebFetch, three attempts). Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
-
+- **Manufacturer:** Analog Devices
 - **Function:** 1-cell fuel gauge (ModelGauge m5 EZ per the vendor's product naming, **UNVERIFIED**)
-- **T1 use:** board BOM v1 line 42 (Power), status Proposed; sense resistor line 43, optional thermistor line 101
-- **Datasheet:** MAX17055 datasheet, revision and date **UNVERIFIED**, <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17055.pdf>
+- **BOM v1 lines:** 42 (Power, battery fuel gauge), status Proposed; sense resistor line 43, optional thermistor line 101
 - **Package:** WLP (the `EWL` suffix; ball count and pitch **UNVERIFIED**)
+- **Datasheet:** MAX17055 datasheet, revision and date **UNVERIFIED**, <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17055.pdf>
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL timed out from this host on 2026-10-22 (curl and WebFetch, three attempts). Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 
@@ -27,7 +27,7 @@ Power tree §4.9 lumps the gauge into "IMU, gauge, TCPC, charger: 3 mW" from dat
 
 Package code `EWL` (WLP) from the MPN. Ball map **UNVERIFIED**.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
@@ -45,7 +45,7 @@ I2C (2-wire) at 0x36 on the 1.8 V I2C1 bus (BOM line 42). Input thresholds at 1.
 
 Mainline `max17042_battery` (drivers/power/supply/max17042_battery.c, Kconfig `BATTERY_MAX17042`) supports the MAX17055 with compatible `maxim,max17055`. The BOM states that Debian does not enable `BATTERY_MAX17042`, so the T1 builds it as DKMS (opendap-os ADR 0007). The compatible string and the driver's handling of the MAX17055 model registers are from memory of the mainline source and are **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Vendor models **UNVERIFIED** (not checked).
 

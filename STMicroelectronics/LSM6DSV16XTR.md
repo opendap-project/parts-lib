@@ -2,9 +2,10 @@
 
 - **Manufacturer:** STMicroelectronics
 - **Function:** 6-axis inertial measurement unit (3-axis accelerometer, 3-axis gyroscope) with embedded sensor fusion, finite state machine, machine learning core and Qvar
+- **BOM v1 lines:** 59 (motion sensor)
 - **Package:** LGA-14L, 2.5 × 3.0 × 0.86 mm (maximum height)
 - **Datasheet:** LSM6DSV16X, DS13510 Rev 4 (25 May 2023). The `manifest.toml` entry has no sha256 yet; the copy read here (198 pages, obtained from the LCSC datasheet mirror) has sha256 `ec53c0e5952fc0c9587ed32b56d066016c2954bc6e9d18355b13a1c4cda17894`
-- **BOM v1 line:** 59
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -84,7 +85,7 @@ Default pin states (Table 23, pp. 50–51): SDO/SA0, SDx, SCx, SCL and SDA are i
 
 Package: body 2.50 ± 0.1 × 3.00 ± 0.1 mm, 0.86 mm maximum height; 14 lands of 0.25 ± 0.05 × 0.475 ± 0.05 mm at 0.5 mm pitch (Figure 33, p. 175, drawing DM00249496_5). Reel A (max) 330 mm (Table 506, p. 177). Qualified for soldering heat resistance per JEDEC J-STD-020 (§18, p. 174).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 The datasheet does not give a land pattern. It refers to ST technical note TN0018 for land pattern and soldering recommendations (§18, p. 174). TN0018 was not opened for this sheet, so any pad dimensions beyond the package lands above are **UNVERIFIED**.
 
@@ -130,7 +131,7 @@ SPI: up to 10 MHz, modes 0 and 3 (p. 16, Table 7; §5.1, p. 21). The T1 does not
 - The device tree compatible is `st,lsm6dsv16x`. The kernel version that added it and whether Debian enables `IIO_ST_LSM6DSX` are **UNVERIFIED** (not re-checked against the source or the Debian config in this pass).
 - Whether the driver supports wake-on-motion through INT1 as a system wakeup source (`wakeup-source`) for this device is **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Not expected for a MEMS sensor; any ST IBIS model is **UNVERIFIED**.
 

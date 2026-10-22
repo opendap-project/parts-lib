@@ -1,9 +1,11 @@
-# JST S2B-PH-SM4-TB(LF)(SN)
+# S2B-PH-SM4-TB(LF)(SN)
 
+- **Manufacturer:** JST
 - **Function:** 2-circuit, 2.0 mm pitch wire-to-board header, side entry, surface mount (PH series)
-- **T1 use:** board BOM v1 line 47 (Power), battery connector mating the Adafruit 328 JST PHR-2 lead, status Proposed
-- **Datasheet:** JST PH Connector catalog (2.0 mm pitch wire-to-board, crimp style), 5 pages, <https://www.jst-mfg.com/product/pdf/eng/ePH.pdf>; revision and date not printed (**UNVERIFIED**)
+- **BOM v1 lines:** 47 (Power), battery connector mating the Adafruit 328 JST PHR-2 lead, status Proposed
 - **Package:** SMT side-entry header, 2 contacts plus 2 tin-plated reinforcement tabs, 7.9 mm wide
+- **Datasheet:** JST PH Connector catalog (2.0 mm pitch wire-to-board, crimp style), 5 pages, <https://www.jst-mfg.com/product/pdf/eng/ePH.pdf>; revision and date not printed (**UNVERIFIED**)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -43,7 +45,7 @@ Passive part. Loss per contact at 2 A: 2² × 10 mΩ = 40 mW initial, 80 mW at t
 
 Dimensions (ePH p. 4, Header SMT side entry): A = 2.0 mm (contact pitch span), B = 7.9 mm (overall width), 1000 per reel. Posts and reinforcement copper alloy, tin-plated; housing PA (heat resistant), natural ivory; label (LF)(SN) (p. 4). Assembly drawing (p. 2): (9.6) mm depth and (5.5) mm reference dimensions on the side view, (2.6) mm from the reinforcement to the rear edge; the exact reference edges should be read from the drawing before the 3D model is drawn.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 JST PC board layout, SMT side-entry type (ePH p. 2, viewed from the mounting surface; dimensions for reference only):
 
@@ -65,7 +67,7 @@ Not applicable.
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. A JST 3D model is **UNVERIFIED** (not checked); ADR 0001 has OpenDAP generate its own.
 

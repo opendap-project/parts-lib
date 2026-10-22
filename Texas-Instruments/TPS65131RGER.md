@@ -1,8 +1,11 @@
-# Texas Instruments TPS65131RGER
+# TPS65131RGER
 
-- BOM: board BOM v1, line 22 (HP-amp pre-rails ±6 V).
-- Datasheet: *TPS6513x Dual, Positive and Negative Output DC-DC Converter*, SLVS493E, March 2004, revised April 2022. Cited below as "SLVS493E".
-- Datasheet file: `~/.cache/opendap/parts/Texas-Instruments/TPS65131RGER/tps65131.pdf`, sha256 `e8360b9509047317416cfd9163a09d8cdf5c8accbd4e702ad6a43292ef48e0ed` (matches the BOM v1 Datasheets table).
+- **Manufacturer:** Texas Instruments
+- **Function:** Dual-output DC-DC converter: boost for the positive output, inverting buck-boost for the negative output
+- **BOM v1 lines:** 22 (HP-amp pre-rails ±6 V)
+- **Package:** VQFN-24 (RGE), 4 × 4 mm, exposed thermal pad
+- **Datasheet:** *TPS6513x Dual, Positive and Negative Output DC-DC Converter*, SLVS493E, March 2004, revised April 2022. Cited below as "SLVS493E". File sha256 `e8360b9509047317416cfd9163a09d8cdf5c8accbd4e702ad6a43292ef48e0ed` (matches the BOM v1 Datasheets table).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -85,7 +88,7 @@ VQFN-24 (RGE), 4 mm × 4 mm, exposed thermal pad (pad 25) (SLVS493E, p. 3, Figur
 
 Package body 3.9–4.1 mm square, 1 mm max height, 0.5 mm pitch, exposed pad 2.45 ± 0.1 mm (SLVS493E, p. 36, drawing 4219013/A). MSL Level-2-260C-1 YEAR, NiPdAu finish (SLVS493E, p. 30, package option addendum).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SLVS493E, p. 37 (example board layout) and p. 38 (stencil), drawing 4219013/A 05/2017.
 
@@ -135,7 +138,7 @@ Divider values for ±6.0 V in the T1 are not in the datasheet; compute from Eq. 
 
 None. The converter has no digital interface; ENP/ENN and PSP/PSN are GPIO-controlled. The rails can be described with the mainline `regulator-fixed` binding gated by a GPIO (`HPA_RAIL_EN`) (BOM v1 line 22: driver path *none*).
 
-## Simulation models available
+## Simulation models
 
 - The datasheet's Device Support section (SLVS493E, p. 28, §10.1) names no model or EVM.
 - PSpice, TINA-TI or WEBENCH models on ti.com: **UNVERIFIED**.

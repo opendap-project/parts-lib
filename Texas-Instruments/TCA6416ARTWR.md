@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 16-bit I2C GPIO expander with two supply rails (I2C side VCCI, port side VCCP), interrupt output and reset input
+- **BOM v1 lines:** 93 (GPIO expander: slow enables, detects, HAT spare GPIOs)
 - **Package:** WQFN-24 (RTW), 4 × 4 mm, 0.5 mm pitch, exposed thermal pad
 - **Datasheet:** TCA6416A, SCPS194F (May 2009, revised January 2023), sha256 `a7deab846f35…` in `manifest.toml`
-- **BOM v1 line:** 93
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -103,7 +104,7 @@ RTW pin numbers from Table 5-1 (p. 4):
 
 Outline RTW0024B (drawing 4219135/B, p. 42): body 3.85–4.15 mm square, 0.8 mm maximum height, 0.5 mm pitch, terminals 0.18–0.30 mm wide and 0.3–0.5 mm long, exposed pad 2.45 ± 0.1 mm square. MSL Level-2-260C-1 YEAR, NiPdAu or Sn finish; reel 3000 (p. 34).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 RTW0024B example board layout (p. 43, drawing 4219135/B, scale 20:1):
 
@@ -152,7 +153,7 @@ Interrupt: any input edge asserts INT after tIV; it clears when the port returns
 
 Mainline `drivers/gpio/gpio-pca953x.c` (`CONFIG_GPIO_PCA953X`), device-tree compatible `"ti,tca6416"`, with `gpio-controller`, `#gpio-cells = <2>`, and optional `interrupt-controller` on INT. The compatible string is from the mainline driver's match table to the best of this sheet's knowledge; the exact binding text and whether Debian's trixie-backports config enables `GPIO_PCA953X` are **UNVERIFIED** (BOM v1 §3 lists it as not re-checked).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS model for this device is **UNVERIFIED**.
 

@@ -1,9 +1,11 @@
-# Texas Instruments INA236AIDDFR
+# INA236AIDDFR
 
+- **Manufacturer:** Texas Instruments
 - **Function:** 48 V, 16-bit current, voltage and power monitor with I2C, address option A
-- **T1 use:** board BOM v1 line 54 (Power), ×4: VSYS, audio block, display block, HAT; status Proposed
-- **Datasheet:** INA236 48-V, 16-Bit, Ultra-Precise, Current, Voltage, and Power Monitor With an I2C Interface, SBOSA81D (May 2021, revised August 2023), <https://www.ti.com/lit/ds/symlink/ina236.pdf>
+- **BOM v1 lines:** 54 (Power), ×4: VSYS, audio block, display block, HAT; status Proposed
 - **Package:** SOT-23-THIN 8-pin (DDF, drawing DDF0008A)
+- **Datasheet:** INA236 48-V, 16-Bit, Ultra-Precise, Current, Voltage, and Power Monitor With an I2C Interface, SBOSA81D (May 2021, revised August 2023), <https://www.ti.com/lit/ds/symlink/ina236.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -79,7 +81,7 @@ Power-up default is MODE = 111b, continuous shunt and bus conversion (reset valu
 
 Source: SBOSA81D p. 3, Figure 5-2, Table 5-1; ALERT p. 14, §7.3.5. Marking 2QRF, MSL 1 at 260 °C, 3000 per reel (p. 37, Package Option Addendum).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 - Drawing DDF0008A (4222047/E, July 2024), SBOSA81D p. 41–43. Body 2.85–2.95 mm × 1.55–1.65 mm, 1.1 mm maximum height, lead span 2.65–2.95 mm, pitch 0.65 mm (p. 41).
 - Land pattern example: 8 pads 1.05 mm × 0.45 mm, 0.65 mm pitch, 2.6 mm between pad-row centres (p. 42). Stencil example: same openings, 0.125 mm stencil (p. 43).
@@ -120,7 +122,7 @@ Source: SBOSA81D p. 3, Figure 5-2, Table 5-1; ALERT p. 14, §7.3.5. Marking 2QRF
 
 Mainline IIO driver `drivers/iio/adc/ina2xx-adc.c`, compatible `ti,ina236` and I2C id `ina236`; its chip table gives shunt LSB 2.5 µV, bus LSB 1.6 mV and power LSB factor 32, matching the datasheet (source read 2026-10-22 from the mainline `master` tree). Kconfig `CONFIG_INA2XX_ADC`, built as a module in Debian trixie-backports `linux-config-7.2` per BOM v1 §Conventions (not re-checked here). The shunt value is set in the device tree with `shunt-resistor` in µΩ (binding `ti,ina2xx.yaml`, **UNVERIFIED** for this exact property name with the IIO driver). Whether the IIO driver places the device in shutdown when no capture is running is **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 No model is listed in `manifest.toml`. Vendor models are **UNVERIFIED**; the device is a digital monitor and is unlikely to need electrical simulation beyond the shunt and filter.
 

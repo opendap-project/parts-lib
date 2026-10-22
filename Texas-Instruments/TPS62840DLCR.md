@@ -1,8 +1,11 @@
-# Texas Instruments TPS62840DLCR
+# TPS62840DLCR
 
-- BOM: board BOM v1, line 27 (audio 2.2 V pre-buck, AUDIO_2V2).
-- Datasheet: *TPS62840 1.8-V to 6.5-V, 750-mA, 60-nA IQ Step-Down Converter*, SLVSEC6D, June 2019, revised March 2020. Cited below as "SLVSEC6D".
-- Datasheet file: `~/.cache/opendap/parts/Texas-Instruments/TPS62840DLCR/tps62840.pdf`, sha256 `b715ae80beb8f08b5c4a417537c5f52e01ad0a52f3791c240146b72fec5f3214` (matches the BOM v1 Datasheets table).
+- **Manufacturer:** Texas Instruments
+- **Function:** 1.8 V to 6.5 V input, 750 mA, 60 nA IQ step-down converter
+- **BOM v1 lines:** 27 (audio 2.2 V pre-buck, AUDIO_2V2)
+- **Package:** VSON-HR-8 (DLC), 1.5 × 2 mm, 0.5 mm pitch, no exposed pad
+- **Datasheet:** *TPS62840 1.8-V to 6.5-V, 750-mA, 60-nA IQ Step-Down Converter*, SLVSEC6D, June 2019, revised March 2020. Cited below as "SLVSEC6D". File sha256 `b715ae80beb8f08b5c4a417537c5f52e01ad0a52f3791c240146b72fec5f3214` (matches the BOM v1 Datasheets table).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -78,7 +81,7 @@ VSON-HR-8 (DLC), body 1.4–1.6 mm × 1.9–2.1 mm, 1 mm max height, 0.5 mm pitc
 
 (SLVSEC6D, p. 5, Pin Functions.) Orderable TPS62840DLCR: 3000 per reel, Sn finish, MSL Level-1-260C-UNLIM, −40 to 125 °C, marking E5 (SLVSEC6D, package addendum).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SLVSEC6D, p. 37 (DLC0008B example board layout) and p. 38 (stencil, 0.1 mm):
 
@@ -118,7 +121,7 @@ Application circuit (SLVSEC6D, p. 16, Figure 13; p. 17, Table 2; Table 3):
 
 None. No digital interface; EN (`AUDIO_LN_EN`) and optionally MODE/STOP are GPIOs. Describe as a `regulator-fixed` supply (BOM v1 line 27: driver path *none*).
 
-## Simulation models available
+## Simulation models
 
 - The Device Support section (SLVSEC6D, p. 30, §12.1) names no simulation model.
 - An EVM, TPS62841-2EVM123, is named only in the thermal table (SLVSEC6D, p. 6, §7.4).

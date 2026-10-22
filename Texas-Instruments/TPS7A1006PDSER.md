@@ -1,7 +1,11 @@
-# Texas Instruments TPS7A1006PDSER
+# TPS7A1006PDSER
 
-- **BOM v1 line:** 9 (LPDDR4X VDDQ 0.6 V LDO), Core
+- **Manufacturer:** Texas Instruments
+- **Function:** 300 mA LDO with a separate bias input, fixed 0.6 V output, active output pull-down
+- **BOM v1 lines:** 9 (LPDDR4X VDDQ 0.6 V LDO), Core
+- **Package:** 6-pin WSON (DSE), 1.5 × 1.5 mm
 - **Datasheet:** TI *TPS7A10 300-mA, Low VIN, Low VOUT, Ultra-Low Dropout Regulator*, SBVS314B, March 2018, revised October 2018, 40 pages (<https://www.ti.com/lit/ds/symlink/tps7a10.pdf>, sha256 `c2c2c5ff934b44df9fdbbff6e66f5d6397ffd5b78f6d918c91f3ffcb4dd355f9`). Cited below as "SBVS314B".
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -86,7 +90,7 @@ DSE 6-pin WSON, top view (SBVS314B, p. 3; p. 24, Figure 45):
 
 Package DSE0006A: 1.45–1.55 × 1.45–1.55 mm, 0.8 mm max height, pitch 0.5 mm, leads 0.2–0.3 mm wide, 0.4–0.6 mm long; pin 1 lead 0.5–0.7 mm long (SBVS314B, p. 34, drawing 4220552/B 01/2024).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SBVS314B, p. 35, DSE0006A example board layout: six pads 0.25 mm wide on 0.5 mm pitch; pads 4–6 are 0.7 mm long and non-solder-mask-defined (0.05 mm max mask clearance); pads 1–3 are solder-mask-defined (0.05 mm min metal under mask), pad 1 is 0.8 mm long; 1.2 mm between pad-row centres; corner radius 0.05 mm. Stencil: p. 36.
 
@@ -109,7 +113,7 @@ For the T1: VIN = vcc_ddr 1.1 V (VIN − VOUT = 0.5 V, meets §9), VBIAS = vcc_1
 
 None (BOM v1 line 9). The rail is described as a fixed regulator in the device tree if software needs to see it; normally it follows the PMIC sequence.
 
-## Simulation models available
+## Simulation models
 
 - SPICE model in the TI product folder (SBVS314B, p. 25, §11.1.1.2). Not in the local cache; not listed in `manifest.toml`.
 - `manifest.toml`: `datasheet` entry SBVS314B, 2018-10, sha256 `c2c2c5ff…55f9`.
@@ -123,6 +127,6 @@ None (BOM v1 line 9). The rail is described as a fixed regulator in the device t
 
 ## Sources
 
-- Texas Instruments, TPS7A10 datasheet, SBVS314B (October 2018), cached at `~/.cache/opendap/parts/Texas-Instruments/TPS7A1006PDSER/tps7a10.pdf`.
+- Texas Instruments, TPS7A10 datasheet, SBVS314B (October 2018).
 - Rockchip, RK3568 Datasheet Rev 1.0, 2020-12-10.
 - OpenDAP board, `docs/specs/bom-v1.md`, line 9 and §6.

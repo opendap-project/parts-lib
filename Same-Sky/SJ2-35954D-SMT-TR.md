@@ -1,9 +1,12 @@
-# Same Sky SJ2-35954D-SMT-TR
+# SJ2-35954D-SMT-TR
 
-**Datasheet not downloaded.** The manifest URL (<https://www.sameskydevices.com/product/resource/sj2-3595xd-smt.pdf>) returned HTTP 404 on 2026-10-22, and the PDF linked from LCSC C4992270 is the datasheet of a different part (SJ2-35364B-SMT-TR), so it was not used. Every value below comes from BOM v1 and is **UNVERIFIED** against the manufacturer's document.
-
-- **BOM:** board BOM v1, line 30 (Audio), quantity 1
-- **Second source (BOM):** SJ2-35894D-SMT-TR
+- **Manufacturer:** Same Sky
+- **Function:** 3.5 mm audio jack, surface mount, with a detect switch
+- **BOM v1 lines:** 30 (Audio, single-ended 3.5 mm headphone output), quantity 1
+  - Second source (BOM): SJ2-35894D-SMT-TR
+- **Package:** Surface mount; dimensions **UNVERIFIED**
+- **Datasheet:** Not downloaded; see Status.
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL (<https://www.sameskydevices.com/product/resource/sj2-3595xd-smt.pdf>) returned HTTP 404 on 2026-10-22, and the PDF linked from LCSC C4992270 is the datasheet of a different part (SJ2-35364B-SMT-TR), so it was not used. Every value below comes from BOM v1 and is **UNVERIFIED** against the manufacturer's document.
 
 ## Summary
 
@@ -25,7 +28,7 @@ Not applicable (passive connector).
 
 Number of poles, pin numbering, detect-switch type and mechanical dimensions: **UNVERIFIED** (datasheet not downloaded).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 **UNVERIFIED** (datasheet not downloaded).
 
@@ -41,7 +44,7 @@ Not applicable.
 
 None for the jack itself. Jack detection is exposed through the TCA6416A GPIO with `gpio-keys` or the `simple-audio-card` jack-detect GPIO (BOM v1 line 30); the binding choice is **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

@@ -1,10 +1,11 @@
 # DM3AT-SF-PEJM5
 
 - **Manufacturer:** Hirose Electric
-- **Function:** microSD card connector, push-push (ejection mechanism), top board mounting, right-angle SMT, with card-detection switch
+- **Function:** MicroSD card connector, push-push (ejection mechanism), top board mounting, right-angle SMT, with card-detection switch
+- **BOM v1 lines:** 11 (Core, microSD socket)
 - **Package:** 8 contacts plus detect switch and shell, 13.85 × 15.95 mm, 1.68 mm high
 - **Datasheet:** DM3 Series microSD Card Connectors catalog, edition 2017.1 (copyright stamp May 1, 2017), 13 pages (copy obtained from the LCSC datasheet mirror, part C114218)
-- **BOM v1 line:** 11 (Core)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -44,7 +45,7 @@ Dimensions (p. 3): 13.85 mm wide, 15.95 mm deep, 1.68 mm high; card positions 16
 
 Packaging: embossed carrier tape, 1,500 pieces per reel, 32 mm tape, 20 mm pitch, Ø 380 mm reel (p. 4).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Recommended PCB mounting pattern (p. 3, all dimensions in mm):
 
@@ -66,7 +67,7 @@ Not applicable to the connector. The catalog gives no signal-integrity data. On 
 
 None for the socket. The card detect switch is read as a GPIO by the `dw_mmc-rockchip` host (SD detect on PMUIO1, BOM §4.2); not a device-specific driver.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

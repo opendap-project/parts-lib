@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 1-channel unidirectional TVS ESD protection diode, 0.5 pF, low RDYN (snapback)
+- **BOM v1 lines:** 68 (second source: per-line HAT high-speed ESD at the pogo field)
 - **Package:** X1SON-2 (DPY), 1.0 × 0.6 mm (0402)
 - **Datasheet:** TPD1E04U04, SLVSDG4B (March 2016, revised August 2016), sha256 `f48a05822f3f…` in `manifest.toml`
-- **BOM v1 line:** 68 (second source)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -57,7 +58,7 @@ X1SON-2 (DPY) (Pin Functions, p. 3): pin 1 IO (ESD-protected channel), pin 2 GND
 
 Outline DPY0002A (drawing 4224561/C 07/2024, PDF p. 21): body 0.9–1.1 × 0.5–0.7 mm, 0.30–0.45 mm height, terminal pitch 0.65 mm. MSL Level-1-260C, reel of 10 000 (package option addendum, p. 16).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DPY0002A example board layout (PDF p. 22): two pads 0.3 × 0.5 mm (reference) at 0.7 mm centre-to-centre; solder-mask-defined preferred, 0.07 mm minimum overlap. Same drawing and land pattern as the TPD1E10B06DPYR.
 
@@ -73,7 +74,7 @@ Not applicable (no logic interface).
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. IBIS or SPICE availability is **UNVERIFIED**.
 

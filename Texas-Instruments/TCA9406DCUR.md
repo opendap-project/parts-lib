@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 2-bit bidirectional I2C and SMBus voltage-level translator, auto-direction, with internal 10 kΩ pull-ups and output enable
+- **BOM v1 lines:** 94 (second source for the HAT ID translator PCA9306DCUR)
 - **Package:** VSSOP-8 (DCU, "US8"), 2.30 × 2.00 mm body (nominal), 0.5 mm pitch
 - **Datasheet:** TCA9406, SCPS221G (October 2010, revised November 2018), `tca9406.pdf`. The `manifest.toml` entry for this MPN currently points at the PCA9306 datasheet (URL `pca9306.pdf`, sha256 `1cd97c734729…`); the correct file is <https://www.ti.com/lit/ds/symlink/tca9406.pdf>, sha256 `fdb80d682fbacd5ef18cbafc57e4d9375a295daa38da33721af6e055f8a7da61` (downloaded 2026-10-22)
-- **BOM v1 line:** 94 (second source)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -90,7 +91,7 @@ DCU pin numbers (Pin Functions, p. 5):
 
 Outline DCU0008A (drawing 4225266/A, p. 32), the same outline as the PCA9306DCUR: 0.5 mm pitch, lead span 3.0–3.2 mm, 0.9 mm maximum height. MSL Level-1-260C-UNLIM, NiPdAu or Sn, −40 to 85 °C, reel 3000 (p. 25).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DCU0008A example board layout (p. 33, drawing 4225266/A): 8 pads 0.85 × 0.3 mm (reference), 0.5 mm pitch, 3.1 mm between pad-row centres (reference), non-solder-mask-defined preferred. Stencil on p. 34. The land is identical to the PCA9306DCUR's, but the pin assignment is not (see Design notes).
 
@@ -126,7 +127,7 @@ Selected switching characteristics, VCCA = 1.8 V ± 0.15 V, VCCB = 3.3 V ± 0.3 
 
 None (transparent translator).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml` (and the manifest datasheet entry for this MPN is wrong, see header). Whether TI publishes an IBIS model is **UNVERIFIED**.
 

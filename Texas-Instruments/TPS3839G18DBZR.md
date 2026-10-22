@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Ultralow-power supply voltage supervisor, 1.67 V threshold, push-pull active-low RESET, 200 ms typical reset delay
+- **BOM v1 lines:** 97 (MaskROM combo power-on window supervisor)
 - **Package:** SOT-23-3 (DBZ)
 - **Datasheet:** TPS3831, TPS3839, SBVS193D (June 2012, revised July 2015), sha256 `a18940237afc…` in `manifest.toml`
-- **BOM v1 line:** 97
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -72,7 +73,7 @@ DBZ pin numbers (Pin Functions, p. 5):
 
 Outline DBZ0003A (drawing 4214838/F, p. 28): body 2.80–3.04 × 1.20–1.40 mm, lead span 2.10–2.64 mm, pitch 0.95 mm (1.9 mm between pins 1 and 2), leads 0.3–0.5 mm wide, 1.12 mm maximum height; JEDEC TO-236 reference. MSL Level-1-260C-UNLIM, NiPdAuAg, −40 to 85 °C, reel 3000 (p. 20).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DBZ0003A example board layout (p. 29, drawing 4214838/F, scale 15:1): 3 pads 1.3 × 0.6 mm (reference); pins 1 and 2 at 2 × 0.95 mm pitch; pin 3 opposite at 2.1 mm between pad-column centres (reference); non-solder-mask-defined preferred, 0.07 mm maximum mask clearance. Stencil on p. 30.
 
@@ -99,7 +100,7 @@ The device ignores fast VDD transients; the trigger boundary of amplitude versus
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. The datasheet states that TI provides SPICE models for the TPS3831 and TPS3839 in the product folders (§12.1.1.2, p. 16); the model file has not been downloaded (**UNVERIFIED** URL and licence).
 

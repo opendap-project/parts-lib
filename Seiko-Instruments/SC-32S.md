@@ -1,8 +1,12 @@
-# Seiko Instruments SC-32S
+# SC-32S
 
-- **BOM v1 line:** 16 (RTC 32.768 kHz crystal for the RK809), Core
+- **Manufacturer:** Seiko Instruments
+- **Function:** 32.768 kHz tuning-fork quartz crystal
+- **BOM v1 lines:** 16 (RTC 32.768 kHz crystal for the RK809), Core
+  - The BOM selects the 7 pF load, ±20 ppm variant (line 16). The leaflet gives the CL range for the family, not an ordering code; the full orderable part number for 7 pF is **UNVERIFIED**.
+- **Package:** 3.2 × 1.5 × 0.75 mm SMD, two pads
 - **Datasheet:** Seiko Instruments *SC-32S SMD Quartz Crystal Unit* leaflet, 1 page (document title "SC-32S_Leaflet_20151208"; no revision printed). Copy read from the LCSC mirror of part C97604: <https://datasheet.lcsc.com/datasheet/pdf/01dfa0f4259dba8a3f226f0ebcc7a103.pdf>, sha256 `3b4a8a66e16acecca7125bdd3b1ccc68981eef54c0e0982edea8c2f5ea7269b5`. Cited below as "SC-32S leaflet 2015-12-08".
-- The BOM selects the 7 pF load, ±20 ppm variant (line 16). The leaflet gives the CL range for the family, not an ordering code; the full orderable part number for 7 pF is **UNVERIFIED**.
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -41,7 +45,7 @@ Passive resonator. Drive power is set by the RK809 32 kHz oscillator; it must st
 - Two terminals #1 and #2, the crystal connected between them; no case ground (SC-32S leaflet, Internal Lead Connections).
 - Body 3.2 (+0.1) × 1.5 ± 0.1 mm, height 0.75 ± 0.1 mm; terminal centre spacing 1.7 mm typ (SC-32S leaflet, Dimensions).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SC-32S leaflet, Recommended Soldering Pattern: two pads 1.0 × 1.8 mm with a 1.5 mm gap (overall 3.5 mm).
 
@@ -59,7 +63,7 @@ One load capacitor from each terminal to ground, sized from the selected CL (7 p
 
 None for the crystal (BOM v1 line 16). The RTC is handled by `rtc-rk808` and the 32 kHz output by `clk-rk808` (BOM v1 line 2).
 
-## Simulation models available
+## Simulation models
 
 None found. `manifest.toml`: one `datasheet` entry pointing at the LCSC product page (HTML), no sha256.
 

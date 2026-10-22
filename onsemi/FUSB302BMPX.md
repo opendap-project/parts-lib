@@ -1,9 +1,11 @@
-# onsemi FUSB302BMPX
+# FUSB302BMPX
 
+- **Manufacturer:** onsemi
 - **Function:** Programmable USB Type-C port controller with USB PD BMC physical layer (CC detection, Rp/Rd, VCONN switch, PD FIFOs over I2C)
-- **T1 use:** board BOM v1 line 41 (Power), status Proposed
-- **Datasheet:** FUSB302B Programmable USB Type-C Controller w/PD, FUSB302B/D Rev. 5 (August 2021), <https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf>
+- **BOM v1 lines:** 41 (Power, USB Type-C/PD controller), status Proposed
 - **Package:** WQFN-14 (MLP) 2.5 × 2.5 mm, 0.5 mm pitch, exposed pad (onsemi case 510BR)
+- **Datasheet:** FUSB302B Programmable USB Type-C Controller w/PD, FUSB302B/D Rev. 5 (August 2021), <https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -83,7 +85,7 @@ FUSB302BMPX, top view (p. 5, Figure 5; Table 3):
 
 Ordering (p. 2, Table 1): FUSB302BMPX, top mark UA, 14-lead MLP 2.5 × 2.5 mm 0.5 mm pitch, −40 to 85 °C, 3,000 per reel. Variants 01/10/11 differ only in I2C address; FUSB302BVMPX is the −40 to 105 °C automotive part. Case 510BR (p. 31): body 2.50 ± 0.05 mm square, 0.75 ± 0.05 mm height, exposed pad 1.45 ± 0.05 mm square, leads 0.24 ± 0.06 mm wide, 0.5 mm pitch, no JEDEC registration (drawing 98AON13629G).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Recommended land pattern (p. 31, case 510BR, 98AON13629G): pad-row outer extent 2.43 × 2.43 mm, centre thermal pad 1.45 × 1.45 mm, signal pads 0.30 mm wide on 0.50 mm pitch, pad length 0.58 mm (reference). Note D on the drawing: "land pattern recommendation is existing industry land pattern". Solder-mask and stencil openings are not given (**UNVERIFIED**).
 
@@ -121,7 +123,7 @@ The typical application (p. 3, Figure 2) places an OVP device between connector 
 - DT (binding `Documentation/devicetree/bindings/usb/fcs,fusb302.yaml`, **UNVERIFIED** against the current tree): `reg = <0x22>`, `interrupts` (INT_N, level low), `vbus-supply` (the regulator that switches the T1's source VBUS, here the TPS61088 + eFuse #C path behind `USB_SRC_ON`), and a `connector` child node with `compatible = "usb-c-connector"`, `power-role = "dual"`, `data-role`, `try-power-role`, `source-pdos`, `sink-pdos` and `op-sink-microwatt` (usb-connector binding).
 - The TCPM charger link (setting BQ25895 IINLIM after negotiation) goes through the power-supply framework; the exact wiring for this board is **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml` for this part. IBIS or other onsemi models are **UNVERIFIED**: not checked in this session.
 

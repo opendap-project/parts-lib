@@ -1,9 +1,11 @@
-# Adafruit 328 (lithium-ion polymer battery, 3.7 V 2500 mAh)
+# Adafruit 328
 
-- **Function:** single-cell lithium-ion polymer pack, 2500 mAh, with protection circuit module (PCM) and 2-pin JST PH lead
-- **T1 use:** board BOM v1 line 46 (Power), the T1 battery, status Decided (board ADR 0007); connector line 47, board NTC line 48, gauge line 42
+- **Manufacturer:** Adafruit
+- **Function:** Single-cell lithium-ion polymer pack, 2500 mAh, with protection circuit module (PCM) and 2-pin JST PH lead; Adafruit lists it as a lithium-ion polymer battery, 3.7 V 2500 mAh
+- **BOM v1 lines:** 46 (Power), the T1 battery, status Decided (board ADR 0007); connector line 47, board NTC line 48, gauge line 42
+- **Package:** Pouch cell 785060 with PCM and wire leads; pack 7.9 × 50.5 × 60.5 mm maximum with PCM
 - **Datasheet:** Polymer Lithium-ion Battery Product Specification, model 785060 2500mAh, Q/WAPL785060-1011, edition 1.0, Hunan Sounddon New Energy Co., Ltd (cell maker's sheet published by Adafruit), <https://cdn-shop.adafruit.com/datasheets/785060-2500mAh_specification_sheet.pdf>
-- **Package:** pouch cell 785060 with PCM and wire leads; pack 7.9 × 50.5 × 60.5 mm maximum with PCM
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -64,7 +66,7 @@ Connector JST PHR-2 (p. 10, bill of materials item 5). Which contact of the PHR-
 
 Dimensions: cell 7.8 × 50 × 60 mm maximum, pack 7.9 × 50.5 × 60.5 mm maximum with PCM (p. 2, §2.3); the drawing table on p. 10 gives length 60.2, width 50.5, thickness 7.9 mm maximum and tab width 3 mm. Weight approx. 46 g (p. 2, §3). Lead length is not given (**UNVERIFIED**).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not applicable to the pack. The board side is the JST S2B-PH-SM4-TB header (BOM line 47).
 
@@ -82,7 +84,7 @@ None (two-wire pack, no data line).
 
 None for the pack itself. Its parameters reach the charger and gauge drivers through the device tree, typically a `simple-battery` node (`charge-full-design-microamp-hours`, `voltage-max-design-microvolt`, `constant-charge-voltage-max-microvolt`, `constant-charge-current-max-microamp`) referenced by `monitored-battery`; which properties the `bq25890_charger` and MAX17055 drivers actually read is **UNVERIFIED** (see their sheets). Values from this sheet: 2 500 000 µAh, 4 200 000 µV charge voltage, 2 750 000 µV minimum.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. A cell model for the MAX17055 (ModelGauge m5 EZ or custom) has not been characterised (**UNVERIFIED**).
 

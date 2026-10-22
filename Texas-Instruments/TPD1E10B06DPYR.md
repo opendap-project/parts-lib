@@ -1,8 +1,11 @@
-# Texas Instruments TPD1E10B06DPYR
+# TPD1E10B06DPYR
 
+- **Manufacturer:** Texas Instruments
+- **Function:** Single-channel bidirectional TVS ESD protection diode
 - **BOM v1 lines:** 36 (Audio, headphone output and detect-line ESD), quantity 8; 74 (Protection, button ESD: Power, Action, Vol+, Vol−), quantity 4
-- **Datasheet:** TI TPD1E10B06 Single-Channel ESD Protection Diode, SLLSEB1G, February 2012, revised August 2024, 33 pages (cited as "SLLSEB1G"); sha256 in `manifest.toml`
 - **Package:** DPY, 2-pin X1SON, 1.0 × 0.6 mm (0402)
+- **Datasheet:** TI TPD1E10B06 Single-Channel ESD Protection Diode, SLLSEB1G, February 2012, revised August 2024, 33 pages (cited as "SLLSEB1G"); sha256 in `manifest.toml`
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -62,7 +65,7 @@ Passive device, no supply. Standby loss is leakage only, ≤ 100 nA at 5 V (SLLS
 
 SLLSEB1G §4, Table 4-1, p. 3. DPY0002A outline (SLLSEB1G p. 19): body 0.9–1.1 × 0.5–0.7 mm, height 0.30–0.45 mm, pads 0.2–0.3 × 0.45–0.55 mm at 0.65 mm pitch; optional pin-1 chamfer.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DPY0002A example board layout (SLLSEB1G p. 20): two pads 0.3 × 0.5 mm, centre-to-centre 0.7 mm, corner radius 0.05 mm; solder-mask-defined preferred (mask 0.07 mm min inside metal), or non-solder-mask-defined with 0.07 mm max opening around metal. Stencil on p. 21.
 
@@ -78,7 +81,7 @@ No passives. One device per line between the signal and GND, as close to the con
 
 None (passive protection device).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. TI SPICE/IBIS for this part: **UNVERIFIED** (not searched).
 

@@ -1,8 +1,11 @@
-# Analog Devices MAX98357AETE+T
+# MAX98357AETE+T
 
-- **BOM:** board BOM v1, line 32 (Audio), quantity 1
+- **Manufacturer:** Analog Devices
+- **Function:** Mono filterless Class D amplifier with a PCM digital input (I2S, 8-slot TDM)
+- **BOM v1 lines:** 32 (Audio, internal-speaker amplifier), quantity 1
+- **Package:** 16-pin TQFN, 3 mm × 3 mm × 0.75 mm, −40 to +85 °C, tape and reel (Rev 11, Ordering Information, p. 34; package code T1633+4, outline 21-0136, p. 35)
 - **Datasheet:** MAX98357A/MAX98357B "Tiny, Low-Cost, PCM Class D Amplifier with Class AB Performance", 19-6779 Rev 11, May 2018 (Maxim Integrated, now Analog Devices). Copy opened: the manufacturer document as mirrored by LCSC (<https://datasheet.lcsc.com/datasheet/pdf/9dd365a93d191d8d6f09766b0e3ea172.pdf>), sha256 `1509d795a016246625d8614df332b18ad85943c9c6cd1bf009291220d4b0d5c3`. The Analog Devices URL in `manifest.toml` timed out; whether it serves a later revision: **UNVERIFIED**.
-- **Package of this order number:** 16-pin TQFN, 3 mm × 3 mm × 0.75 mm, −40 to +85 °C, tape and reel (Rev 11, Ordering Information, p. 34; package code T1633+4, outline 21-0136, p. 35)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -82,7 +85,7 @@ Output-trace parasitic capacitance adds VDD × 300 kHz × C to the quiescent cur
 
 Outline 21-0136 rev O, variant 16L 3×3, package code T1633+4 (Rev 11, pp. 36–37): body 2.90/3.00/3.10 mm; height 0.70/0.75/0.80 mm; pitch 0.50 mm; lead width b 0.20/0.25/0.30 mm; lead length L 0.30/0.40/0.50 mm; exposed pad D2 = E2 = 0.95/1.10/1.25 mm.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 The datasheet names Maxim land pattern 90-0031 for the 16 TQFN (Rev 11, p. 35) but does not reproduce it. Land pattern 90-0031 dimensions: **UNVERIFIED** (document not opened). Until it is opened, derive pads from outline 21-0136 (above) to IPC-7351.
 
@@ -112,7 +115,7 @@ Rev 11, pp. 6–7 and 16.
 - Device-tree binding: `Documentation/devicetree/bindings/sound/maxim,max98357a.yaml` (present in mainline, checked 2026-10-22).
 - BOM v1 line 32: driver path "mainline + Debian". The Debian config symbol name (`SND_SOC_MAX98357A`) and its state were not re-checked in this sheet: **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Manufacturer models: **UNVERIFIED**. An evaluation kit exists (Rev 11, p. 1).
 

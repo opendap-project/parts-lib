@@ -1,9 +1,11 @@
-# Texas Instruments TPS259470ARPWR
+# TPS259470ARPWR
 
+- **Manufacturer:** Texas Instruments
 - **Function:** 2.7–23 V, 5.5 A eFuse with true reverse-current blocking, adjustable OVLO, active current limit, auto-retry
-- **T1 use:** board BOM v1 line 44 (Power), ×3: #A `HAT_5V` out, #B `HAT_3V3` out, #C USB-C VBUS out; status Proposed
-- **Datasheet:** TPS25947xx 2.7V to 23V, 5.5A, 28mΩ True Reverse Current Blocking eFuse with Input Reverse Polarity Protection, SLVSFC9C (October 2020, revised May 2026), <https://www.ti.com/lit/ds/symlink/tps25947.pdf>
+- **BOM v1 lines:** 44 (Power), ×3: #A `HAT_5V` out, #B `HAT_3V3` out, #C USB-C VBUS out; status Proposed
 - **Package:** VQFN-HR 10-pin, 2 mm × 2 mm, 0.45 mm pitch (RPW, drawing RPW0010A)
+- **Datasheet:** TPS25947xx 2.7V to 23V, 5.5A, 28mΩ True Reverse Current Blocking eFuse with Input Reverse Polarity Protection, SLVSFC9C (October 2020, revised May 2026), <https://www.ti.com/lit/ds/symlink/tps25947.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -89,7 +91,7 @@ Thermal (RPW, p. 8, §6.4): RθJA 41.7 °C/W on a custom 4-layer board with 8 th
 
 Source: SLVSFC9C p. 5–6, Figure 5-1, Table 5-1. Device marking 2A9H, MSL 2 at 260 °C, 3000 per reel (p. 68, Package Option Addendum).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 - Package outline, example board layout and stencil: drawing RPW0010A (4225183/A), SLVSFC9C p. 72–74. Stencil example based on 0.100 mm thickness (p. 74). The pad dimensions in the extracted text are not reliably attributable to individual pads; draw the footprint from the drawing itself (**UNVERIFIED** until the KiCad footprint is checked against p. 73).
 - IN and OUT are the heat-sinking pins: connect them to as much copper as possible on top and bottom layers with thermal vias; vias under IN and OUT also equalise current and improve RON and current-sense accuracy (p. 63, §8.4.1).
@@ -142,7 +144,7 @@ Measured turn-on slew rate (RL = 100 Ω, COUT = 1 µF, TJ = 25 °C, p. 11, §6.7
 
 None. The device has no digital bus. In the device tree each output is a `regulator-fixed` node with an enable GPIO (`HAT5V_EN`, `HAT3V3_EN`, `USB_SRC_ON`, power tree §5); ILM is read through the RK3566 SARADC (`iio-channels`). This mapping is OpenDAP's design, not a datasheet statement. FLT can be routed to a GPIO interrupt; which kernel consumer reports it is **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 No model is listed in `manifest.toml`. The datasheet points to a spreadsheet design tool, "TPS25947xx Design Calculator", in the product folder (p. 42, §8.1). A PSpice or SIMPLIS transient model is **UNVERIFIED**.
 

@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 2-bit dual-supply translating transceiver, 0.65–3.6 V on each port, one direction pin, no output enable
+- **BOM v1 lines:** 95 (I2S-A MCLK and DOUT on the DAC clock)
 - **Package:** VSSOP-8 (DCU), 2 × 3.1 mm nominal, 0.5 mm pitch
 - **Datasheet:** SN74AXC2T45, SCES880D (August 2019, revised January 2024), `sn74axc2t45.pdf`, sha256 `2fbbad36930a9d370e15affdf9378246188b43efc53ba338f79f36ea29564990` (downloaded 2026-10-22 from <https://www.ti.com/lit/ds/symlink/sn74axc2t45.pdf>). The `manifest.toml` entry for this MPN currently points at the SN74AXC8T245 datasheet (sha256 `6cf4003c438c…`)
-- **BOM v1 line:** 95 (I2S-A MCLK and DOUT on the DAC clock)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -91,7 +92,7 @@ DCU pin numbers (Figure 4-2, Table 4-1, p. 2):
 
 Outline DCU0008A (drawing 4225266/A, p. 33): 0.5 mm pitch, lead span 3.0–3.2 mm, 0.9 mm maximum height; JEDEC MO-187 variation CA. MSL Level-1-260C-UNLIM, Sn finish, −40 to 125 °C, reel 3000 (p. 26).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DCU0008A example board layout (p. 34, drawing 4225266/A): 8 pads 0.85 × 0.3 mm (reference), 0.5 mm pitch, 3.1 mm between pad-row centres (reference), non-solder-mask-defined preferred. Stencil on p. 35.
 
@@ -122,7 +123,7 @@ Minimum tpd is 0.5 ns. Enable times are calculated as tdis of the opposite port 
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml` (and the manifest datasheet entry for this MPN points at the wrong document, see header). Whether TI publishes an IBIS model is **UNVERIFIED**.
 

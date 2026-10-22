@@ -1,9 +1,12 @@
-# Texas Instruments TPS7A2033PDBVR
+# TPS7A2033PDBVR
 
-- BOM: board BOM v1, line 29 (MCLK_3V3 low-noise LDO, 3.3 V, qty 1); ADR 0010.
-- Datasheet: *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H".
-- Datasheet file: `~/.cache/opendap/parts/Texas-Instruments/TPS7A2018PDBVR/tps7a20.pdf` (cached under the TPS7A2018PDBVR folder), sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
-- Same datasheet as [TPS7A2018PDBVR](TPS7A2018PDBVR.md); this sheet repeats only what differs for the 3.3 V version and the clock supply.
+- **Manufacturer:** Texas Instruments
+- **Function:** 300 mA ultra-low-noise LDO, fixed 3.3 V output, active output discharge
+- **BOM v1 lines:** 29 (MCLK_3V3 low-noise LDO, 3.3 V, qty 1); ADR 0010
+- **Package:** SOT-23-5 (DBV0005A)
+- **Datasheet:** *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H". File sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
+  - Same datasheet as [TPS7A2018PDBVR](TPS7A2018PDBVR.md); this sheet repeats only what differs for the 3.3 V version and the clock supply.
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -45,7 +48,7 @@ SBVS338H, p. 6, §5.5.
 
 Identical to TPS7A2018PDBVR: SOT-23-5 DBV0005A; pin 1 IN, 2 GND, 3 EN, 4 N/C, 5 OUT (SBVS338H, p. 4, Figure 4-4; p. 56). MSL Level-1-260C-UNLIM, NiPdAu or Sn (SBVS338H, p. 42).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Identical to TPS7A2018PDBVR: SBVS338H, p. 57–58, five (1.1) mm × (0.6) mm pads, 0.95 mm pitch, (2.6) mm row distance.
 
@@ -68,7 +71,7 @@ The oscillator catalogue asks for about 0.01 µF between VCC and GND close to ea
 
 None. EN on `AUDIO_LN_EN` (power tree v0 §7); describe as `regulator-fixed`. Driver path *none* (BOM v1 line 29).
 
-## Simulation models available
+## Simulation models
 
 - None named in the Device Support section (SBVS338H, p. 33, §8.1). ti.com models **UNVERIFIED**. No manifest entry beyond the datasheet.
 

@@ -1,7 +1,11 @@
-# Samsung K4UBE3D4AB-MGCL
+# K4UBE3D4AB-MGCL
 
-- **Datasheet not downloaded.** Samsung does not publish a public datasheet for this part (NDA); `manifest.toml` has an empty URL. Every value below comes from OpenDAP's BOM or from the SoC side and is **UNVERIFIED** against a Samsung document.
-- **BOM v1 line:** 8 (LPDDR4X, 4 GB), Core
+- **Manufacturer:** Samsung
+- **Function:** LPDDR4X SDRAM, 4 GB
+- **BOM v1 lines:** 8 (LPDDR4X, 4 GB), Core
+- **Package:** **UNVERIFIED** (no datasheet)
+- **Datasheet:** Not downloaded; see Status.
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. Samsung does not publish a public datasheet for this part (NDA); `manifest.toml` has an empty URL. Every value below comes from OpenDAP's BOM or from the SoC side and is **UNVERIFIED** against a Samsung document.
 
 ## Summary
 
@@ -27,7 +31,7 @@ LPDDR4X SDRAM, 4 GB, the T1 system memory on the RK3566 32-bit DDR controller (B
 
 **UNVERIFIED** (no datasheet). Package type and ball map must come from Samsung under NDA or from a published reference design.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 **UNVERIFIED** (no datasheet).
 
@@ -46,7 +50,7 @@ LPDDR4X SDRAM, 4 GB, the T1 system memory on the RK3566 32-bit DDR controller (B
 
 None (BOM v1 line 8: "none (rkbin DDR blob ≥ v1.26)"). The memory is initialised by the boot loader; Linux sees it as system RAM.
 
-## Simulation models available
+## Simulation models
 
 None available publicly; IBIS models for LPDDR4X are normally released under NDA (**UNVERIFIED**). No `manifest.toml` entry other than the empty datasheet row.
 

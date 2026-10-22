@@ -1,9 +1,12 @@
-# Texas Instruments TPS7A2018PDBVR
+# TPS7A2018PDBVR
 
-- BOM: board BOM v1, line 29 (DAC1 VA and DAC2 VA low-noise LDOs, 1.8 V, qty 2).
-- Datasheet: *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H".
-- Datasheet file: `~/.cache/opendap/parts/Texas-Instruments/TPS7A2018PDBVR/tps7a20.pdf`, sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
-- Same datasheet as [TPS7A2033PDBVR](TPS7A2033PDBVR.md).
+- **Manufacturer:** Texas Instruments
+- **Function:** 300 mA ultra-low-noise LDO, fixed 1.8 V output, active output discharge
+- **BOM v1 lines:** 29 (DAC1 VA and DAC2 VA low-noise LDOs, 1.8 V, qty 2)
+- **Package:** SOT-23-5 (DBV0005A), 2.9 × 2.8 mm nominal, 1.45 mm max height
+- **Datasheet:** *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H". File sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
+  - Same datasheet as [TPS7A2033PDBVR](TPS7A2033PDBVR.md).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -73,7 +76,7 @@ SOT-23-5 (DBV0005A), 2.9 mm × 2.8 mm nominal, 1.45 mm max height (SBVS338H, p. 
 
 (SBVS338H, p. 4, Figure 4-4 and Pin Functions.) Addendum: NiPdAu or Sn finish, MSL Level-1-260C-UNLIM, −40 to 125 °C, marking 2AUF (SBVS338H, p. 42).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SBVS338H, p. 57 (DBV0005A example board layout) and p. 58 (stencil, 0.125 mm):
 
@@ -111,7 +114,7 @@ Typical application (SBVS338H, p. 30, Figure 7-4):
 
 None. EN on `AUDIO_LN_EN` (power tree v0 §7). Describe as a `regulator-fixed` supply (BOM v1 line 29: driver path *none*).
 
-## Simulation models available
+## Simulation models
 
 - The Device Support section (SBVS338H, p. 33, §8.1) names no simulation model or EVM.
 - PSpice/TINA models on ti.com: **UNVERIFIED**. No manifest entry beyond the datasheet.

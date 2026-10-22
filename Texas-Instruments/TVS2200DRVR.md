@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 22 V unidirectional flat-clamp surge protection device (TI Flat-Clamp family)
+- **BOM v1 lines:** 64 (main USB-C VBUS TVS)
 - **Package:** WSON-6 (DRV), 2.0 × 2.0 mm, exposed thermal pad
 - **Datasheet:** TVS2200 22-V Flat-Clamp Surge Protection Device, SLVSED5C (December 2017, revised August 2023), sha256 `84c986c9cc4f…` in `manifest.toml`
-- **BOM v1 line:** 64
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -78,7 +79,7 @@ WSON-6 (DRV) (Figure 6-1 and Table 6-1, p. 3):
 
 Outline DRV0006A (drawing 4222173/C 11/2025, PDF p. 18): body 1.9–2.1 × 1.9–2.1 mm, 0.7–0.8 mm height, 0.65 mm pitch, exposed pad 1.0 ± 0.1 × 1.6 ± 0.1 mm, terminals 0.25–0.35 mm wide and 0.2–0.3 mm long. The thermal pad must be soldered (note 3). NiPdAu finish, MSL Level-1-260C-UNLIM, reel of 3000, marking 1HVH (package option addendum, p. 14).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DRV0006A example board layout (PDF p. 19, drawing 4222173/C, scale 25:1):
 
@@ -99,7 +100,7 @@ Not applicable (no logic interface). Input slew rate above 2.5 V/µs (27 °C) or
 
 None (passive protection part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes a SPICE model for this device is **UNVERIFIED**.
 

@@ -1,11 +1,11 @@
-# Nexperia PMEG4010CEH
+# PMEG4010CEH
 
-> **Datasheet not downloaded.** The manifest URL returned HTTP 403 (Access Denied) to curl and to WebFetch on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
-
+- **Manufacturer:** Nexperia
 - **Function:** 40 V, 1 A low-VF Schottky barrier rectifier (per the BOM)
-- **T1 use:** board BOM v1 line 53 (Power), TPS61169 backlight boost rectifier, status Proposed
-- **Datasheet:** PMEG4010CEH data sheet, revision and date **UNVERIFIED**, <https://assets.nexperia.com/documents/data-sheet/PMEG4010CEH.pdf>
+- **BOM v1 lines:** 53 (Power), TPS61169 backlight boost rectifier, status Proposed
 - **Package:** SOD123F (from the `EH` suffix, **UNVERIFIED**)
+- **Datasheet:** PMEG4010CEH data sheet, revision and date **UNVERIFIED**, <https://assets.nexperia.com/documents/data-sheet/PMEG4010CEH.pdf>
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL returned HTTP 403 (Access Denied) to curl and to WebFetch on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 
@@ -27,7 +27,7 @@ Average forward current equals the LED current (60 mA maximum); loss = VF × 60 
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
@@ -43,7 +43,7 @@ Not applicable.
 
 None (discrete part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Vendor models **UNVERIFIED** (not checked).
 

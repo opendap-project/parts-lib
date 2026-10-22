@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Single-bit dual-supply bus transceiver, 0.65–3.6 V on each port, direction pin
+- **BOM v1 lines:** 96 (touch-faceplate panel RST and TE translators), quantity 2
 - **Package:** SC70-6 (DCK), 2 × 2.1 mm nominal, 0.65 mm pitch
 - **Datasheet:** SN74AXC1T45, SCES882E (December 2017, revised December 2023), `sn74axc1t45.pdf`, sha256 `41e03bd8f0740ae8bbdf92309e7c82bac1359a768556cbe68de41b0273e49f12` (downloaded 2026-10-22 from <https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf>). The `manifest.toml` entry for this MPN currently points at the SN74AXC8T245 datasheet (sha256 `6cf4003c438c…`)
-- **BOM v1 line:** 96
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -87,7 +88,7 @@ DCK pin numbers (Figure 4-2, Table 4-1, p. 3):
 
 Outline DCK0006A (drawing 4214835/D, p. 30): body 1.85–2.15 × 1.1–1.4 mm, lead span 1.8–2.4 mm, 0.65 mm pitch, leads 0.15–0.30 mm, 0.8–1.1 mm height; JEDEC MO-203 variation AB. MSL Level-1-260C-UNLIM, Sn finish, −40 to 125 °C, reel 3000 (p. 26).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DCK0006A example board layout (p. 31, drawing 4214835/D, scale 18:1): 6 pads 0.9 × 0.4 mm (reference), 0.65 mm pitch, 2.2 mm between pad-column centres (reference); non-solder-mask-defined preferred, 0.07 mm maximum mask clearance. Stencil on p. 32.
 
@@ -117,7 +118,7 @@ Minimum tpd in all cases is 0.5 ns. Direction-change enable and disable times ar
 
 None. The panel driver controls RST and reads TE through these buffers as plain GPIOs.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml` (and the manifest datasheet entry for this MPN points at the wrong document, see header). Whether TI publishes an IBIS model is **UNVERIFIED**.
 

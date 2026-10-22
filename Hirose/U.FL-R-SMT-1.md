@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Hirose Electric
 - **Function:** Ultra-small SMT coaxial receptacle, 50 Ω, DC to 6 GHz
+- **BOM v1 lines:** 56 (Wi-Fi/Bluetooth antenna receptacles), ordered as U.FL-R-SMT-1(10), quantity 2
 - **Package:** 3.0 × 2.6 mm (3.1 mm over the centre tab), 1.25 mm high
 - **Datasheet:** U.FL Series catalog, edition 2009.2 (pages 1–3 used); copy obtained from the LCSC datasheet mirror (part C88373)
-- **BOM v1 line:** 56 (U.FL-R-SMT-1(10), quantity 2)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -59,7 +60,7 @@ Three terminals: SIG (centre, at the tab) and two GND (shell sides) (p. 3, U.FL-
 
 Tape: 12 ± 0.3 mm, 4 ± 0.1 mm pocket pitch; reel Ø 330 ± 2 mm (p. 3).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Recommended PCB mounting pattern (p. 3):
 
@@ -79,7 +80,7 @@ Not applicable. RF: 50 Ω, DC to 6 GHz, mated VSWR as above (p. 2).
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

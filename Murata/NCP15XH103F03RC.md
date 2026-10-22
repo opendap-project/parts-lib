@@ -1,11 +1,11 @@
-# Murata NCP15XH103F03RC
+# NCP15XH103F03RC
 
-> **Datasheet not downloaded.** The manifest URL is a product page that redirects to pim.murata.com, which renders by script; no PDF was retrieved on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
-
+- **Manufacturer:** Murata
 - **Function:** 10 kΩ NTC thermistor, 0402, B = 3380 K (per the BOM)
-- **T1 use:** board BOM v1 line 48 (Power, battery NTC on the BQ25895 TS pin) and line 101 (optional MAX17055 TH thermistor), status Proposed
-- **Datasheet:** Murata product page <https://www.murata.com/en-us/products/productdetail?partno=NCP15XH103F03RC> (redirects to pim.murata.com); PDF datasheet **UNVERIFIED**
+- **BOM v1 lines:** 48 (Power, battery NTC on the BQ25895 TS pin) and line 101 (optional MAX17055 TH thermistor), status Proposed
 - **Package:** 0402 (1005 metric) chip NTC (`15` size code, **UNVERIFIED**)
+- **Datasheet:** Murata product page <https://www.murata.com/en-us/products/productdetail?partno=NCP15XH103F03RC> (redirects to pim.murata.com); PDF datasheet **UNVERIFIED**
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL is a product page that redirects to pim.murata.com, which renders by script; no PDF was retrieved on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 
@@ -27,7 +27,7 @@ Self-heating depends on the divider current from REGN; the dissipation constant 
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
@@ -43,7 +43,7 @@ Thermal time constant **UNVERIFIED**; it sets how quickly a warming pack is dete
 
 None for the part. Temperature reaches Linux through the `bq25890_charger` status (TS fault) and, if fitted on TH, the MAX17055 driver.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Vendor models **UNVERIFIED** (not checked).
 

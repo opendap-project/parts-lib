@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** USB Type-C port protector: 4-channel short-to-VBUS overvoltage protection (CC1, CC2, SBU1, SBU2) and 8-channel IEC 61000-4-2 ESD protection
+- **BOM v1 lines:** 63 (main USB-C CC and SBU protection)
 - **Package:** WQFN-20 (RUK), 3.0 × 3.0 mm, 0.4 mm pitch, exposed thermal pad
 - **Datasheet:** TPD8S300A, SLVSEL9 (June 2018, initial release), sha256 `2c1d5b68b194…` in `manifest.toml`
-- **BOM v1 line:** 63
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -120,7 +121,7 @@ WQFN-20 (RUK), top view (Pin Functions, pp. 3–4):
 
 Outline RUK0020B (drawing 4222676/A, PDF p. 33): body 2.9–3.1 × 2.9–3.1 mm, 0.8 mm maximum height, 0.4 mm pitch, exposed pad 1.7 ± 0.05 mm square, terminals 0.15–0.25 mm wide and 0.3–0.5 mm long. MSL and finish: NiPdAu, reel of 3000 (package option addendum, PDF p. 29).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 RUK0020B example board layout (PDF p. 34, drawing 4222676/A, scale 20:1):
 
@@ -158,7 +159,7 @@ FLT is an open-drain output asserted on CC overvoltage, SBU overvoltage or therm
 
 None (no software interface). The FLT output can be wired to a GPIO and reported through a generic GPIO or interrupt binding; no T1 decision on this exists yet.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS or SPICE model for this device is **UNVERIFIED**.
 

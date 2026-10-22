@@ -1,11 +1,11 @@
-# Texas Instruments TPS61088RHLR
+# TPS61088RHLR
 
-> **Datasheet not downloaded.** On 2026-10-22 TI returned **HTTP 404** for both the datasheet URL and the product page `ti.com/product/TPS61088` (the TPS61089 URLs still answer 200). The part's status at TI is therefore unknown and must be checked before it stays in the BOM. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
-
-- **Function:** synchronous boost converter, used at 5.1 V output from VSYS (per the BOM)
-- **T1 use:** board BOM v1 line 91 (Power), HAT_5V and USB-C VBUS source boost ahead of eFuses #A and #C; inductor line 92; status Proposed (new)
-- **Datasheet:** TPS61088 datasheet, revision and date **UNVERIFIED**, <https://www.ti.com/lit/ds/symlink/tps61088.pdf>
+- **Manufacturer:** Texas Instruments
+- **Function:** Synchronous boost converter, used at 5.1 V output from VSYS (per the BOM)
+- **BOM v1 lines:** 91 (Power), HAT_5V and USB-C VBUS source boost ahead of eFuses #A and #C; inductor line 92; status Proposed (new)
 - **Package:** VQFN (RHL) from the MPN suffix; pin count and size **UNVERIFIED**
+- **Datasheet:** TPS61088 datasheet, revision and date **UNVERIFIED**, <https://www.ti.com/lit/ds/symlink/tps61088.pdf>
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. On 2026-10-22 TI returned **HTTP 404** for both the datasheet URL and the product page `ti.com/product/TPS61088` (the TPS61089 URLs still answer 200). The part's status at TI is therefore unknown and must be checked before it stays in the BOM. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 
@@ -27,7 +27,7 @@ Shutdown and quiescent currents **UNVERIFIED**. Load case from the T1: up to 1.5
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
@@ -44,7 +44,7 @@ EN from a hardware OR of `HAT5V_EN` and `USB_SRC_ON` (BOM line 91). EN threshold
 
 None (no register interface). In the device tree the 5.1 V rail is a `regulator-fixed` supply of the eFuse-switched outputs; modelling is OpenDAP's design.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Vendor models **UNVERIFIED** (not checked).
 

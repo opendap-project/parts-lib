@@ -1,9 +1,11 @@
-# Texas Instruments BQ25895RTWR
+# BQ25895RTWR
 
+- **Manufacturer:** Texas Instruments
 - **Function:** I2C-controlled single-cell 5 A buck charger with NVDC power path, integrated BATFET and 4.5–5.5 V boost (OTG)
-- **T1 use:** board BOM v1 line 39 (Power), status Proposed; related lines 40 (charger inductor, Coilcraft XAL4020-102MEC) and 48 (board NTC, Murata NCP15XH103F03RC, on TS)
-- **Datasheet:** BQ25895 I2C Controlled Single Cell 5-A Fast Charger with MaxCharge for High Input Voltage and Adjustable Voltage 3.1-A Boost Operation, SLUSC88C (March 2015, revised October 2022), <https://www.ti.com/lit/ds/symlink/bq25895.pdf>
+- **BOM v1 lines:** 39 (Power, charger and power-path controller), status Proposed; related lines 40 (charger inductor, Coilcraft XAL4020-102MEC) and 48 (board NTC, Murata NCP15XH103F03RC, on TS)
 - **Package:** WQFN-24 (RTW), 4 × 4 mm, 0.5 mm pitch, 0.8 mm maximum height, exposed PowerPAD
+- **Datasheet:** BQ25895 I2C Controlled Single Cell 5-A Fast Charger with MaxCharge for High Input Voltage and Adjustable Voltage 3.1-A Boost Operation, SLUSC88C (March 2015, revised October 2022), <https://www.ti.com/lit/ds/symlink/bq25895.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -110,7 +112,7 @@ When the battery monitor (ADC) is active, REGN is enabled and the quiescent curr
 
 Source: SLUSC88C pp. 4–5, Figure 6-1, Table 6-1. Package option addendum (p. 57): BQ25895RTWR, WQFN (RTW) 24, 3000 per reel, NiPdAu, MSL Level-2-260C-1 YEAR, −40 to 85 °C, marking BQ25895. Generic package view RTW 24, 4 × 4 mm, 0.5 mm pitch, 0.8 mm maximum height, drawing 4224801/A (p. 61).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 The package outline and example land pattern are on pp. 62–64 (RTW0024A) as drawings only; the text layer carries no dimensions. Pad sizes, the thermal-pad opening and the via pattern must be taken from those drawings when the KiCad footprint is drawn (**UNVERIFIED** here). Layout rules (p. 55, §11.1): input capacitor tight to PMID and GND; short, narrow SW trace on a single layer; output capacitor near the inductor and the IC; analog ground routed separately and joined to power ground at the PowerPAD (or through 0 Ω); the PowerPAD soldered with enough thermal vias to the ground plane.
 
@@ -150,7 +152,7 @@ The typical application (Figure 9-1, p. 49) uses a 2.2 µH inductor, 40 µF on P
 - DT properties known from the binding `Documentation/devicetree/bindings/power/supply/bq25890.yaml` (**UNVERIFIED** against the current tree): `ti,battery-regulation-voltage`, `ti,charge-current`, `ti,termination-current`, `ti,precharge-current`, `ti,minimum-sys-voltage`, `ti,boost-voltage`, `ti,boost-max-current`, `ti,use-ilim-pin`, `ti,thermal-regulation-threshold`, `ti,ibatcomp-micro-ohms`, `ti,ibatcomp-clamp-microvolt`, `interrupts`.
 - Whether the driver disables the watchdog or kicks it, and whether a DT property exists to clear AUTO_DPDM_EN, is **UNVERIFIED**; check the source before relying on either (see design notes).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml` for this part. Vendor models (PSpice or SIMPLIS transient model, EVM files) are **UNVERIFIED**: not checked on ti.com in this session.
 

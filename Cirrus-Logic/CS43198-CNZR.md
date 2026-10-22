@@ -1,8 +1,11 @@
-# Cirrus Logic CS43198-CNZR
+# CS43198-CNZR
 
-- **BOM:** board BOM v1, line 18 (Audio), quantity 2
+- **Manufacturer:** Cirrus Logic
+- **Function:** Stereo 32-bit audio DAC with pseudodifferential headphone-capable outputs
+- **BOM v1 lines:** 18 (Audio, dual-mono DACs), quantity 2
+- **Package:** 40-pin 5 mm × 5 mm QFN, tape and reel (DS1156F2, Table 12-1, p. 136)
 - **Datasheet:** CS43198 "130-dB, 32-Bit High-Performance DAC with Pseudodifferential Outputs", DS1156F2, December 2022 (manifest sha256 `e2da18e0…dd351d`, verified against the cached copy)
-- **Package of this order number:** 40-pin 5 mm × 5 mm QFN, tape and reel (DS1156F2, Table 12-1, p. 136)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -131,7 +134,7 @@ GNDA, GNDCP and GNDD must meet in a common ground area under the chip (DS1156F2,
 
 Package dimensions (DS1156F2, Table 10-1, p. 134): body 5 × 5 mm BSC; height 0.70/0.75/0.80 mm; pitch 0.4 mm; lead width b 0.15/0.20/0.25 mm; lead length L 0.35/0.40/0.45 mm; exposed pad J × K 3.4/3.5/3.6 mm.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DS1156F2 gives package dimensions (Table 10-1, p. 134) but no recommended land pattern. The thermal pad must mate with a copper pad connected to ground through a via array to inner ground planes (DS1156F2, §8.4, p. 121). Land dimensions, paste-mask segmentation of the exposed pad and via count: **UNVERIFIED** (to be derived from Table 10-1 to IPC-7351 in `kicad-lib`).
 
@@ -178,7 +181,7 @@ Power sequencing (DS1156F2, §5.2, p. 55): VP first; the other supplies in any o
 - Debian: `SND_SOC_CS43130` is not enabled in the trixie-backports arm64 config, so the T1 builds it through DKMS (BOM v1 line 18; opendap-os ADR 0007).
 - Mono-mode (one device per channel) configuration through the driver: **UNVERIFIED**.
 
-## Simulation models available
+## Simulation models
 
 No IBIS, SPICE or other model is listed in `manifest.toml` for this part. Availability of an IBIS model from Cirrus Logic: **UNVERIFIED**.
 

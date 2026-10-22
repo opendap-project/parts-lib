@@ -1,8 +1,11 @@
-# Texas Instruments TPS7A3001DGNR
+# TPS7A3001DGNR
 
-- BOM: board BOM v1, line 26 (−5.0 V headphone-amplifier LDO).
-- Datasheet: *TPS7A30 −35-V, −200-mA, Ultralow-Noise, Negative Linear Regulator*, SBVS125D, August 2010, revised June 2015. Cited below as "SBVS125D".
-- Datasheet file: `~/.cache/opendap/parts/Texas-Instruments/TPS7A3001DGNR/tps7a30.pdf`, sha256 `b60d6fd8d7220e9f8a4dcfeaa7438a5e5e419ef589e1ea85e9d04781f2203ae5` (matches the BOM v1 Datasheets table).
+- **Manufacturer:** Texas Instruments
+- **Function:** −200 mA ultralow-noise negative linear regulator, adjustable output
+- **BOM v1 lines:** 26 (−5.0 V headphone-amplifier LDO)
+- **Package:** 8-pin HVSSOP PowerPAD (DGN), 3.00 × 3.00 mm body
+- **Datasheet:** *TPS7A30 −35-V, −200-mA, Ultralow-Noise, Negative Linear Regulator*, SBVS125D, August 2010, revised June 2015. Cited below as "SBVS125D". File sha256 `b60d6fd8d7220e9f8a4dcfeaa7438a5e5e419ef589e1ea85e9d04781f2203ae5` (matches the BOM v1 Datasheets table).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -84,7 +87,7 @@ Dissipation: PD = (VIN − VOUT) × IMAX + VIN × IQ (SBVS125D, p. 20, Eq. 3).
 
 Outline DGN0008D (SBVS125D, p. 39, drawing 4225481/A 11/2019): body 2.9–3.1 mm, 4.75–5.05 mm over leads, 0.65 mm pitch, 1.1 mm max height, exposed pad 1.63–1.89 mm × 1.28–1.57 mm. Addendum (SBVS125D, p. 30): NiPdAu, MSL Level-2-260C-1 YEAR, −40 to 125 °C, marking PSZQ, 2500 per reel.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SBVS125D, p. 40 (DGN0008D example board layout):
 
@@ -131,7 +134,7 @@ Maximum-AC-performance circuit (SBVS125D, p. 20, Figure 32; p. 18, §9.1.2–9.1
 
 None. No digital interface; describe as a GPIO-gated `regulator-fixed` supply (BOM v1 line 26: driver path *none*).
 
-## Simulation models available
+## Simulation models
 
 - SPICE model: "available through the product folders under the Tools & Software tab" (SBVS125D, p. 28, §12.1.1.2). File and revision **UNVERIFIED**; no manifest entry yet.
 - EVM: TPS7A30-49EVM-567, user's guide SLVU405 (SBVS125D, p. 28, §12.1.1.1).

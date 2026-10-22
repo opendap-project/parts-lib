@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Focus LCDs (Focus Display Solutions)
 - **Function:** 3.5-inch 320 × 480 IPS TFT display module, 1-lane MIPI DSI, with capacitive touch panel (GT911) and white LED backlight
+- **BOM v1 lines:** 81 (display), 82 (touch controller, see [`Goodix/GT911.md`](../Goodix/GT911.md)), 84 and 85 (mating connectors)
 - **Package:** Module, 54.46 × 82.94 × 5.50 mm, 46.85 g; 20-pin TFT FPC tail and 6-pin CTP FPC tail
 - **Datasheet:** Focus LCDs product specification E35GH-I-MW800-CB, Rev 1.0 (2025-03-04, drawing revision block p. 3), 15 pages, sha256 `2912a2ebd90e…` in `manifest.toml`
-- **BOM v1 lines:** 81 (display), 82 (touch controller, see [`Goodix/GT911.md`](../Goodix/GT911.md)), 84 and 85 (mating connectors)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -107,7 +108,7 @@ The spec marks INT as "I" (p. 6). On the GT911 it is an output during operation 
 
 Mechanical (spec p. 2 and outline drawing p. 3): module 54.46 (H) × 82.94 (V) × 5.50 (D) mm typical; active area 48.96 × 73.44 mm; CTP view area 49.56 × 74.04 mm; general tolerance ±0.3 mm. Drawing p. 3: cover glass 0.55 mm (etched AG), sensor 0.55 mm, total thickness 5.50 mm. Both tails exit the bottom edge and bend behind the module ("Bend and Ship"). Exact tail lengths, widths and the contact pitch must be read from the drawing on p. 3. That drawing is not to scale, and the dimensions printed on it are hard to read at the available resolution (**UNVERIFIED**; request the DXF/PDF master drawing from Focus LCDs).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not applicable (module). Mating connectors:
 
@@ -137,7 +138,7 @@ The specification gives no application circuit. Needed by inference from the pin
 - Touch: mainline `goodix` touchscreen driver, compatible `goodix,gt911` (see the GT911 sheet).
 - Backlight: `pwm-backlight` through the main-board driver (BOM line 51), not through this module.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. No 3D model is provided in the specification. A STEP or DXF from Focus LCDs is **UNVERIFIED**.
 

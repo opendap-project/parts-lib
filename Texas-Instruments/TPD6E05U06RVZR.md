@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 6-channel unidirectional TVS ESD protection, ultra-low capacitance
+- **BOM v1 lines:** 69 (HAT low-speed and analog lines at the pogo field, quantity 9), 73 (microSD CLK, CMD, D0–D3), 75 (faceplate low-speed lines, quantity 3)
 - **Package:** USON-14 (RVZ)
 - **Datasheet:** TPD1E05U06, TPD4E05U06, TPD6E05U06, SLVSBO7O (December 2012, revised August 2024), sha256 `c167cf1e72a5…` in `manifest.toml` (same document as the TPD4E05U06)
-- **BOM v1 lines:** 69, 73, 75
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -76,7 +77,7 @@ The "+/−" names are channel labels only; each channel is an independent single
 
 Package dimensions: **UNVERIFIED.** SLVSBO7O revised August 2024 contains outline drawings for DQA, DYA and DPY only (pp. 24–36); no RVZ outline, land pattern or stencil is included, although the RVZ orderables are active (package option addendum, p. 37; tape and reel data, pp. 20–21). The RVZ0014 drawing must be obtained separately from TI before the footprint is drawn. NiPdAu finish, MSL Level-1-260C-UNLIM, reel of 3000 (p. 37).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 **UNVERIFIED**: not in SLVSBO7O (see above). Do not derive the footprint from the tape cavity dimensions.
 
@@ -92,7 +93,7 @@ Not applicable (no logic interface). Line capacitance 0.47 pF typical; the famil
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS or SPICE model for this device is **UNVERIFIED**.
 

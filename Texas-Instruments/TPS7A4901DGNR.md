@@ -1,8 +1,11 @@
-# Texas Instruments TPS7A4901DGNR
+# TPS7A4901DGNR
 
-- BOM: board BOM v1, line 25 (+5.0 V headphone-amplifier LDO).
-- Datasheet: *TPS7A49 36-V, 150-mA, Ultralow-Noise, Positive Linear Regulator*, SBVS121E, August 2010, revised May 2015. Cited below as "SBVS121E".
-- Datasheet file: `~/.cache/opendap/parts/Texas-Instruments/TPS7A4901DGNR/tps7a49.pdf`, sha256 `f69e957b22bcc2db72149f57c96501aedeb4ed214f016c98f562d71411474182` (matches the BOM v1 Datasheets table).
+- **Manufacturer:** Texas Instruments
+- **Function:** 150 mA ultralow-noise positive linear regulator, adjustable output
+- **BOM v1 lines:** 25 (+5.0 V headphone-amplifier LDO)
+- **Package:** 8-pin HVSSOP PowerPAD (DGN), 3.00 × 3.00 mm body
+- **Datasheet:** *TPS7A49 36-V, 150-mA, Ultralow-Noise, Positive Linear Regulator*, SBVS121E, August 2010, revised May 2015. Cited below as "SBVS121E". File sha256 `f69e957b22bcc2db72149f57c96501aedeb4ed214f016c98f562d71411474182` (matches the BOM v1 Datasheets table).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -82,7 +85,7 @@ Dissipation: PD = (VIN − VOUT) × IOUT + VIN × IQ (SBVS121E, p. 17, Eq. 3).
 
 The datasheet carries two DGN outlines: DGN0008D (exposed pad 1.63–1.89 mm × 1.28–1.57 mm, drawing 4225481/A, p. 33) and DGN0008G (exposed pad 1.95–2.15 mm × 1.646–1.846 mm, drawing 4225480/C, p. 36). Body 2.9–3.1 mm, 4.75–5.05 mm over leads, 0.65 mm pitch, 1.1 mm max height. Which outline applies to a given TPS7A4901DGNR lot is not stated in the datasheet: **UNVERIFIED**; the land patterns of both are identical (below). MSL Level-2-260C-1 YEAR; lead finish "Call TI | NiPdAuAg | NiPdAu" (SBVS121E, p. 24, addendum).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 SBVS121E, p. 34 (DGN0008D) and p. 37 (DGN0008G), identical dimensions:
 
@@ -121,7 +124,7 @@ Maximum-AC-performance circuit (SBVS121E, p. 16, Figure 29; p. 14, §9.1.3–9.1
 
 None. No digital interface. Can be described as a `regulator-fixed` supply gated by a GPIO (BOM v1 line 25: driver path *none*).
 
-## Simulation models available
+## Simulation models
 
 - SPICE model: "available through the product folder under Tools & Software" (SBVS121E, p. 22, §12.1.1.2). Exact file, format and revision **UNVERIFIED**; no manifest entry yet.
 - EVM: TPS7A30-49EVM-567, user's guide SLVU405 (SBVS121E, p. 22, §12.1.1.1).

@@ -1,8 +1,11 @@
-# Nippon DICS Pentaconn 4.4 mm jack
+# Pentaconn 4.4 mm jack
 
-**Datasheet not downloaded.** Nippon DICS publishes no public drawing for the Pentaconn 4.4 mm jack; the manifest URL (<https://www.ndics.com/brands/pentaconn/>) is a brand page. The exact order number is not fixed in BOM v1. Every value below comes from BOM v1 and is **UNVERIFIED**.
-
-- **BOM:** board BOM v1, line 31 (Audio), quoted upgrade to the primary G-Switch GT-3321667P-01
+- **Manufacturer:** Nippon DICS
+- **Function:** 4.4 mm balanced headphone jack (Pentaconn)
+- **BOM v1 lines:** 31 (Audio), quoted upgrade to the primary G-Switch GT-3321667P-01
+- **Package:** **UNVERIFIED**
+- **Datasheet:** Not downloaded; see Status.
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. Nippon DICS publishes no public drawing for the Pentaconn 4.4 mm jack; the manifest URL (<https://www.ndics.com/brands/pentaconn/>) is a brand page. The exact order number is not fixed in BOM v1. Every value below comes from BOM v1 and is **UNVERIFIED**.
 
 ## Summary
 
@@ -24,7 +27,7 @@ Not applicable (passive connector).
 
 Order number, pinout, detect switch and dimensions: **UNVERIFIED**. The BOM requires the 5-pole JEITA RC-8141C layout to be confirmed before layout (BOM v1 line 31).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 **UNVERIFIED**. A shared land with the G-Switch part is possible only if the Pentaconn drawing matches drawing C-GT03321667P-01 (see `G-Switch/GT-3321667P-01.md`).
 
@@ -40,7 +43,7 @@ Not applicable.
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

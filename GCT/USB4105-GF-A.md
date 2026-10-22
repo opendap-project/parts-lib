@@ -2,9 +2,10 @@
 
 - **Manufacturer:** GCT (Global Connector Technology)
 - **Function:** USB Type-C receptacle for USB 2.0, SMT, PCB top mount
+- **BOM v1 lines:** 61 (main USB-C receptacle)
 - **Package:** 16 signal contacts plus 4 shell stakes, 8.94 × 7.35 mm footprint outline
 - **Datasheet:** USB4105 product drawing, revision B4, dated 18/12/23 (drawing date 4 October 2019), 2 sheets, sha256 `fb331fbabee8…` in `manifest.toml`
-- **BOM v1 line:** 61
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -61,7 +62,7 @@ Solder-tail order along the board edge: A1/B12, A4/B9, B8, A5, B7, A6, A7, B6, A
 
 Outline: 8.94 mm wide (footprint outline), 7.35 mm deep; receptacle opening 8.34 (+0.06/−0.02) × 2.56 ± 0.04 mm; height 3.31 mm above the board (sheet 1, side and front views). Plug-and-receptacle mating view: 6.5 mm maximum plug overmould, 1.85 mm minimum (sheet 1).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Recommended PCB layout, as viewed from the component side, tolerance ±0.05 mm (sheet 1):
 
@@ -84,7 +85,7 @@ USB 2.0 only (product description, sheet 1): one D+/D− pair per orientation (D
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. GCT 3D models: **UNVERIFIED** (not fetched).
 

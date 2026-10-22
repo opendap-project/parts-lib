@@ -1,8 +1,11 @@
-# Panasonic ERA-3AEB series
+# ERA-3AEB series
 
-- **BOM v1 line:** 37 (Audio, headphone-amplifier precision resistors), about 40 pieces
-- **Datasheet:** Panasonic "Metal Film (Thin Film) Chip Resistors, High Reliability Type, Series ERA 1A, 2A, 3A, 6A, 8A" series catalogue, pages dated 8-Jun-20, 7 pages (cited as "ERA catalogue"). Obtained from the LCSC-hosted copy (<https://datasheet.lcsc.com/datasheet/pdf/4fab4a4bbac579220253950d6371122a.pdf?productCode=C2074417>); the manifest URL timed out from this host.
+- **Manufacturer:** Panasonic
+- **Function:** Thin-film chip resistors, ±0.1 % tolerance (code B), ±25 ppm/K TCR (code E)
+- **BOM v1 lines:** 37 (Audio, headphone-amplifier precision resistors), about 40 pieces
 - **Package:** 0603 (1608 metric)
+- **Datasheet:** Panasonic "Metal Film (Thin Film) Chip Resistors, High Reliability Type, Series ERA 1A, 2A, 3A, 6A, 8A" series catalogue, pages dated 8-Jun-20, 7 pages (cited as "ERA catalogue"). Obtained from the LCSC-hosted copy (<https://datasheet.lcsc.com/datasheet/pdf/4fab4a4bbac579220253950d6371122a.pdf?productCode=C2074417>); the manifest URL timed out from this host.
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -40,7 +43,7 @@ Not applicable (passive). Check the ballast resistor dissipation at full headpho
 
 Two terminals, no polarity. ERA3A dimensions (ERA catalogue p. 3): L 1.60 ± 0.20, W 0.80 ± 0.20, a 0.30 ± 0.20, b 0.30 ± 0.20, T 0.45 ± 0.10 mm; mass 2 g / 1000 pcs. E96 values carry no value marking (p. 3).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not in the series catalogue; it points to Panasonic's separate "Data Files" for land pattern and soldering conditions (p. 1). **UNVERIFIED**; use the KiCad 0603 resistor footprint until the Panasonic land-pattern document is retrieved.
 
@@ -56,7 +59,7 @@ Not applicable.
 
 None (passive component).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

@@ -1,9 +1,11 @@
-# Texas Instruments TPS22919DCKR
+# TPS22919DCKR
 
+- **Manufacturer:** Texas Instruments
 - **Function:** 5.5 V, 1.5 A, 90 mΩ load switch with controlled rise time, short-circuit protection and adjustable quick output discharge
-- **T1 use:** board BOM v1 line 50 (Power), ×7: DAC_VP, DAC_DIG_1V8, FP_1V8, FP_3V3, MIC_1V8, RP_3V3, RP_IOVDD_1V8; status Proposed
-- **Datasheet:** TPS22919 5.5 V, 1.5 A, 90-mΩ Self-Protected Load Switch with Controlled Rise Time, SLVSEN5B (October 2018, revised May 2019), <https://www.ti.com/lit/ds/symlink/tps22919.pdf>
+- **BOM v1 lines:** 50 (Power), ×7: DAC_VP, DAC_DIG_1V8, FP_1V8, FP_3V3, MIC_1V8, RP_3V3, RP_IOVDD_1V8; status Proposed
 - **Package:** SC-70 6-pin (DCK, drawing DCK0006A), 2.1 × 2.0 mm nominal
+- **Datasheet:** TPS22919 5.5 V, 1.5 A, 90-mΩ Self-Protected Load Switch with Controlled Rise Time, SLVSEN5B (October 2018, revised May 2019), <https://www.ti.com/lit/ds/symlink/tps22919.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -70,7 +72,7 @@ Conduction loss is I² × RON (for example 1.5 A at 90 mΩ = 0.20 W; calculation
 
 Source: SLVSEN5B p. 3, §5. Marking 1CS, MSL 1 at 260 °C, Sn finish (p. 20). SOT/SC-70, 1.1 mm maximum height (p. 24, DCK0006A). Tape 8 mm, 4 mm pitch, pin 1 in Q3, 3000 per reel (p. 22).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 TI example board layout DCK0006A (SLVSEN5B p. 25): six pads 0.9 × 0.4 mm, pitch 0.65 mm, 2.2 mm between pad-row centres, corner radius 0.05 mm. The example stencil (p. 26) keeps the same 0.9 × 0.4 mm openings for a 0.125 mm stencil. Layout example: Figure 32 (p. 18).
 
@@ -97,7 +99,7 @@ ON logic: VIH ≥ 1 V, VIL ≤ 0.35 V (p. 4), so 1.8 V and 3.3 V GPIOs drive it 
 
 None for the device. Each switched rail is a `regulator-fixed` node with `gpio` (or a TCA6416A line) and `enable-active-high`; `startup-delay-us` should cover tON (about 2 ms at 5 V). The DT modelling is OpenDAP's design, not a datasheet statement.
 
-## Simulation models available
+## Simulation models
 
 No model is listed in `manifest.toml`. A TI PSpice or TINA model is **UNVERIFIED** (not checked).
 

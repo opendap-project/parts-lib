@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 8-bit dual-supply bus transceiver, 0.65–3.6 V on each port, two direction-control pins, tri-state outputs
+- **BOM v1 lines:** 95 (TDM input path)
 - **Package:** TSSOP-24 (PW), 7.8 × 6.4 mm nominal, 0.65 mm pitch
 - **Datasheet:** SN74AXC8T245, SCES875C (March 2018, revised January 2024), sha256 `6cf4003c438c…` in `manifest.toml`
-- **BOM v1 line:** 95 (TDM input path)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -92,7 +93,7 @@ PW pin numbers (Figure 4-1, Table 4-1, pp. 2–3):
 
 Outline PW0024A (drawing 4220208/A, p. 29): body 7.7–7.9 × 4.3–4.5 mm, lead span 6.2–6.6 mm, 0.65 mm pitch, leads 0.19–0.30 mm, 1.2 mm maximum height; JEDEC MO-153. MSL Level-1-260C-UNLIM, NiPdAu, −40 to 125 °C, reel 2000 (p. 25).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 PW0024A example board layout (p. 30, drawing 4220208/A, scale 10:1): 24 pads 1.5 × 0.45 mm (reference), 0.65 mm pitch, 5.8 mm between pad-row centres (reference); non-solder-mask-defined preferred, 0.05 mm maximum mask clearance. Stencil example on p. 31.
 
@@ -135,7 +136,7 @@ Minimum tpd in all cases is 0.5 ns.
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS model for this device is **UNVERIFIED**.
 

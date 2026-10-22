@@ -1,8 +1,12 @@
-# Microchip AT24C02D-STUM-T
+# AT24C02D-STUM-T
 
-- **BOM v1 line:** 17 (board-ID / calibration EEPROM, 2 kbit), Core
+- **Manufacturer:** Microchip
+- **Function:** 2-kbit (256 × 8) I²C serial EEPROM
+- **BOM v1 lines:** 17 (board-ID / calibration EEPROM, 2 kbit), Core
+- **Package:** 5-lead SOT23 (5TS1), matte-tin finish
 - **Datasheet:** Atmel *AT24C01D and AT24C02D I2C-Compatible (2-wire) Serial EEPROM*, Atmel-8871F, 01/2017, 26 pages. Copy read from the LCSC mirror of part C79996: <https://datasheet.lcsc.com/datasheet/pdf/c29e4cc385dd45a5834baf0ecd97c09b.pdf>, sha256 `397ff061aa7a4ae36864592813831e9386e9467f10049064d7f139f26be6475e`. Cited below as "8871F".
-- The Microchip re-issue listed in `manifest.toml` (DS20006064) returned HTTP 403 from this host and was not read. Values below are from Atmel 8871F; differences in DS20006064 are **UNVERIFIED**.
+  - The Microchip re-issue listed in `manifest.toml` (DS20006064) returned HTTP 403 from this host and was not read. Values below are from Atmel 8871F; differences in DS20006064 are **UNVERIFIED**.
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -66,7 +70,7 @@ Endurance 1,000,000 write cycles at 25 °C; data retention 100 years at 55 °C (
 
 Package 5TS1: body D = 2.90 mm BSC × E1 = 1.60 mm BSC, E = 2.80 mm BSC, pitch e = 0.95 mm, e1 = 1.90 mm, lead width b = 0.30–0.50 mm, height A ≤ 1.00 mm; JEDEC MO-193 variation AB (8871F, p. 23, drawing 5TS1 rev D). 5,000 pieces per reel (8871F, p. 17).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 8871F gives the package outline only, no land pattern. Use the IPC-7351 SOT-23-5 (MO-193 AB) pattern from the 5TS1 dimensions; the exact pad sizes are **UNVERIFIED** against a Microchip land-pattern drawing.
 
@@ -87,7 +91,7 @@ Package 5TS1: body D = 2.90 mm BSC × E1 = 1.60 mm BSC, E = 2.80 mm BSC, pitch e
 
 Mainline `at24` (drivers/misc/eeprom/at24.c), `EEPROM_AT24=m` in Debian (BOM v1 line 17 and §3). Device-tree compatible `"atmel,24c02"` with `reg` = the 7-bit address and `pagesize = <8>`; `read-only` if WP is tied high. The exposed nvmem cell layout is defined by OpenDAP OS.
 
-## Simulation models available
+## Simulation models
 
 None found. IBIS for this part is not referenced in 8871F. `manifest.toml`: one `datasheet` entry (Microchip DS20006064 URL), no revision and no sha256.
 

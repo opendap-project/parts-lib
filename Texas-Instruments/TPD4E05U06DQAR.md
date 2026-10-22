@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 4-channel unidirectional TVS ESD protection, ultra-low capacitance
+- **BOM v1 lines:** 62 (main USB-C D+/D−), 68 (HAT high-speed pairs at the pogo field, quantity 6), 72 (faceplate MIPI DSI lanes, quantity 3)
 - **Package:** USON-10 (DQA), 2.5 × 1.0 mm, 0.5 mm pitch
 - **Datasheet:** TPD1E05U06, TPD4E05U06, TPD6E05U06, SLVSBO7O (December 2012, revised August 2024), sha256 `c167cf1e72a5…` in `manifest.toml`
-- **BOM v1 lines:** 62, 68, 72
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -69,7 +70,7 @@ USON-10 (DQA), top view (Figure 4-3, Table 4-2, p. 4):
 
 Body 2.4–2.6 × 0.9–1.1 mm, 0.55 mm maximum height, 0.5 mm pitch (outline DQA0010A, drawing 4220328/A, p. 28). The datasheet also carries a second outline, DQA0010B (drawing 4230307/A, p. 31), with the same body limits. Which outline a reel ships in is **UNVERIFIED**. MSL Level-1-260C-UNLIM, NiPdAu finish (package option addendum, p. 37). Reel: 3000 units (p. 37).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DQA0010A example board layout (p. 29, drawing 4220328/A, scale 30:1):
 
@@ -92,7 +93,7 @@ Not applicable (no logic interface). Signal-integrity data: line capacitance 0.5
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS or SPICE model for this device is **UNVERIFIED**.
 

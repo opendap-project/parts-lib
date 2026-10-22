@@ -2,9 +2,10 @@
 
 - **Manufacturer:** C&K
 - **Function:** Microminiature top-actuated SMT tactile switch, SPST normally open, with ground pin
+- **BOM v1 lines:** 76 (Action button placeholder; Open)
 - **Package:** KMR 2 series, 1.9 mm height, gull-wing SMT terminals
 - **Datasheet:** KMR 2 Series catalog pages B–11 and B–12, dated 8 June 2016 (copy obtained from the LCSC datasheet mirror; the manifest URL `ckswitches.com/media/1479/kmr2.pdf` redirects to a Littelfuse URL that refused the download)
-- **BOM v1 line:** 76 (Open; placeholder)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -48,7 +49,7 @@ Outline (p. B–12, "KMR 2 Series – 1.9 mm height"): body 4.2 mm long (4.6 mm 
 
 Packaging: reels of 7,000 pieces, 330 mm ± 2 mm reel; 12 mm tape, 4 mm pitch (pp. B–11, B–12).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 The PCB layout on p. B–12 is shown with the ground-pin option: overall pad span 5 mm, with pad rows at 2.45 mm and 0.55 mm and pad dimensions of 0.6 mm; the remaining figures on the drawing (1.7, 2.11, 3.2, 1.61, 2.2, 2.6, 1) are not attributable to features at the resolution of the available copy. **UNVERIFIED**: draw the footprint only from a full-resolution C&K drawing.
 
@@ -64,7 +65,7 @@ Not applicable. Bounce time ≤ 3 ms (p. B–11) sets the minimum debounce inter
 
 `gpio-keys` (mainline, `KEYBOARD_GPIO=m` in Debian, BOM v1 §3 and line 76). No device-specific driver.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`.
 

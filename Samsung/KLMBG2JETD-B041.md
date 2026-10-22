@@ -1,7 +1,11 @@
-# Samsung KLMBG2JETD-B041
+# KLMBG2JETD-B041
 
-- **Datasheet not downloaded.** Samsung does not publish a public datasheet for this part (NDA); `manifest.toml` has an empty URL. Every value below comes from OpenDAP's BOM or from the SoC side and is **UNVERIFIED** against a Samsung document.
-- **BOM v1 line:** 10 (eMMC, 32 GB), Core
+- **Manufacturer:** Samsung
+- **Function:** eMMC managed NAND, 32 GB
+- **BOM v1 lines:** 10 (eMMC, 32 GB), Core
+- **Package:** **UNVERIFIED** (no datasheet)
+- **Datasheet:** Not downloaded; see Status.
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. Samsung does not publish a public datasheet for this part (NDA); `manifest.toml` has an empty URL. Every value below comes from OpenDAP's BOM or from the SoC side and is **UNVERIFIED** against a Samsung document.
 
 ## Summary
 
@@ -27,7 +31,7 @@ eMMC managed NAND, 32 GB, the T1 boot and system storage on the RK3566 eMMC cont
 
 **UNVERIFIED** (no datasheet). Package and ball map must come from Samsung or a published reference design.
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 **UNVERIFIED** (no datasheet).
 
@@ -43,7 +47,7 @@ RK3566 eMMC host: eMMC 4.41/4.51/5.0/5.1, 1/4/8-bit bus, HS200, command queue (R
 
 None specific (BOM v1 line 10). The RK356x eMMC host uses mainline `sdhci-of-dwcmshc` (**UNVERIFIED** in this session).
 
-## Simulation models available
+## Simulation models
 
 None public. No `manifest.toml` entry other than the empty datasheet row.
 

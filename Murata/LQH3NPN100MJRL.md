@@ -1,11 +1,11 @@
-# Murata LQH3NPN100MJRL
+# LQH3NPN100MJRL
 
-> **Datasheet not downloaded.** The manifest URL is a product page that redirects to pim.murata.com, which renders by script; no PDF was retrieved on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
-
+- **Manufacturer:** Murata
 - **Function:** 10 µH wire-wound power inductor, LQH3NP series (3 × 3 mm class, **UNVERIFIED**)
-- **T1 use:** board BOM v1 line 52 (Power), TPS61169 backlight boost inductor, status Proposed
-- **Datasheet:** Murata product page <https://www.murata.com/en-us/products/productdetail?partno=LQH3NPN100MJRL> (redirects to pim.murata.com); PDF datasheet **UNVERIFIED**
+- **BOM v1 lines:** 52 (Power), TPS61169 backlight boost inductor, status Proposed
 - **Package:** SMD wire-wound, dimensions **UNVERIFIED**
+- **Datasheet:** Murata product page <https://www.murata.com/en-us/products/productdetail?partno=LQH3NPN100MJRL> (redirects to pim.murata.com); PDF datasheet **UNVERIFIED**
+- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL is a product page that redirects to pim.murata.com, which renders by script; no PDF was retrieved on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 
@@ -27,7 +27,7 @@ Loss = DCR × I²rms; input current at full brightness about 0.34 A DC (TPS61169
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Not available: datasheet not downloaded. **UNVERIFIED**
 
@@ -43,7 +43,7 @@ Not applicable.
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Vendor models **UNVERIFIED** (not checked).
 

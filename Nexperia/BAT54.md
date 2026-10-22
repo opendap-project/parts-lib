@@ -1,10 +1,11 @@
-# BAT54 (ordered as BAT54,215)
+# BAT54
 
 - **Manufacturer:** Nexperia
 - **Function:** Single Schottky barrier diode, 30 V, 200 mA
-- **Package:** SOT23 (TO-236AB), 2.9 × 1.3 × 1 mm body
+- **BOM v1 lines:** 78 (MaskROM combo, PWRON isolation diode)
+- **Package:** SOT23 (TO-236AB), 2.9 × 1.3 × 1 mm body; ordered as BAT54,215
 - **Datasheet:** BAT54 Schottky barrier diode, product data sheet BAT54 v.6 (1 July 2022). Obtained from the LCSC mirror of the Nexperia document, sha256 `40b7447c4bbe3a9153d07a28620275322e1b4a7375c89de312d1f4b8c7325847`. The manifest URL (assets.nexperia.com) refused the download in this session.
-- **BOM v1 line:** 78
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -60,7 +61,7 @@ Pinning (Table 2, p. 2):
 
 SOT23, 1.9 mm lead pitch, body 2.8–3.0 × 1.2–1.4 mm, height 0.9–1.1 mm, overall width across leads 2.1–2.5 mm (Fig. 5, p. 6). Marking code `L4%`, where `%` is the manufacturing-site code (Table 4, p. 2).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Reflow soldering footprint for SOT23 (Fig. 6, p. 7, `sot023_fr`):
 
@@ -82,7 +83,7 @@ Not applicable. Switching figure: trr ≤ 5 ns (Table 7, p. 4).
 
 None.
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether Nexperia publishes a SPICE model for BAT54 is **UNVERIFIED** (not checked; the Nexperia site refused requests in this session).
 

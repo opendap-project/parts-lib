@@ -1,9 +1,11 @@
-# Texas Instruments TLV62569DBVR
+# TLV62569DBVR
 
+- **Manufacturer:** Texas Instruments
 - **Function:** 2 A synchronous step-down converter, adjustable output, SOT-23-5
-- **T1 use:** board BOM v1 line 6 (Core, `vcc3v3_sys`) and line 38 (Power, `HAT_3V3`), status Proposed
-- **Datasheet:** TLV62569 2-A High Efficiency Synchronous Buck Converter in SOT Package, SLVSDG1C (December 2016, revised October 2017), <https://www.ti.com/lit/ds/symlink/tlv62569.pdf>
+- **BOM v1 lines:** 6 (Core, `vcc3v3_sys`) and line 38 (Power, `HAT_3V3`), status Proposed
 - **Package:** SOT-23 5-pin (DBV, drawing DBV0005A)
+- **Datasheet:** TLV62569 2-A High Efficiency Synchronous Buck Converter in SOT Package, SLVSDG1C (December 2016, revised October 2017), <https://www.ti.com/lit/ds/symlink/tlv62569.pdf>
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -62,7 +64,7 @@ Efficiency at VOUT = 3.3 V is given only as a curve (p. 11, Figure 9); no tabula
 
 Source: SLVSDG1C p. 3, §5 Pin Functions. Marking 16AF (p. 1, Device Comparison). Body 2.90 × 2.80 mm nominal including leads (p. 1, Device Information); SOT-23, 1.45 mm maximum height (p. 21, DBV0005A). MSL 1, 260 °C peak, NiPdAu or Sn lead finish (p. 16, Orderable Addendum). Tape: 8 mm, 4 mm pitch, pin 1 in quadrant Q3, 3000 per reel (p. 18).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 TI example board layout DBV0005A (SLVSDG1C p. 22): five pads 1.1 × 0.6 mm, pitch 0.95 mm, 1.9 mm between outer pins on a side, 2.6 mm between pad-row centres, corner radius 0.05 mm, solder mask opening 0.07 mm around each pad (non-solder-mask-defined preferred). The stencil example on the following drawing pages was not transcribed (**UNVERIFIED** values; read the drawing before making the KiCad footprint).
 
@@ -91,7 +93,7 @@ The EN thresholds accept 1.8 V and 3.3 V logic. The device starts into a pre-bia
 
 None required. In the device tree the rails are `regulator-fixed` nodes: `vcc3v3_sys` with its enable owned by the RK809 `EXT_EN` (no GPIO), `HAT_3V3` with `gpio` = `HAT3V3_EN` (power tree §5). This mapping is OpenDAP's design, not a datasheet statement.
 
-## Simulation models available
+## Simulation models
 
 No model is listed in `manifest.toml`. The datasheet points to a WEBENCH model (SLVSDG1C p. 2, Revision History; p. 8, §8.2.2.1). Availability of a downloadable PSpice or SIMPLIS model is **UNVERIFIED**.
 

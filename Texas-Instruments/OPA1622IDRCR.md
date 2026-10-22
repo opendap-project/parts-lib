@@ -1,8 +1,11 @@
-# Texas Instruments OPA1622IDRCR
+# OPA1622IDRCR
 
-- **BOM:** board BOM v1, line 19 (Audio), quantity 4
-- **Datasheet:** OPA1622 "SoundPlus High-Fidelity, Bipolar-Input, Audio Operational Amplifier", SBOS727B, November 2015, revised May 2016 (manifest sha256 `505556d1…ac9824`, verified against the cached copy)
+- **Manufacturer:** Texas Instruments
+- **Function:** Dual bipolar-input audio operational amplifier with a high-current output stage and an enable pin
+- **BOM v1 lines:** 19 (Audio, headphone drivers), quantity 4
 - **Package:** VSON-10 (DRC0010J), 3 mm × 3 mm, tape and reel of 3000, NiPdAu, MSL 1 at 260 °C, marking O1622 (SBOS727B, package option addendum, PDF p. 29)
+- **Datasheet:** OPA1622 "SoundPlus High-Fidelity, Bipolar-Input, Audio Operational Amplifier", SBOS727B, November 2015, revised May 2016 (manifest sha256 `505556d1…ac9824`, verified against the cached copy)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -91,7 +94,7 @@ SBOS727B, §5, p. 3.
 
 Package DRC0010J: body 2.9–3.1 mm × 2.9–3.1 mm, height 0.8–1.0 mm, pitch 0.5 mm, lead width 0.18–0.30 mm, exposed pad 1.65 ± 0.1 mm × 2.4 ± 0.1 mm (SBOS727B, package outline, PDF p. 34).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 TI example board layout for DRC0010J, drawing 4218878/B (SBOS727B, PDF p. 35):
 
@@ -121,7 +124,7 @@ The thermal pad must be soldered (SBOS727B, PDF p. 34 note 3) and connected to a
 
 None. The amplifier has no control interface; EN lines are GPIOs (BOM v1 line 19, driver path "none").
 
-## Simulation models available
+## Simulation models
 
 - The datasheet points to TINA-TI and its macro-model library (SBOS727B, §11.1.1.1, p. 27). The availability of an OPA1622-specific PSpice or TINA-TI macromodel on ti.com: **UNVERIFIED**.
 - Related reference design: TIDUAW1, "Headphone Amplifier for Voltage-Output Audio DACs" (§11.2.1, p. 27).

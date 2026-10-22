@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** USB Type-C port protector: 4-channel short-to-VBUS overvoltage and IEC ESD protection (CC1, CC2, SBU1, SBU2)
+- **BOM v1 lines:** 63 (second source for the TPD8S300A)
 - **Package:** DSBGA-16 (YBF), 1.69 × 1.69 mm nominal, 0.4 mm pitch; orderable TPD4S311AYBFR
 - **Datasheet:** TPD4S311, TPD4S311A, SLVSF72C (December 2019, revised February 2021), sha256 `3f206dd65f48…` in `manifest.toml`
-- **BOM v1 line:** 63 (second source)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -75,7 +76,7 @@ DSBGA-16 (YBF), top view (Figure 6-1, Table 6-1, p. 4):
 
 Outline YBF0016 (drawing 4225494/A 11/2019, PDF p. 30): D and E 1.66–1.72 mm, 0.55 mm maximum height, ball pitch 0.4 mm, ball Ø 0.23–0.27 mm. SnAgCu balls, reel of 3000 (package option addendum, p. 26).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 YBF0016 example board layout (PDF p. 31): 16 Ø 0.23 mm pads at 0.4 mm pitch; non-solder-mask-defined preferred, 0.05 mm maximum clearance. Stencil on PDF p. 32.
 
@@ -95,7 +96,7 @@ Same passives as the TPD8S300A: 0.1 µF ≥ 35 V (50 V recommended) on VBIAS, 1 
 
 None (no software interface).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. IBIS or SPICE availability is **UNVERIFIED**.
 

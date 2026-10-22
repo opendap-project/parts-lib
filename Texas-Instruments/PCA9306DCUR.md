@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Dual bidirectional I2C and SMBus voltage-level translator (pass-FET type) with enable
+- **BOM v1 lines:** 94 (HAT ID EEPROM I2C translator)
 - **Package:** VSSOP-8 (DCU), 2.3 × 3.1 mm nominal, 0.5 mm pitch
 - **Datasheet:** PCA9306, SCPS113O (October 2004, revised September 2023), sha256 `1cd97c734729…` in `manifest.toml`
-- **BOM v1 line:** 94
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -74,7 +75,7 @@ DCU pin numbers (Figure 5-2, Table 5-1, p. 4):
 
 Outline DCU0008A (drawing 4225266/A, p. 31): body 2.2–2.4 × 1.9–2.1 mm (excluding mold flash, ≤ 0.15 mm per side), lead span 3.0–3.2 mm, 0.5 mm pitch, leads 0.17–0.25 mm wide, 0.6–0.9 mm height; JEDEC MO-187 variation CA. MSL Level-1-260C-UNLIM, NiPdAu or Sn; −40 to 85 °C; reel 3000 (p. 24).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DCU0008A example board layout (p. 32, drawing 4225266/A, scale 25:1): 8 pads 0.85 × 0.3 mm (reference), 0.5 mm pitch, 3.1 mm between pad-row centres (reference); non-solder-mask-defined preferred, 0.05 mm maximum mask clearance. Stencil example on p. 33.
 
@@ -106,7 +107,7 @@ Propagation delay, maximum, DCU package (§6.6–6.9, p. 7):
 
 None. The translator is transparent; the HAT EEPROM behind it uses `at24` (not part of this sheet).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes an IBIS model for this device is **UNVERIFIED**.
 

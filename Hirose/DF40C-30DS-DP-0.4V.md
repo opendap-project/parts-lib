@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Hirose Electric
 - **Function:** 30-contact board-to-FPC connector pair, 0.4 mm pitch, 1.5 mm stacking height: DF40C-30DP-0.4V(51) header (board) and DF40C-30DS-0.4V(51) receptacle (FPC)
+- **BOM v1 lines:** 66 (power (VHAT, 3V3 and returns); 2 + 2 per end, Proposed, picked in ADR 0009)
 - **Package:** SMT, double row. Header 7.52 × 2.97 mm, 1.14 mm high; receptacle 8.6 × 3.38 mm, 1.45 mm high
 - **Datasheet:** DF40 Series catalog, edition May 1, 2020 (catalog 2020.2); DF40C-*DP-0.4V(51) header drawing EDC3-311351-00 (revision 7, 2018-11-19) and specification sheet ELC4-311351-01 (2008-06-27). Copies obtained from the LCSC datasheet mirror.
-- **BOM v1 line:** 66 (power (VHAT, 3V3 and returns); 2 + 2 per end, Proposed, picked in ADR 0009)
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -53,7 +54,7 @@ Two rows of 15 contacts at 0.4 mm pitch. **The four corner contacts of the heade
 
 Lead coplanarity 0.1 mm maximum (drawing EDC3-311351-00, note 1).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Header DF40C-30DP (catalog p. 10; drawing EDC3-311351-00, recommended pattern):
 
@@ -77,7 +78,7 @@ The catalog states that the shielded DF40 type supports high-speed signal transm
 
 None (passive part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Hirose S-parameter models for DF40: **UNVERIFIED**.
 

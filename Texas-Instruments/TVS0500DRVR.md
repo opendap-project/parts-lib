@@ -2,9 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 5 V unidirectional flat-clamp surge protection device (TI Flat-Clamp family)
+- **BOM v1 lines:** 65 (HAT 5 V and 3.3 V rail surge protection), quantity 2
 - **Package:** WSON-6 (DRV), 2.0 × 2.0 mm, exposed thermal pad
 - **Datasheet:** TVS0500 5-V Flat-Clamp Surge Protection Device, SLVSED2C (December 2017, revised November 2019), sha256 `ac7a4dc56da9…` in `manifest.toml`
-- **BOM v1 line:** 65
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -77,7 +78,7 @@ WSON-6 (DRV), top view (Pin Configuration and Functions, p. 4):
 
 Outline DRV0006A (drawing 4222173/C 11/2025, PDF p. 19, same drawing as the TVS2200): body 1.9–2.1 × 1.9–2.1 mm, 0.7–0.8 mm height, 0.65 mm pitch, exposed pad 1.0 ± 0.1 × 1.6 ± 0.1 mm. NiPdAu finish, MSL Level-1-260C-UNLIM, reel of 3000, marking 1HRH (package option addendum, p. 15).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 DRV0006A example board layout (drawing 4222173/C, PDF p. 20): six pads 0.45 × 0.3 mm (reference) at 0.65 mm pitch, pad column centre-to-centre 1.95 mm, thermal pad 1.0 × 1.6 mm with optional Ø 0.2 mm vias, non-solder-mask-defined pads preferred with 0.07 mm maximum clearance. Stencil on PDF p. 21. One shared KiCad footprint serves TVS0500 and TVS2200.
 
@@ -93,7 +94,7 @@ Not applicable (no logic interface). Input slew rate above 2.5 V/µs (27 °C) or
 
 None (passive protection part).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Whether TI publishes a SPICE model for this device is **UNVERIFIED**.
 

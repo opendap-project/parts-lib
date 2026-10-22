@@ -1,8 +1,11 @@
-# Nexperia PMEG2010AEH
+# PMEG2010AEH
 
-- **BOM v1 line:** 24 (Audio, TPS65131 rectifiers), quantity 2
-- **Datasheet:** NXP/Nexperia "PMEG2010AEH; PMEG2010AET 1 A very low VF MEGA Schottky barrier rectifiers", Rev. 03, 2007-03-28, product data sheet, 11 pages plus a Nexperia cover notice (cited as "Rev. 03"). Obtained from the LCSC-hosted copy of the manufacturer document (<https://datasheet.lcsc.com/datasheet/pdf/0048ef3cc1cc47f2a46f601985c58027.pdf?productCode=C110921>); the manifest URL returned HTTP 403 from this host.
+- **Manufacturer:** Nexperia
+- **Function:** 20 V, 1 A planar Schottky barrier rectifier with very low forward voltage
+- **BOM v1 lines:** 24 (Audio, TPS65131 rectifiers), quantity 2
 - **Package:** SOD123F, 2 leads, flat
+- **Datasheet:** NXP/Nexperia "PMEG2010AEH; PMEG2010AET 1 A very low VF MEGA Schottky barrier rectifiers", Rev. 03, 2007-03-28, product data sheet, 11 pages plus a Nexperia cover notice (cited as "Rev. 03"). Obtained from the LCSC-hosted copy of the manufacturer document (<https://datasheet.lcsc.com/datasheet/pdf/0048ef3cc1cc47f2a46f601985c58027.pdf?productCode=C110921>); the manifest URL returned HTTP 403 from this host.
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
@@ -55,7 +58,7 @@ Not applicable (discrete). In the boost converter the losses are VF × IF while 
 
 Rev. 03 Table 3, p. 2. Marking code "AF" (Table 5, p. 2). SOD123F outline (Fig. 5, p. 6): body 2.5–2.7 × 1.5–1.7 mm, overall length with leads 3.4–3.6 mm, height 1.0–1.2 mm, lead width 0.55–0.70 mm. Packing: 3000 pcs (-115) or 10000 pcs (-135) on 8 mm tape (Table 9, p. 6).
 
-## Recommended footprint / land pattern
+## Recommended footprint
 
 Rev. 03 Fig. 7, p. 7, reflow footprint SOD123F: occupied area 4.4 × 2.1 mm; dimensions 4.0, 2.9, 1.6 mm (horizontal) and 1.6, 1.1, 1.2 mm (vertical); land width 1.1 mm (2×). Transcribe the full geometry from Fig. 7 when the footprint is drawn. Reflow soldering is the only recommended method.
 
@@ -71,7 +74,7 @@ Not applicable. Reverse-recovery time is not specified (Schottky). Junction capa
 
 None (discrete).
 
-## Simulation models available
+## Simulation models
 
 None listed in `manifest.toml`. Nexperia SPICE model: **UNVERIFIED** (not searched).
 
