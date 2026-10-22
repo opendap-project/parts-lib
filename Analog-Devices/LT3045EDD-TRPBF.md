@@ -2,14 +2,14 @@
 
 - **Manufacturer:** Analog Devices (Linear Technology)
 - **Function:** 20 V, 500 mA ultralow-noise, ultrahigh-PSRR positive linear regulator, output set by one resistor on a 100 µA SET current
-- **BOM v1 lines:** none placed. Proposed in BOM v1.2 (change 8, line 25, §7 item 13) as the replacement for the +5.0 V HP-amp LDO (TPS7A4901DGNR), paired with the [LT3094EDD#TRPBF](LT3094EDD-TRPBF.md) on line 26; listed as the line 25 second source
+- **BOM v1 lines:** 25 (Audio, +6.0 V HP-amp LDO, HPA_P6V0), quantity 1, Proposed (v1.3: replaces the TPS7A4901DGNR, ADR 0012, D30), paired with the [LT3094EDD#TRPBF](LT3094EDD-TRPBF.md) on line 26. Its RSET, RILIM and capacitors are on lines 109–110
 - **Package:** 10-lead DFN (DD), 3 mm × 3 mm, 0.5 mm pitch, 0.75 mm height, exposed pad = GND
 - **Datasheet:** *LT3045 20V, 500mA, Ultralow Noise, Ultrahigh PSRR Linear Regulator*, Rev. D, 11/22. Cited below as "LT3045 Rev. D". Obtained from the LCSC datasheet mirror; analog.com did not answer from this host.
-- **Status:** Partly UNVERIFIED. Not in the current BOM (proposed alternative, BOM v1.2 change 8, pending the maintainers' confirmation).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
-The LT3045 is a precision 100 µA current reference followed by a unity-gain rail-to-rail buffer: VOUT = ISET × RSET, so noise, PSRR and bandwidth do not change with the programmed output voltage (LT3045 Rev. D, p. 1; p. 15). Headline figures: 0.8 µVrms (10 Hz–100 kHz) with CSET = 4.7 µF, 2 nV/√Hz at 10 kHz, 76 dB PSRR at 1 MHz, 500 mA, 260 mV typical dropout at 500 mA, 2.2 mA quiescent current, < 1 µA in shutdown, 1.8 V to 20 V input, 0 V to 15 V output, minimum 10 µF ceramic output capacitor, programmable current limit and power good (p. 1). LT3045EDD#TRPBF is the E-grade DFN-10 on tape and reel, marking LGYP, −40 °C to 125 °C (p. 2, Order Information). BOM v1.2 proposes it for HPA_P5V0 (+5.0 V from the TPS65131 +6.0 V pre-rail) because the worst continuous sine load of 122 mA is 81 % of the TPS7A4901's 150 mA (BOM v1 line 25; power tree v0 §4.1, §4.10).
+The LT3045 is a precision 100 µA current reference followed by a unity-gain rail-to-rail buffer: VOUT = ISET × RSET, so noise, PSRR and bandwidth do not change with the programmed output voltage (LT3045 Rev. D, p. 1; p. 15). Headline figures: 0.8 µVrms (10 Hz–100 kHz) with CSET = 4.7 µF, 2 nV/√Hz at 10 kHz, 76 dB PSRR at 1 MHz, 500 mA, 260 mV typical dropout at 500 mA, 2.2 mA quiescent current, < 1 µA in shutdown, 1.8 V to 20 V input, 0 V to 15 V output, minimum 10 µF ceramic output capacitor, programmable current limit and power good (p. 1). LT3045EDD#TRPBF is the E-grade DFN-10 on tape and reel, marking LGYP, −40 °C to 125 °C (p. 2, Order Information). BOM v1.3 uses it for HPA_P6V0 (+6.04 V from the TPS65131 +7.0 V pre-rail), because the worst continuous load of 275 mA is 183 % of the TPS7A4901's 150 mA (BOM v1 line 25, Changes in v1.3 item 3; power tree v0 §4.1, §4.10.1).
 
 ## Absolute maximum ratings
 
@@ -126,7 +126,7 @@ LT3045 Rev. D, p. 3–4 unless noted.
 
 ## Linux driver
 
-None. A fixed regulator enabled by the HP-amp rail logic; in the device tree it would be a `regulator-fixed` supply like the TPS7A4901 it would replace (BOM v1 line 25: driver path *none*).
+None. A fixed regulator enabled by the HP-amp rail logic; in the device tree it is a `regulator-fixed` supply (BOM v1 line 25: driver path *none*).
 
 ## Simulation models
 
@@ -135,17 +135,19 @@ None. A fixed regulator enabled by the HP-amp rail logic; in the device tree it 
 
 ## Design notes for the T1
 
-- **Not a drop-in.** The TPS7A4901DGNR on line 25 is an 8-pin MSOP with a feedback divider and a CNR/SS capacitor; the LT3045 is a DFN-10 programmed by RSET with CSET. Footprint, pinout and passives change.
-- **Electrically it fits the +6 V → +5 V rail.** VIN 6 V is inside 2–20 V; 1 V headroom exceeds the 350 mV full-range maximum dropout at 300 mA, so it covers the 122 mA worst continuous sine (power tree v0 §4.1). 122 mA is 24 % of the 500 mA rating (BOM v1.2 change 8 states the same).
-- **RSET = 49.9 kΩ** gives 5.0 V (Table 1). Accuracy is set by ISET ±2 % (full range) plus the RSET tolerance.
-- **PSRR at the T1 headroom:** the 76 dB at 1 MHz is specified at VIN − VOUT = 2 V. At 1 V the curve G45 reads about 65–75 dB near the 1.25 MHz TPS65131 frequency; the power tree's PSRR budget (§4.2) should use the 1 V curve, or the pre-rail moves up. Layout governs it (p. 18–19).
-- **Quiescent current:** 2.2 mA typ at no load, 4.3 mA typ at 100 mA (dropout, worst case), against about 0.8 mA at 100 mA for the TPS7A4901 (power tree v0 §4.2). BOM v1.2 estimates about 4 mA more for the LT3045/LT3094 pair; the datasheet typicals (2.2 + 2.35 mA at no load) agree in magnitude.
-- **Soft-start match with the LT3094:** both use tSS ≈ 2.3 × RSET × CSET (LT3045 p. 19; LT3094 p. 22). Equal RSET (49.9 kΩ) and equal CSET give equal RC ramps. The ramp is RC-shaped, not linear like the TPS7A49/TPS7A30 pair; with CSET 4.7 µF it takes about 0.5 s (p. 4: 550 ms). Fast start-up currents differ (2 mA vs 1.8 mA typ), so fast start-up does not keep the ramps matched (**UNVERIFIED** in practice). The OPA1622 symmetric-ramp requirement (BOM v1 D3) must be re-checked with the chosen CSET.
-- **EN/UV** at 1.24 V is driven by the 3.3 V `HPA_LDO_EN` net directly (power tree v0 §7).
-- **Current limit:** RILIM can cap the output below the TPS65131's 200–500 mA capability (power tree v0 §4.2), e.g. 1 kΩ for 150 mA (p. 20). Value is a design choice for the maintainers.
-- **Thermal:** 0.122 A × 1 V + about 4 mA × 6 V ≈ 0.15 W; × 35 °C/W ≈ 5 °C rise (calculation from p. 22 method).
+- **Replaces the TPS7A4901DGNR (v1.3).** The TPS7A4901 is an 8-pin MSOP with a feedback divider and a CNR/SS capacitor; the LT3045 is a DFN-10 programmed by RSET with CSET. Footprint, pinout and passives changed with it (BOM lines 25, 109–110).
+- **Operating point:** +7.0 V in (TPS65131 AUDIO_P7V0), +6.04 V out, so about 0.96 V of headroom against the 350 mV full-range maximum dropout at 300 mA (power tree v0 §4.2). The worst continuous load of 275 mA (full-scale sine into balanced 32 Ω, both channels; power tree v0 §4.1) is 55 % of the 500 mA rating (BOM line 25).
+- **RSET = 60.4 kΩ, 0.1 %** (Yageo RT0603BRD0760K4L, BOM line 109): VOUT = 100 µA × 60.4 kΩ = 6.04 V. Accuracy is set by ISET ±2 % (full range) plus the RSET tolerance. Guard ring around SET (p. 16, Figure 2).
+- **Current limit:** RILIM = 374 Ω (Yageo RC0603FR-07374RL, line 109): 150 mA·kΩ / 374 Ω ≈ 401 mA (p. 20). The spread is tabulated only at 300 Ω (450 / 500 / 550 mA, ±10 %) and 1.5 kΩ (p. 4); the ≈ 360 mA minimum on line 25 assumes the same ±10 % at 374 Ω (est., **UNVERIFIED**). 275 mA is 69 % of the programmed limit.
+- **CSET = 0.47 µF** (line 110): 2.5 µVrms with CSET 0.47 µF (p. 3, at 3.3 V; noise does not change with VOUT, p. 15); 4.7 µF gives 0.8 µVrms at a slower ramp. CSET should be low-leakage and non-piezoelectric (p. 18–19).
+- **Soft-start match with the LT3094:** tSS ≈ 2.3 × RSET × CSET = 2.3 × 60.4 kΩ × 0.47 µF ≈ 65 ms on both rails (p. 19; BOM line 110). Fast start-up is disabled (PGFB tied to IN), because its SET currents differ (2 mA vs 1.8 mA typ); PG is then unused (p. 20). The residual ramp mismatch is the CSET tolerance, to be measured at bring-up (power tree v0 §4.2).
+- **PSRR at the T1 headroom:** the 76 dB at 1 MHz is specified at VIN − VOUT = 2 V. At about 1 V the curve G45 reads about 65–75 dB near the 1.25 MHz TPS65131 frequency; power tree v0 §4.2 uses the 1 V curve. Layout governs it (p. 18–19).
+- **EN/UV** at 1.24 V is driven by the 3.3 V `HPA_LDO_EN` net, shared with the LT3094 and raised after the ±7.0 V pre-rails settle (power tree v0 §6.2).
+- **Capacitors:** COUT 10 µF X7R (ESR < 20 mΩ, ESL < 2 nH), CIN 4.7 µF X7R (p. 16–18; BOM line 110).
+- **Quiescent current:** 2.2 mA typ at no load, 4.3 mA typ (7 mA max) at 100 mA in dropout (p. 3–4); about 25 mW at SE idle from +7.0 V (power tree v0 §4.2).
+- **Thermal:** about 0.34 W at 275 mA, +12 °C at θJA 34 °C/W (power tree v0 §4.2, from the p. 22 method). Exposed pad = GND.
 
 ## Sources
 
 - Analog Devices, LT3045 datasheet, Rev. D (11/22), via the LCSC mirror: <https://datasheet.lcsc.com/datasheet/pdf/6b4c027fb90357baec1b8d318e11eacb.pdf>. Manufacturer URL (not reachable from this host): <https://www.analog.com/media/en/technical-documentation/data-sheets/lt3045.pdf>
-- OpenDAP board BOM v1, v1.2 change 8, lines 25–26, §7 item 13; power tree v0 §4.1, §4.2, §4.10 (`public/board/docs/specs/`).
+- OpenDAP board BOM v1 (v1.3), lines 25–26 and 109–110, Changes in v1.3 item 3; power tree v0 §4.1, §4.2, §4.10.1, §6.2 (`public/board/docs/specs/`).

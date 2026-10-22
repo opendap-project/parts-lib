@@ -2,14 +2,14 @@
 
 - **Manufacturer:** Analog Devices (Linear Technology)
 - **Function:** −20 V, 500 mA ultralow-noise, ultrahigh-PSRR negative linear regulator, output set by one resistor on a 100 µA SET current
-- **BOM v1 lines:** none placed. Proposed in BOM v1.2 (change 8, line 26, §7 item 13) as the replacement for the −5.0 V HP-amp LDO (TPS7A3001DGNR), paired with the [LT3045EDD#TRPBF](LT3045EDD-TRPBF.md) on line 25; listed as the line 26 second source
+- **BOM v1 lines:** 26 (Audio, −6.0 V HP-amp LDO, HPA_N6V0), quantity 1, Proposed (v1.3: replaces the TPS7A3001DGNR, ADR 0012, D30; LT3094EDD#PBF, the same part in tube, is the listed alternative), paired with the [LT3045EDD#TRPBF](LT3045EDD-TRPBF.md) on line 25. Its RSET, RILIM and capacitors are on lines 109–110
 - **Package:** 12-lead DFN (DD), 3 mm × 3 mm, 0.45 mm pitch, 0.75 mm height, exposed pad = IN
 - **Datasheet:** *LT3094 −20V, 500mA, Ultralow Noise, Ultrahigh PSRR Negative Linear Regulator*, Rev. B, 01/20. Cited below as "LT3094 Rev. B". Obtained from the LCSC datasheet mirror; analog.com did not answer from this host.
-- **Status:** Partly UNVERIFIED. Not in the current BOM (proposed alternative, BOM v1.2 change 8, pending the maintainers' confirmation).
+- **Status:** Partly UNVERIFIED
 
 ## Summary
 
-The LT3094 is the negative counterpart of the LT3045: a precision 100 µA SET current and a unity-gain error amplifier, so VOUT = ISET × RSET (negative) and noise, PSRR and bandwidth are independent of the output voltage (LT3094 Rev. B, p. 1; p. 15). Headline figures: 0.8 µVrms (10 Hz–100 kHz), 2.2 nV/√Hz at 10 kHz, 74 dB PSRR at 1 MHz, 500 mA, 235 mV typical dropout, 2.35 mA quiescent current, 3 µA in shutdown, −1.8 V to −20 V input, 0 V to −19.5 V output, bipolar enable, VIOC pin to track an upstream converter, minimum 10 µF ceramic output capacitor (p. 1). LT3094EDD#TRPBF is the E-grade DFN-12 on tape and reel, marking LHCC, −40 °C to 125 °C (p. 4). BOM v1.2 proposes it for HPA_N5V0 (−5.0 V from the TPS65131 −6.0 V pre-rail) so both HP-amp LDOs share the same SET-pin soft-start law (BOM v1 lines 25–26).
+The LT3094 is the negative counterpart of the LT3045: a precision 100 µA SET current and a unity-gain error amplifier, so VOUT = ISET × RSET (negative) and noise, PSRR and bandwidth are independent of the output voltage (LT3094 Rev. B, p. 1; p. 15). Headline figures: 0.8 µVrms (10 Hz–100 kHz), 2.2 nV/√Hz at 10 kHz, 74 dB PSRR at 1 MHz, 500 mA, 235 mV typical dropout, 2.35 mA quiescent current, 3 µA in shutdown, −1.8 V to −20 V input, 0 V to −19.5 V output, bipolar enable, VIOC pin to track an upstream converter, minimum 10 µF ceramic output capacitor (p. 1). LT3094EDD#TRPBF is the E-grade DFN-12 on tape and reel, marking LHCC, −40 °C to 125 °C (p. 4). BOM v1.3 uses it for HPA_N6V0 (−6.04 V from the TPS65131 −7.0 V pre-rail), so both HP-amp LDOs share the same SET-pin soft-start law (BOM v1 lines 25–26, Changes in v1.3 item 3).
 
 ## Absolute maximum ratings
 
@@ -125,7 +125,7 @@ LT3094 Rev. B, p. 4–6 unless noted.
 
 ## Linux driver
 
-None. A fixed regulator enabled by the HP-amp rail logic, as the TPS7A3001 it would replace (BOM v1 line 26: driver path *none*).
+None. A fixed regulator enabled by the HP-amp rail logic, described as a `regulator-fixed` supply (BOM v1 line 26: driver path *none*).
 
 ## Simulation models
 
@@ -134,15 +134,20 @@ None. A fixed regulator enabled by the HP-amp rail logic, as the TPS7A3001 it wo
 
 ## Design notes for the T1
 
-- **Not a drop-in.** The TPS7A3001DGNR on line 26 is an 8-pin MSOP with a divider and CNR/SS; the LT3094 is a DFN-12 programmed by RSET and CSET. Footprint, pinout and passives change.
-- **Exposed pad is IN (−6 V), not GND.** The thermal copper under the part belongs to the AUDIO_N6V0 net; it cannot join the ground plane.
-- **Electrically it fits the −6 V → −5 V rail.** VIN −6 V is inside −2.3 to −20 V; 1 V headroom exceeds the 280 mV full-range dropout at 100 mA and the 410 mV at 500 mA, so the 122 mA worst continuous sine (power tree v0 §4.1) is covered at 24 % of the rating.
-- **Enable from 3.3 V logic:** the positive EN/UV threshold (1.26 V) lets the shared 3.3 V `HPA_LDO_EN` net drive it directly; EN/UV to IN is then 9.3 V, inside the −0.3 V to 30 V rating (p. 3).
-- **PSRR at the T1 headroom:** the 74 dB at 1 MHz is at VIN − VOUT = 2 V. At 1 V, curve G47 reads about 65 dB at 1 MHz, close to the 1.25 MHz TPS65131 switching frequency.
-- **Soft-start match:** same tSS ≈ 2.3 × RSET × CSET law as the LT3045 (p. 22); equal RSET and CSET give equal RC ramps. Fast start-up currents differ (1.8 mA vs 2 mA typ). See the LT3045 sheet.
+- **Replaces the TPS7A3001DGNR (v1.3).** The TPS7A3001 is an 8-pin MSOP with a divider and CNR/SS; the LT3094 is a DFN-12 programmed by RSET and CSET. Footprint, pinout and passives changed with it (BOM lines 26, 109–110).
+- **Exposed pad is IN (−7.0 V), not GND.** The thermal copper under the part belongs to the AUDIO_N7V0 net; it cannot join the ground plane (BOM line 26).
+- **Operating point:** −7.0 V in (TPS65131 AUDIO_N7V0), −6.04 V out, so about 0.96 V of headroom against the 280 mV (100 mA) and 410 mV (500 mA) full-range maximum dropout (power tree v0 §4.2). The worst continuous load of 275 mA (power tree v0 §4.1) is 55 % of the 500 mA rating (BOM line 26).
+- **RSET = 60.4 kΩ, 0.1 %** (Yageo RT0603BRD0760K4L, BOM line 109): VOUT = −100 µA × 60.4 kΩ = −6.04 V (p. 15).
+- **Current limit:** RILIM = 9.31 kΩ (Yageo RC0603FR-079K31L, line 109): 3.75 A·kΩ / 9.31 kΩ ≈ 403 mA (p. 5). ILIM must not float (p. 15). The spread is tabulated only at 7.5 kΩ (450 / 500 / 560 mA, −10 % / +12 %) and 37.5 kΩ (p. 5); BOM lines 26 and 109 assume ±10 % at 9.31 kΩ (≈ 360 mA minimum, est., **UNVERIFIED**); the +12 % upper spread at 7.5 kΩ would put the maximum near 450 mA (est.). 275 mA is 68 % of the programmed limit.
+- **CSET = 0.47 µF** (line 110): 3 µVrms at −3.3 V with CSET 0.47 µF; 0.8 µVrms with 4.7 µF (p. 5).
+- **Soft-start match with the LT3045:** tSS ≈ 2.3 × RSET × CSET ≈ 65 ms with equal RSET and CSET on both rails (p. 22; BOM line 110). Fast start-up is disabled (PGFB tied to IN) because the SET currents differ (1.8 mA vs 2 mA typ). See the LT3045 sheet.
+- **Enable from 3.3 V logic:** the positive EN/UV threshold (1.26 V) lets the shared 3.3 V `HPA_LDO_EN` net drive it directly; EN/UV to IN is then 10.3 V, inside the −0.3 V to 30 V rating (p. 3).
+- **PSRR at the T1 headroom:** the 74 dB at 1 MHz is at VIN − VOUT = 2 V. At about 1 V, curve G47 reads about 65 dB at 1 MHz, close to the 1.25 MHz TPS65131 switching frequency.
+- **Capacitors:** COUT 10 µF X7R (ESR < 30 mΩ, ESL < 1.5 nH), CIN 10 µF X7R (p. 15, p. 18, p. 20; BOM line 110).
+- **Thermal:** about 0.33 W at 275 mA (power tree v0 §4.2); GND current 2.35 mA typ at no load.
 - **VIOC** is not needed with the TPS65131 pre-rail; float it (p. 15). Using it to trim the TPS65131 negative output is a design option for the maintainers, **UNVERIFIED** against the TPS65131 feedback network.
 
 ## Sources
 
 - Analog Devices, LT3094 datasheet, Rev. B (01/20), via the LCSC mirror: <https://datasheet.lcsc.com/datasheet/pdf/1a8bfd511d8ae1f9056ba9136e868838.pdf>. Manufacturer URL (not reachable from this host): <https://www.analog.com/media/en/technical-documentation/data-sheets/lt3094.pdf>
-- OpenDAP board BOM v1, v1.2 change 8, lines 25–26, §7 item 13; power tree v0 §4.1, §4.2, §4.10 (`public/board/docs/specs/`).
+- OpenDAP board BOM v1 (v1.3), lines 25–26 and 109–110, Changes in v1.3 item 3; power tree v0 §4.1, §4.2, §4.10.1, §6.2 (`public/board/docs/specs/`).

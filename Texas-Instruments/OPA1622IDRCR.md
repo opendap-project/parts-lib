@@ -2,14 +2,14 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Dual bipolar-input audio operational amplifier with a high-current output stage and an enable pin
-- **BOM v1 lines:** 19 (Audio, headphone drivers), quantity 4
+- **BOM v1 lines:** 19 (Audio, headphone drivers), quantity 6 (v1.3: 4 → 6, ADR 0012); its difference-amplifier resistors, capacitors and ballast resistors are on lines 37, 107 and 108
 - **Package:** VSON-10 (DRC0010J), 3 mm × 3 mm, tape and reel of 3000, NiPdAu, MSL 1 at 260 °C, marking O1622 (SBOS727B, package option addendum, PDF p. 29)
 - **Datasheet:** OPA1622 "SoundPlus High-Fidelity, Bipolar-Input, Audio Operational Amplifier", SBOS727B, November 2015, revised May 2016 (manifest sha256 `505556d1…ac9824`, verified against the cached copy)
 - **Status:** Partly UNVERIFIED
 
 ## Summary
 
-The OPA1622 is a dual bipolar-input audio operational amplifier with a high-current output stage (+145/−130 mA short-circuit), 2.8 nV/√Hz input noise at 1 kHz, an enable pin referenced to a dedicated ground pin, and a low-power shutdown mode of 5 µA per channel (SBOS727B, pp. 1, 5–6). In the T1 it is the headphone driver after the CS43198 DACs: four packages, two for the 4.4 mm balanced output (L+, L−, R+, R−) and two for the 3.5 mm output, each enabled separately for power gating. BOM line 19.
+The OPA1622 is a dual bipolar-input audio operational amplifier with a high-current output stage (+145/−130 mA short-circuit), 2.8 nV/√Hz input noise at 1 kHz, an enable pin referenced to a dedicated ground pin, and a low-power shutdown mode of 5 µA per channel (SBOS727B, pp. 1, 5–6). In the T1 it is the headphone driver after the CS43198 DACs: six packages, each running both halves in parallel, four for the 4.4 mm balanced output (one per leg: L+, L−, R+, R−) and two for the 3.5 mm output (one per channel), each enabled separately for power gating. BOM line 19 (v1.3, ADR 0012).
 
 ## Absolute maximum ratings
 
@@ -132,15 +132,17 @@ None. The amplifier has no control interface; EN lines are GPIOs (BOM v1 line 19
 
 ## Design notes for the T1
 
-- Supplies: the T1 runs the OPA1622 from ±5.0 V (TPS7A4901 and TPS7A3001, BOM lines 25–26), the supply used in the datasheet application (§8.2.1).
-- Pop control: ramp V+ and V− symmetrically and hold EN low while the supplies ramp (§7.4.2, p. 18). BOM line 100 reserves a DNP mute shunt in case measurements show pops.
-- Thermal pad and its pour go to V− (−5 V), not to ground (§10.1).
+- Supplies (v1.3): the T1 runs the OPA1622 from ±6.04 V (LT3045 HPA_P6V0 and LT3094 HPA_N6V0, BOM lines 25–26), made from the ±7.0 V TPS65131 pre-rails (line 22). This is inside the ±2 V to ±18 V dual-supply range (§6.3); the datasheet application uses ±5 V (§8.2.1); output swing against current at ±6 V is **UNVERIFIED** (power tree v0 §4.1).
+- Topology (v1.3, ADR 0012): both halves of every package in parallel, each half its own difference amplifier (R1 = R3 = 1.00 kΩ, R2 = R4 = 1.62 kΩ, 100 pF, gain 1.62; BOM lines 37, 108) driving the output through a 1.0 Ω ballast resistor outside the loop (line 107). Paralleling halves is not described in SBOS727B; current sharing and stability with the ballast resistors are **UNVERIFIED** until simulated and measured (BOM line 19).
+- Enable per output (v1.3): 8 halves enabled for balanced, 4 for SE. A package in shutdown does not present a high-impedance output, and signals applied to it can parasitically power the output stage (§7.4.1, p. 17); a whole package is therefore the smallest unit that can be disabled (power tree v0 §4.1).
+- Pop control: ramp V+ and V− symmetrically and hold EN low while the supplies ramp (§7.4.2, p. 18). v1.3: the LT3045 and LT3094 ramp on equal RSET × CSET soft-starts, about 65 ms (power tree v0 §4.2, §6.2). BOM line 100 reserves a DNP mute shunt in case measurements show pops.
+- Thermal pad and its pour go to V− (−6 V), not to ground (§10.1).
 - GND pin: connect to the low-noise analog reference (§7.3.4, p. 16; §10.1).
 - Feedback resistors close to the inverting input, short input traces (§10.1, Figure 60).
 - Headphone ESD (TPD1E10B06, BOM line 36) sits after the feedback node per the BOM note.
-- Paralleling both halves of one package for 16 Ω loads on the 3.5 mm output is not described in SBOS727B: **UNVERIFIED**.
+- Thermal (est., power tree v0 §4.1): about 0.5 W per package at the balanced 32 Ω full-scale sine, +24 °C at θJA 47.6 °C/W (§6.4).
 
 ## Sources
 
 - Texas Instruments, OPA1622 data sheet, SBOS727B, May 2016, <https://www.ti.com/lit/ds/symlink/opa1622.pdf>, sha256 `505556d18113e86aed84f20c1dbcfc6b4ad66ccdc5202998bd883f7a7eac9824`.
-- OpenDAP board BOM v1, lines 19, 25, 26, 36, 100.
+- OpenDAP board BOM v1 (v1.3), lines 19, 22, 25, 26, 36, 37, 100, 107, 108; power tree v0 §4.1, §4.2, §6.2 (`public/board/docs/specs/`).

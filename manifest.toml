@@ -1270,7 +1270,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/6b4c027fb90357baec1b8d318e11eacb
 revision = "Rev. D"
 date = "2022-11"
 sha256 = "9132e595759a58a0920e7c63997872df02ca9ce598ead76c6f7a31051405eba6"
-# LCSC mirror; analog.com timed out from this host. Proposed alternative, not in the BOM
+# LCSC mirror; analog.com timed out from this host. BOM v1.3 line 25
 redistributable = false
 
 [[file]]
@@ -1281,5 +1281,128 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/1a8bfd511d8ae1f9056ba9136e868838
 revision = "Rev. B"
 date = "2020-01"
 sha256 = "c82438ca3359a588f6f1ad5ab5160b3f2223ec78f723be17bda753f8dc71694d"
-# LCSC mirror; analog.com timed out from this host. Proposed alternative, not in the BOM
+# LCSC mirror; analog.com timed out from this host. BOM v1.3 line 26
+redistributable = false
+
+# BOM v1.3 parts (2026-10-22).
+
+[[file]]
+mpn = "744373240047"
+manufacturer = "Wurth Elektronik"
+kind = "datasheet"
+url = "https://www.we-online.com/components/products/datasheet/744373240047.pdf"
+revision = "003.000"
+date = "2024-12-27"
+sha256 = "18d4780afd61015ea4d7b56a174b1f51405d51a51fd87ca1d1eef86f177af2da"
+# BOM v1.3 line 106. curl from this host gets HTTP 403; the file was fetched from this URL with a browser-like client
+redistributable = false
+
+[[file]]
+mpn = "XFL4015-471MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/84927b8b-f089-421b-a7f4-a0fa23afe908/xfl4015.pdf"
+revision = "Document 769-1"
+date = "2026-03-10"
+sha256 = "6535ab70d0ef65ba03d4b0800e206fc7867f26464e2d9dfd5dd931a2bcb0c7c1"
+# BOM v1.3 line 106 alternative
+redistributable = false
+
+[[file]]
+mpn = "RT0603BRD071KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf"
+revision = "V.16"
+date = "2025-05-06"
+sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 37, 1.00 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RT0603BRD071K62L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf"
+revision = "V.16"
+date = "2025-05-06"
+sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 37, 1.62 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RT0603BRD0760K4L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf"
+revision = "V.16"
+date = "2025-05-06"
+sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 60.4 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-071RL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 107, 1.0 Ω
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07374RL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 374 Ω
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-079K31L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 9.31 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07475KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 475 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07576KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 576 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07100KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 100 kΩ
 redistributable = false

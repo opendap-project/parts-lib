@@ -2,10 +2,10 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** −200 mA ultralow-noise negative linear regulator, adjustable output
-- **BOM v1 lines:** 26 (−5.0 V headphone-amplifier LDO)
+- **BOM v1 lines:** none in v1.3. Line 26 (−5.0 V headphone-amplifier LDO) up to BOM v1.2
 - **Package:** 8-pin HVSSOP PowerPAD (DGN), 3.00 × 3.00 mm body
 - **Datasheet:** *TPS7A30 −35-V, −200-mA, Ultralow-Noise, Negative Linear Regulator*, SBVS125D, August 2010, revised June 2015. Cited below as "SBVS125D". File sha256 `b60d6fd8d7220e9f8a4dcfeaa7438a5e5e419ef589e1ea85e9d04781f2203ae5` (matches the BOM v1 Datasheets table).
-- **Status:** Partly UNVERIFIED
+- **Status:** Not in the current BOM (replaced in BOM v1.3 by LT3045/LT3094, ADR 0012)
 
 ## Summary
 

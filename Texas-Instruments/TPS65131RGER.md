@@ -2,14 +2,14 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Dual-output DC-DC converter: boost for the positive output, inverting buck-boost for the negative output
-- **BOM v1 lines:** 22 (HP-amp pre-rails ±6 V)
+- **BOM v1 lines:** 22 (HP-amp pre-rails ±7.0 V; v1.3: ±6.0 → ±7.0 V, ADR 0012), quantity 1; inductors on line 23, rectifiers on line 24, feedback and output network on line 111
 - **Package:** VQFN-24 (RGE), 4 × 4 mm, exposed thermal pad
 - **Datasheet:** *TPS6513x Dual, Positive and Negative Output DC-DC Converter*, SLVS493E, March 2004, revised April 2022. Cited below as "SLVS493E". File sha256 `e8360b9509047317416cfd9163a09d8cdf5c8accbd4e702ad6a43292ef48e0ed` (matches the BOM v1 Datasheets table).
 - **Status:** Partly UNVERIFIED
 
 ## Summary
 
-The TPS65131 is a dual-output DC-DC converter: a boost converter for a positive output (VPOS, up to 15 V) and an inverting buck-boost converter for a negative output (VNEG, down to −15 V), from a 2.7 V to 5.5 V input, with 2 A (typ. 1.95 A) switch current limits on the TPS65131 option, separate enables and separate power-save controls per output (SLVS493E, p. 1). In the T1 it makes the AUDIO_P6V0 / AUDIO_N6V0 pre-rails (+6.0 V / −6.0 V) from VSYS, which feed the TPS7A4901 (+5.0 V) and TPS7A3001 (−5.0 V) headphone-amplifier LDOs (BOM v1 line 22; power tree v0 §2 and §4.2).
+The TPS65131 is a dual-output DC-DC converter: a boost converter for a positive output (VPOS, up to 15 V) and an inverting buck-boost converter for a negative output (VNEG, down to −15 V), from a 2.7 V to 5.5 V input, with 2 A (typ. 1.95 A) switch current limits on the TPS65131 option, separate enables and separate power-save controls per output (SLVS493E, p. 1). In the T1 it makes the AUDIO_P7V0 / AUDIO_N7V0 pre-rails (+7.0 V / −7.0 V) from VSYS, which feed the LT3045 (+6.04 V) and LT3094 (−6.04 V) headphone-amplifier LDOs (BOM v1 line 22, v1.3; power tree v0 §2 and §4.2).
 
 ## Absolute maximum ratings
 
@@ -57,7 +57,7 @@ SLVS493E, p. 5, §6.5, VIN = 3.6 V, TJ = 25 °C typical.
 
 - Power-save mode (PSP / PSN high): pulse skipping at light load, per converter (SLVS493E, p. 10, §7.4.1). PSx low forces continuous PWM.
 - Between VUVLO and 2.7 V the device keeps operating without guaranteed performance; below VUVLO (2.1 / 2.35 / 2.7 V min/typ/max) both converters are off (SLVS493E, p. 5 and p. 10, §7.4.3–7.4.4).
-- Efficiency: up to 89 % (boost) and 81 % (inverter); combined up to 85 % (SLVS493E, p. 1). Efficiency at the T1 operating point (VIN = VSYS 3.4–4.4 V, power tree v0 §3; ±6 V, 10–45 mA) is **UNVERIFIED**.
+- Efficiency: up to 89 % (boost) and 81 % (inverter); combined up to 85 % (SLVS493E, p. 1). Efficiency at the T1 operating point (VIN = VSYS 3.4–4.4 V, power tree v0 §3; v1.3: ±7 V, about 13 mA idle to 275 mA per rail, power tree v0 §3, §4.1) is **UNVERIFIED**; power tree v0 §4.11 assumes 0.8 at 275 mA (est.).
 
 ## Pinout and package
 
@@ -122,7 +122,7 @@ Typical application (SLVS493E, p. 11, Figure 8-1; p. 12, Tables 8-1 and 8-2):
 - A 10–100 kΩ resistor in series with each feed-forward capacitor limits noise coupled into the loop (SLVS493E, p. 15, §8.2.2.6.1).
 - Peak inductor current estimate: IL_P = VPOS × IPOS / (VI × 0.64); IL_N = (VI + |VNEG|) × INEG / (VI × 0.64) (SLVS493E, p. 13, Eq. 3–4).
 
-Divider values for ±6.0 V in the T1 are not in the datasheet; compute from Eq. 1 and Eq. 2.
+T1 divider values (v1.3, BOM line 111): R1 475 kΩ / R2 100 kΩ gives VPOS = 1.213 V × (1 + 4.75) = 6.97 V; R3 576 kΩ / R4 100 kΩ gives VNEG = −1.213 V × 5.76 = −6.99 V (Eq. 1–2). Feed-forward C9 = 6.8 µs / R1 = 14.3 pF (15 pF used) and C10 = 7.5 µs / R3 = 13.0 pF (13 pF) (p. 15, Eq. 11–12).
 
 ## Interfaces and timing
 
@@ -146,15 +146,17 @@ None. The converter has no digital interface; ENP/ENN and PSP/PSN are GPIO-contr
 
 ## Design notes for the T1
 
-- VSYS must stay ≤ 5.5 V at VIN (recommended maximum) and VPOS ≥ VIN + 0.5 V (SLVS493E, p. 4). With VPOS = +6.0 V the input must not exceed 5.5 V; check any VSYS state above that (USB-C input path) before release.
-- Output current at low battery (VIN ≈ 3.4–3.5 V, ±6 V) is read from curves only; power tree v0 risk 3 asks for a SPICE/WEBENCH check at 150 mA per rail.
-- ENP and ENN are driven together from `HPA_RAIL_EN` so the ±5 V LDO outputs ramp symmetrically (power tree v0 §7).
+- VSYS must stay ≤ 5.5 V at VIN (recommended maximum) and VPOS ≥ VIN + 0.5 V (SLVS493E, p. 4). With VPOS = +7.0 V the input must not exceed 5.5 V; check any VSYS state above that (USB-C input path) before release.
+- **Load (v1.3):** 275 mA per rail worst continuous (full-scale sine into balanced 32 Ω, both channels; power tree v0 §4.1). By Eq. 3–4 the inverter peak inductor current is 1.29–1.43 A at VIN 3.5–3.0 V, **72–79 %** of the 1.8 A minimum switch limit; the boost is at 0.86–1.00 A, 48–56 % (BOM line 22; power tree v0 §4.10.1). Figure 6-4 (typical, 25 °C) gives about 340 mA at VIN 3.0 V and about 480 mA at 3.5 V at −7 V (interpolated between the −4 V and −10 V curves). ADR 0012 makes this **conditional on a WEBENCH or SPICE check** at VIN 3.0 V, ±7 V, 275 mA per rail before layout freeze.
+- **Output capacitors (v1.3):** for 10 mV ripple at 275 mA and VIN 3.0 V, Eq. 7–8 give at least 12.6 µF (boost) and 15.4 µF (inverter) effective (BOM line 111). The datasheet's 4 × 4.7 µF 25 V X7R per output is kept; its effective value after DC-bias derating at 7 V is **UNVERIFIED**.
+- **Compensation and reference (v1.3, line 111):** CP 10 nF, CN 4.7 nF C0G, VREF 220 nF, as in the datasheet example (§8.2.2.6.2).
+- ENP and ENN are driven together from `HPA_RAIL_EN`; the LT3045 and LT3094 are enabled afterwards by `HPA_LDO_EN`, so the ±6 V outputs ramp on the LDO soft-starts (power tree v0 §6.2).
 - Power-save mode (PSP = PSN = high) can stay enabled during playback per the power tree v0 §4.2 analysis; to be verified by measurement.
-- The T1 rectifiers are Nexperia PMEG2010AEH (BOM line 24) instead of the datasheet's MBRM120, and the inductors are Murata DFE252012F-4R7M (BOM line 23). Their current ratings against the peak current from Eq. 3–4 are to be checked on those parts' sheets.
+- The T1 rectifiers are Nexperia PMEG2010AEH (BOM line 24) instead of the datasheet's MBRM120, and the inductors are Murata DFE252012F-4R7M (BOM line 23). v1.3: the 2.2 A maximum switch limit exceeds the inductors' 2.1 A (ΔL/L −30 %) rating, so an overload runs them at about −30 % inductance (BOM line 23, D31).
 - BSW and the input PMOS: not used in the BOM; leave BSW floating unless an input disconnect is added (SLVS493E, p. 15).
 - Layout: inputs, outputs, inductors and diodes close to the IC, wide PGND plane, AGND tied to PGND, thermal pad to PGND, dividers close to FBP / VREF (SLVS493E, p. 26, §9.1).
 
 ## Sources
 
 - TI, TPS6513x datasheet, SLVS493E (April 2022): <https://www.ti.com/lit/ds/symlink/tps65131.pdf>
-- OpenDAP board BOM v1, line 22; power tree v0 §2, §4.2, §7 (`public/board/docs/specs/`).
+- OpenDAP board BOM v1 (v1.3), lines 22–24 and 111, Changes in v1.3 items 3–4; power tree v0 §2, §4.1, §4.2, §4.10.1, §6.2 (`public/board/docs/specs/`).
