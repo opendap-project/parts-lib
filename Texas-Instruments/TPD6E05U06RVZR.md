@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 69 (HAT low-speed and analog lines at the pogo field, quantity 9), 73 (microSD CLK, CMD, D0–D3), 75 (faceplate low-speed lines, quantity 3)
 - **Package:** USON-14 (RVZ)
 - **Datasheet:** TPD1E05U06, TPD4E05U06, TPD6E05U06, SLVSBO7O (December 2012, revised August 2024), sha256 `c167cf1e72a5…` in `manifest.toml` (same document as the TPD4E05U06)
-- **Status:** Partly UNVERIFIED
+- **Status:** Not in the current BOM (replaced in BOM v1.1 by TPD4E05U06DQAR). Partly UNVERIFIED
 
 ## Summary
 

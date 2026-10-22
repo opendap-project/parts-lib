@@ -106,14 +106,14 @@ CTP FPC tail, 6 pins (spec p. 6, §3.2):
 
 The spec marks INT as "I" (p. 6). On the GT911 it is an output during operation and an address-strap input during reset (see the GT911 sheet).
 
-Mechanical (spec p. 2 and outline drawing p. 3): module 54.46 (H) × 82.94 (V) × 5.50 (D) mm typical; active area 48.96 × 73.44 mm; CTP view area 49.56 × 74.04 mm; general tolerance ±0.3 mm. Drawing p. 3: cover glass 0.55 mm (etched AG), sensor 0.55 mm, total thickness 5.50 mm. Both tails exit the bottom edge and bend behind the module ("Bend and Ship"). Exact tail lengths, widths and the contact pitch must be read from the drawing on p. 3. That drawing is not to scale, and the dimensions printed on it are hard to read at the available resolution (**UNVERIFIED**; request the DXF/PDF master drawing from Focus LCDs).
+Mechanical (spec p. 2 and outline drawing p. 3): module 54.46 (H) × 82.94 (V) × 5.50 (D) mm typical; active area 48.96 × 73.44 mm; CTP view area 49.56 × 74.04 mm; general tolerance ±0.3 mm. Drawing p. 3: cover glass 0.55 mm (etched AG), sensor 0.55 mm, total thickness 5.50 mm. Both tails exit the bottom edge and bend behind the module ("Bend and Ship"). CTP tail, read from the drawing on p. 3 rendered at 400 dpi: 6 contacts, P 0.50 mm, conductor width W 0.30 mm, tail width 3.50 ± 0.1 mm, 0.35 mm from each outer conductor to the edge, conductive length 3.00 ± 0.3 mm, 0.30 ± 0.05 mm thick with a PI stiffener, contact side marked in the side view. The drawing is marked "do not scale"; the TFT tail pitch and the remaining tail lengths are not transcribed here (**UNVERIFIED**; request the master drawing from Focus LCDs).
 
 ## Recommended footprint
 
 Not applicable (module). Mating connectors:
 
 - TFT tail: the spec recommends "FH12S-20S-0.5SH(55)" (p. 5). "FH12S" is taken as a typo for the Hirose FH12-20S-0.5SH(55) carried in BOM v1 line 84 (**UNVERIFIED** with Focus LCDs).
-- CTP tail: the spec does not name a connector. BOM v1 line 85 states that the Focus spec names FH12-6S-0.5SH(55) for the CTP tail; that claim is not supported by Rev 1.0 (pp. 5–6). Pitch and contact side of the CTP tail must be confirmed from the drawing or with Focus LCDs before the faceplate layout.
+- CTP tail: the spec does not name a connector (pp. 5–6). BOM v1.1 line 85 picks the Hirose FH12-6S-0.5SH(55) from the tail geometry of the outline drawing (p. 3, above), which matches the FH12 6-contact FPC dimensions; see [`Hirose/FH12-6S-0.5SH.md`](../Hirose/FH12-6S-0.5SH.md) for the differences to check on a sample (conductor width, width tolerance, contact side).
 
 ## Application circuit and required passives
 
@@ -133,7 +133,7 @@ The specification gives no application circuit. Needed by inference from the pin
 
 ## Linux driver
 
-- BOM v1 line 81: *DKMS (mainline compatible, off in Debian)*.
+- BOM v1.1 line 81 and §9 item D14 report a mainline MIPI DSI driver, `panel-ilitek-ili9488` (compatible `focuslcds,e35gh-i-mw800cb`), first in v7.3, and DKMS on Debian's 7.2. The kernel source was not re-read for this sheet (**UNVERIFIED** here; the BOM records the commit). The paragraph below is the earlier finding, kept for traceability.
 - The spec names the controller as ILI9488 with a 1-lane DSI interface. A mainline DRM panel driver for the ILI9488 over MIPI DSI could not be confirmed in this pass. The ILI9488 driver support known from mainline is for SPI/DBI variants, not DSI, and is also **UNVERIFIED**. The BOM's "mainline compatible" for this module is therefore **UNVERIFIED**. If no mainline DSI driver exists, a panel driver (for example a `panel-ilitek-ili9488` DSI driver, or a generic DSI panel with an init sequence) has to be written or carried as DKMS.
 - Touch: mainline `goodix` touchscreen driver, compatible `goodix,gt911` (see the GT911 sheet).
 - Backlight: `pwm-backlight` through the main-board driver (BOM line 51), not through this module.

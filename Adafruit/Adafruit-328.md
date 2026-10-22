@@ -93,8 +93,8 @@ None listed in `manifest.toml`. A cell model for the MAX17055 (ModelGauge m5 EZ 
 - **Charge window:** charge only at 0–40 °C (pp. 2, 7). The BQ25895 TS thresholds must be set by the TS divider for the board NTC so charging stops at or below 40 °C (power tree §4.7; see the BQ25895 sheet).
 - **Charge current:** 1.2 A is 0.48C, inside the 1C maximum (p. 6). The standard rate is 0.2C (0.5 A).
 - **Charge voltage:** 4.20 V CC/CV (p. 2) with a hard limit below 4.25 V (p. 7). The BQ25895 VREG setting must stay at 4.20 V or lower for this pack; LiHV settings (ADR 0008) are for other packs only.
-- **Discharge current:** the cell allows 2C = 5 A (p. 7), but its 26 AWG leads and the JST PH contact (2 A per contact, BOM line 47) cap the T1 battery path at 2.0 A continuous (power tree §4.7, finding 8).
-- **Low-voltage cut-off:** the sheet's discharge floor is 2.75 V (p. 7); the system cut-off (BQ25895 VSYSMIN 3.5 V, gauge empty voltage) sits well above it.
+- **Discharge current:** the cell allows 2C = 5 A (p. 7), but its 26 AWG leads and the JST PH contact (2 A per contact, BOM line 47) cap the T1 battery path: JST rates the PH contact 2 A with AWG #24 only, so BOM v1.1 derates the path to 1.6 A continuous (est.) for the 26 AWG leads (power tree §4.7, finding 8; BOM v1.1 lines 46–47).
+- **Low-voltage cut-off:** the sheet's discharge floor is 2.75 V (p. 7); the system cut-off (gauge empty voltage, set in OpenDAP OS) must sit above it. The BQ25895 VSYSMIN of 3.5 V is not a cut-off: on battery VSYS follows VBAT below it (power tree v0 §3 designs VSYS for 3.4–4.4 V).
 - **Long storage and shipping:** 40–60 % charge for storage, 10–50 % for transport (p. 7, §8.4–8.5). Ship mode (BATFET off) in the BQ25895 limits self-discharge during storage.
 - **Mechanical:** the pouch must be fixed over its large face, protected from sharp edges, and its sealed and folded edges must not be bent or touch conductors (pp. 5–8). This applies to the T1 battery pocket.
 - **Dimensional inconsistency:** pack length is 60.5 mm in §2.3 and 60.2 mm in the p. 10 table. Use 60.5 mm for the pocket until measured.

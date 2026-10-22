@@ -132,7 +132,7 @@ None. No digital interface; EN (`AUDIO_LN_EN`) and optionally MODE/STOP are GPIO
 - **2.2 V is selectable** with RSET = 4.32 kΩ (Table 1); the BOM line 29 open point is closed by the datasheet.
 - **1 µH is outside the recommended range:** the effective inductance must be 1.51–2.9 µH (SLVSEC6D, p. 6). The BOM line 28 alternative "DFE201610E-1R0M if the datasheet allows 1 µH" is not allowed. The BOM part DFE201610E-2R2M (2.2 µH) is not in the datasheet's inductor list (Table 4); its saturation current against 1.4 A and its DCR are to be checked on that part's sheet.
 - Power-save mode bursts may fall in the audio band; the TPS7A2018 PSRR downstream is the filter (power tree v0 §4.3). MODE high (forced PWM, 3 mA no-load) or STOP high (switching halted, 70 µA) are available on the DLC package if measurement shows audible residue. **UNVERIFIED** until measured.
-- 100 % mode adds +30 mV to the set point near dropout (SLVSEC6D, p. 15, §8.4.3); not reached with VSYS ≥ 3.5 V and 2.2 V out.
+- 100 % mode adds +30 mV to the set point near dropout (SLVSEC6D, p. 15, §8.4.3); not reached with VSYS ≥ 3.4 V (power tree v0 §3; on battery VSYS follows VBAT) and 2.2 V out.
 - EN can be driven directly by the 1.8 V `AUDIO_LN_EN` GPIO (VIH 1.1 V).
 
 ## Sources

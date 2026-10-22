@@ -2,7 +2,7 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Boost white-LED driver, 40 V / 1.8 A integrated switch, 204 mV feedback, PWM-controlled analog dimming
-- **BOM v1 lines:** 51 (Power), panel backlight; inductor line 52, rectifier line 53; status Proposed
+- **BOM v1 lines:** 51 (Power), panel backlight; inductor line 52, rectifier line 53 (PMEG6010CEH since BOM v1.1); status Proposed
 - **Package:** SC70 5-pin (DCK, drawing DCK0005A), 2.00 × 1.25 mm nominal body
 - **Datasheet:** TPS61169 38V High Current-Boost WLED Driver With PWM Control, SNVSA40B (October 2014, revised June 2024), <https://www.ti.com/lit/ds/symlink/tps61169.pdf>
 - **Status:** Partly UNVERIFIED
@@ -76,7 +76,7 @@ TI example board layout DCK0005A (SNVSA40B p. 22): five pads 0.95 × 0.4 mm, pit
 
 - **RSET:** ILED = VFB / RSET (p. 9, §6.3.4, Equation 1). The T1 uses 3.40 Ω 1 % for 60 mA (power tree §4.5); dissipation 0.204 V × 60 mA = 12 mW.
 - **Inductor:** 4.7–10 µH (p. 4, §5.3; p. 12, §7.2.2.1). Peak current IL(P) = IL(DC) + ΔIL/2 with IL(DC) = VOUT × IOUT / (VIN × η) and ΔIL = 1 / (L × (1/(VOUT − VIN) + 1/VIN) × FS) (p. 12, Equations 3–5). Inductance may fall 20–35 % near saturation (p. 12). TI's listed parts: Coilcraft LPS4018-103ML (10 µH, 1.3 A sat), Cyntec PCMB051H-100M (10 µH, 3 A sat) (p. 12, Table 7-2).
-  - T1 calculation (worst case VIN = 3.5 V, VOUT = 16.5 V + 0.204 V, IOUT = 60 mA, η = 0.85, L = 10 µH, FS = 1.2 MHz): IL(DC) = 0.34 A, ΔIL = 0.23 A, IL(P) = 0.45 A. This matches power tree §4.5; the BOM line 52 inductor (Murata LQH3NPN100MJRL) must saturate above this with margin (its rating is **UNVERIFIED**, datasheet not downloaded).
+  - T1 calculation (VIN = 3.5 V as in power tree §4.5, VOUT = 16.5 V + 0.204 V, IOUT = 60 mA, η = 0.85, L = 10 µH, FS = 1.2 MHz): IL(DC) = 0.34 A, ΔIL = 0.23 A, IL(P) = 0.45 A. On battery VSYS follows VBAT down to 3.4 V (power tree v0 §3); at VIN = 3.4 V the same equations give IL(DC) = 0.35 A, ΔIL = 0.23 A, IL(P) = 0.46 A. This matches power tree §4.5 within 0.01 A; the BOM line 52 inductor (Murata LQH3NPN100MJRL) must saturate above this with margin (its rating is **UNVERIFIED**, datasheet not downloaded).
 - **Schottky diode:** low VF, fast, low capacitance; average and peak current above the output and peak inductor currents; reverse breakdown above the open-LED protection voltage (p. 12, §7.2.2.2). TI recommends onsemi NSR0240.
 - **Output capacitor:** 1–4.7 µF ceramic recommended (p. 13, §7.2.2.3); COUT ≥ (VOUT − VIN) × IOUT / (VOUT × FS × Vripple) (Equation 6). It sees up to VOVP (39 V max) in an open-LED event; choose its voltage rating accordingly (design inference).
 - **Input capacitor:** ≥ 1 µF (p. 4); 4.7 µF in the typical application (p. 11, Figure 7-1).
@@ -108,13 +108,14 @@ No model is listed in `manifest.toml`. A TI PSpice or TINA model is **UNVERIFIED
 ## Design notes for the T1
 
 - **LED current tolerance:** with RSET = 3.40 Ω, VREF 188–220 mV gives 55.3–64.7 mA (calculation from p. 5). Check the upper figure against the panel's LED maximum current (Focus spec sheet), or size RSET for the VREF maximum.
-- **Diode rating margin:** the diode must block above the OVP threshold (p. 12). VOVP is 39 V maximum (p. 5); the BOM line 53 PMEG4010CEH is a 40 V part (its datasheet is **UNVERIFIED**, not downloaded), which leaves 1 V of margin at the OVP maximum. TI's recommended NSR0240 is also a 40 V class part (rating not stated in this datasheet).
+- **Diode rating margin:** the diode must block above the OVP threshold (p. 12). VOVP is 39 V maximum (p. 5). BOM v1.1 line 53 replaces the 40 V PMEG4010CEH (1 V of margin) with the Nexperia PMEG6010CEH: VR 60 V, VF ≤ 660 mV at IF = 1 A, Tj 150 °C maximum (PMEG6010CEH/PMEG6010CEJ datasheet Rev. 02, 2007-03-27, pp. 2–3), which leaves 21 V of margin. See [`Nexperia/PMEG6010CEH.md`](../Nexperia/PMEG6010CEH.md). TI's recommended NSR0240 is a 40 V class part (rating not stated in this datasheet).
 - **PWM and shutdown:** keep the dimming PWM between 5 and 100 kHz. A 0 % duty held for 2.5 ms or longer shuts the device down, and the next turn-on runs the 6.5 ms soft start (pp. 5, 8–9). The `pwm-backlight` minimum brightness should map to a non-zero duty if the panel must stay lit at its lowest level.
 - **Shutdown leakage path:** the panel string VF minimum is 14.0 V (power tree §4.5), far above VSYS maximum 4.4 V, so the LEDs stay dark in shutdown (p. 9, §6.3.3).
-- **Temperature grade:** the DCKR orderable is listed at −40 to 85 °C (p. 18) while TJ operates to 125 °C (p. 4); check this against the T1 internal temperature once modelled (power tree risk 10).
+- **Temperature grade:** the TPS61169DCKR orderable is listed at −40 to 85 °C (p. 18, Package Option Addendum, "Op Temp") while TJ operates to 125 °C (p. 4); check this against the T1 internal temperature once modelled (power tree risk 10). The rating belongs to this part, not to the rectifier.
 - **Other faceplates:** VOUT up to 38 V and OVP 36–39 V bound the string length for future faceplates (BRD-048).
 
 ## Sources
 
 - TI, TPS61169 datasheet, SNVSA40B, revised June 2024, <https://www.ti.com/lit/ds/symlink/tps61169.pdf>, sha256 `7d0b8ace2459a9fd22fe7145086cbad4ccb3bb43219247459313fcba75230151` (manifest). Page numbers are PDF page numbers.
-- OpenDAP board BOM v1 lines 51–53 and power tree v0 §4.5 (T1 context).
+- Nexperia, *PMEG6010CEH; PMEG6010CEJ* product data sheet, Rev. 02, 27 March 2007 (copy from the LCSC mirror; nexperia.com returned HTTP 403), sha256 `00cb4092481811245afeadff66d4bf266ff5486c7ca28fb47e822868f8689bee`.
+- OpenDAP board BOM v1 (v1.1) lines 51–53, §9 item D25, and power tree v0 §3, §4.5 (T1 context).

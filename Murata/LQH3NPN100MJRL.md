@@ -17,7 +17,7 @@ Not available: datasheet not downloaded. **UNVERIFIED**
 
 ## Recommended operating conditions
 
-L = 10 µH (BOM). Isat, Itemp, DCR, SRF **UNVERIFIED**. Requirement from the T1 calculation: peak current 0.45 A at full brightness and VIN = 3.5 V (power tree §4.5, re-derived in the TPS61169 sheet); power tree §4.5 asks for ≥ 0.6 A saturation.
+L = 10 µH (BOM). Isat, Itemp, DCR, SRF **UNVERIFIED**. Requirement from the T1 calculation: peak current 0.45 A at full brightness and VIN = 3.5 V (power tree §4.5), 0.46 A at VIN = 3.4 V, the low end of VSYS on battery (re-derived in the TPS61169 sheet); power tree §4.5 asks for ≥ 0.6 A saturation.
 
 ## Power by mode
 

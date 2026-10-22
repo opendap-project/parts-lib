@@ -1071,3 +1071,119 @@ url = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF
 # sha256 pending: not downloaded yet
 # 51; 51
 redistributable = false
+
+# Board BOM v1.1 additions (2026-10-22). sha256 of the copy downloaded from the URL shown, where it was.
+
+[[file]]
+mpn = "TPS61089RNRR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps61089.pdf"
+revision = "SLVSD38C"
+date = "2021-08"
+sha256 = "863eda98cbb0853553e7cfd4f199027fcca5b80a5e0fb57448aeccabce061e0d"
+redistributable = false
+
+[[file]]
+mpn = "TPS7A2031PDBVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a20.pdf"
+revision = "SBVS338H"
+date = "2024-07"
+sha256 = "b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0"
+redistributable = false
+
+[[file]]
+mpn = "TPS62A03DRLR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62a03.pdf"
+revision = "SLUSFD4A"
+date = "2024-10"
+sha256 = "db38a14c2b2dfcfb6cdd81baa36ab230aca30df836b81cb974d7ec4ed19c9381"
+# fallback for the vcc3v3_sys buck (BOM line 6)
+redistributable = false
+
+[[file]]
+mpn = "SN74AXC2T245RSWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc2t245.pdf"
+revision = "SCES879A"
+date = "2024-02"
+sha256 = "fd6cf4a6e830e80e76a2cbca4351f067dae9f8e3915d5086104a70e2d72e5d4f"
+redistributable = false
+
+[[file]]
+mpn = "SN74AVC2T245RSWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74avc2t245.pdf"
+revision = "SCES692E"
+date = "2024-09"
+sha256 = "2d473c07fce653298ed85fa2b948201ca6bd91616cd2b04eb486760c9de0eb3b"
+# second source for SN74AXC2T245RSWR
+redistributable = false
+
+[[file]]
+mpn = "SN74LVC1G57DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g57.pdf"
+revision = "SCES414P"
+date = "2016-11"
+sha256 = "078364de617898af0dd4cee99931ab1d36b622824a06e8f9b7fa95087644af24"
+redistributable = false
+
+[[file]]
+mpn = "SN74LVC1G58DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g58.pdf"
+revision = "SCES415N"
+date = "2013-12"
+sha256 = "c9f14665a6c5631feeee9a82ccb5328b51a83ad3ea90c49e2d53713520877e8a"
+redistributable = false
+
+[[file]]
+mpn = "ECS-2016MV-120-BN-TR"
+manufacturer = "ECS Inc."
+kind = "datasheet"
+url = "https://ecsxtal.com/store/pdf/ECS-2016MV.pdf"
+revision = "Rev. 2025"
+date = "2025"
+sha256 = "f179ffbc8a8257a363abd72fb03ddc445cfae44fed3edb7e32cd938101c61872"
+redistributable = false
+
+[[file]]
+mpn = "PMEG6010CEH"
+manufacturer = "Nexperia"
+kind = "datasheet"
+url = "https://assets.nexperia.com/documents/data-sheet/PMEG6010CEH_PMEG6010CEJ.pdf"
+revision = "Rev. 02"
+date = "2007-03-27"
+# sha256 pending: not downloaded yet
+# HTTP 403 from this host; the copy read for the spec sheet came from the LCSC mirror (sha256 00cb4092481811245afeadff66d4bf266ff5486c7ca28fb47e822868f8689bee)
+redistributable = false
+
+[[file]]
+mpn = "19-217/G7C-AN1P2/6T"
+manufacturer = "Everlight"
+kind = "datasheet"
+url = "https://www.everlighteurope.com/custom/files/datasheets/DSE-0014851.pdf"
+revision = "DSE-0014851 Rev. 4"
+date = "2021-12-16"
+sha256 = "9329ea0e5aeb9d40f738f4bc8824cc6f3a6b63ab2bc7fe237d06fa69fac017d5"
+redistributable = false
+
+[[file]]
+mpn = "Radxa ROCK 3C schematic"
+manufacturer = "Radxa"
+kind = "datasheet"
+url = "https://dl.radxa.com/rock3/docs/hw/3c/v1400/radxa_rock_3c_v1400_schematic.pdf"
+revision = "v1.4"
+date = "2024-03-05"
+sha256 = "34c3113b192357c97ed42b979ab7f6242c492d3f2e02207e128ec35d1733b5bd"
+# RK809-5 reference
+redistributable = false

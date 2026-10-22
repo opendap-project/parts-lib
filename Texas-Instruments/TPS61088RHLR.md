@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 91 (Power), HAT_5V and USB-C VBUS source boost ahead of eFuses #A and #C; inductor line 92; status Proposed (new)
 - **Package:** VQFN (RHL) from the MPN suffix; pin count and size **UNVERIFIED**
 - **Datasheet:** TPS61088 datasheet, revision and date **UNVERIFIED**, <https://www.ti.com/lit/ds/symlink/tps61088.pdf>
-- **Status:** Datasheet not downloaded: every field UNVERIFIED. On 2026-10-22 TI returned **HTTP 404** for both the datasheet URL and the product page `ti.com/product/TPS61088` (the TPS61089 URLs still answer 200). The part's status at TI is therefore unknown and must be checked before it stays in the BOM. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
+- **Status:** Not in the current BOM (replaced in BOM v1.1 by TPS61089RNRR). Datasheet not downloaded: every field UNVERIFIED. On 2026-10-22 TI returned **HTTP 404** for both the datasheet URL and the product page `ti.com/product/TPS61088` (the TPS61089 URLs still answer 200). The part's status at TI is therefore unknown and must be checked before it stays in the BOM. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 

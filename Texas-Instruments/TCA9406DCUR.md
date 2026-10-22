@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 94 (second source for the HAT ID translator PCA9306DCUR)
 - **Package:** VSSOP-8 (DCU, "US8"), 2.30 × 2.00 mm body (nominal), 0.5 mm pitch
 - **Datasheet:** TCA9406, SCPS221G (October 2010, revised November 2018), `tca9406.pdf`. The `manifest.toml` entry for this MPN currently points at the PCA9306 datasheet (URL `pca9306.pdf`, sha256 `1cd97c734729…`); the correct file is <https://www.ti.com/lit/ds/symlink/tca9406.pdf>, sha256 `fdb80d682fbacd5ef18cbafc57e4d9375a295daa38da33721af6e055f8a7da61` (downloaded 2026-10-22)
-- **Status:** Partly UNVERIFIED
+- **Status:** Not in the current BOM (removed in BOM v1.1 as second source for PCA9306DCUR: not pin-compatible, §9 item D9). Partly UNVERIFIED
 
 ## Summary
 

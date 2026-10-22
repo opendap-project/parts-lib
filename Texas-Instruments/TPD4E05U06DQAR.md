@@ -2,7 +2,7 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 4-channel unidirectional TVS ESD protection, ultra-low capacitance
-- **BOM v1 lines:** 62 (main USB-C D+/D−), 68 (HAT high-speed pairs at the pogo field, quantity 6), 72 (faceplate MIPI DSI lanes, quantity 3)
+- **BOM v1 lines:** 62 (main USB-C D+/D−), 68 (HAT high-speed pairs at the pogo field, quantity 6), 72 (faceplate MIPI DSI lanes, quantity 3); since BOM v1.1 also 69 (HAT low-speed lines, quantity 12), 73 (microSD, quantity 2) and 75 (faceplate low-speed lines, quantity 5), replacing the TPD6E05U06RVZR
 - **Package:** USON-10 (DQA), 2.5 × 1.0 mm, 0.5 mm pitch
 - **Datasheet:** TPD1E05U06, TPD4E05U06, TPD6E05U06, SLVSBO7O (December 2012, revised August 2024), sha256 `c167cf1e72a5…` in `manifest.toml`
 - **Status:** Partly UNVERIFIED

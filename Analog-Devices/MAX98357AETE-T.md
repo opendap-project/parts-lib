@@ -121,7 +121,7 @@ None listed in `manifest.toml`. Manufacturer models: **UNVERIFIED**. An evaluati
 
 ## Design notes for the T1
 
-- Supply from VSYS: VDD range 2.5–5.5 V; VSYS minimum (3.5 V per ADR 0010) is inside it. Confirm the VSYS maximum stays at or below 5.5 V: **UNVERIFIED** here.
+- Supply from VSYS: VDD range 2.5–5.5 V; VSYS 3.4–4.4 V (power tree v0 §3; on battery VSYS follows VBAT below the 3.5 V VSYSMIN) is inside it. Confirm the VSYS maximum stays at or below 5.5 V: **UNVERIFIED** here.
 - Speaker rated 0.7 W (BOM line 33). At VDD = 3.7 V and 12 dB the amplifier gives 0.77 W at 1 % THD+N into 8 Ω (p. 5); the gain strap and the OS limiter must keep the speaker below its rating. Lower gain (3 or 6 dB) reduces the reachable level.
 - SD_MODE from a 1.8 V GPIO: a direct high (1.8 V, above B2) selects the left channel; VDD (VSYS) is always above 1.8 V, so no series resistor is needed for the absolute-maximum limit (p. 17).
 - If SD_MODE is not driven, removing BCLK still gives 340 µA standby, not the 0.6 µA shutdown (p. 17).

@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 95 (I2S-A MCLK and DOUT on the DAC clock)
 - **Package:** VSSOP-8 (DCU), 2 × 3.1 mm nominal, 0.5 mm pitch
 - **Datasheet:** SN74AXC2T45, SCES880D (August 2019, revised January 2024), `sn74axc2t45.pdf`, sha256 `2fbbad36930a9d370e15affdf9378246188b43efc53ba338f79f36ea29564990` (downloaded 2026-10-22 from <https://www.ti.com/lit/ds/symlink/sn74axc2t45.pdf>). The `manifest.toml` entry for this MPN currently points at the SN74AXC8T245 datasheet (sha256 `6cf4003c438c…`)
-- **Status:** Partly UNVERIFIED
+- **Status:** Not in the current BOM (replaced in BOM v1.1 by [SN74AXC2T245RSWR](SN74AXC2T245RSWR.md)). Partly UNVERIFIED
 
 ## Summary
 

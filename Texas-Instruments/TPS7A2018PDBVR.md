@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 29 (DAC1 VA and DAC2 VA low-noise LDOs, 1.8 V, qty 2)
 - **Package:** SOT-23-5 (DBV0005A), 2.9 × 2.8 mm nominal, 1.45 mm max height
 - **Datasheet:** *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H". File sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
-  - Same datasheet as [TPS7A2033PDBVR](TPS7A2033PDBVR.md).
+  - Same datasheet as [TPS7A2031PDBVR](TPS7A2031PDBVR.md) and [TPS7A2033PDBVR](TPS7A2033PDBVR.md).
 - **Status:** Partly UNVERIFIED
 
 ## Summary

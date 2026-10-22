@@ -57,7 +57,7 @@ The individual shell-land dimensions are transcribed from a compact drawing: che
 
 ## Application circuit and required passives
 
-Not given in the catalog. The SD/SDIO pull-ups, the VDD bulk capacitance and the LDO5 1.8/3.3 V signalling switch follow the RK3566 reference design (Radxa ZERO 3W schematic in the cache); values are **UNVERIFIED** here. ESD: TPD6E05U06 on CLK, CMD, D0–D3 (line 73).
+Not given in the catalog. The SD/SDIO pull-ups, the VDD bulk capacitance and the LDO5 1.8/3.3 V signalling switch follow the RK3566 reference design (Radxa ZERO 3W schematic in the cache); values are **UNVERIFIED** here. ESD: TPD4E05U06DQAR ×2 on CLK, CMD, D0–D3 (line 73; TPD6E05U06 until BOM v1.1).
 
 ## Interfaces and timing
 

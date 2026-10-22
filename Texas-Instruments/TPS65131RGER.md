@@ -57,7 +57,7 @@ SLVS493E, p. 5, §6.5, VIN = 3.6 V, TJ = 25 °C typical.
 
 - Power-save mode (PSP / PSN high): pulse skipping at light load, per converter (SLVS493E, p. 10, §7.4.1). PSx low forces continuous PWM.
 - Between VUVLO and 2.7 V the device keeps operating without guaranteed performance; below VUVLO (2.1 / 2.35 / 2.7 V min/typ/max) both converters are off (SLVS493E, p. 5 and p. 10, §7.4.3–7.4.4).
-- Efficiency: up to 89 % (boost) and 81 % (inverter); combined up to 85 % (SLVS493E, p. 1). Efficiency at the T1 operating point (VIN 3.5–4.4 V, ±6 V, 10–45 mA) is **UNVERIFIED**.
+- Efficiency: up to 89 % (boost) and 81 % (inverter); combined up to 85 % (SLVS493E, p. 1). Efficiency at the T1 operating point (VIN = VSYS 3.4–4.4 V, power tree v0 §3; ±6 V, 10–45 mA) is **UNVERIFIED**.
 
 ## Pinout and package
 

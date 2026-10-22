@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 98 (MaskROM combo NOR gate)
 - **Package:** SC70-6 (DCK), 0.65 mm pitch
 - **Datasheet:** SN74LVC1G27, SCES488E (September 2003, revised December 2013), sha256 `52eba79ea5ba…` in `manifest.toml`
-- **Status:** Partly UNVERIFIED
+- **Status:** Not in the current BOM (replaced in BOM v1.1 by [SN74LVC1G57DCKR](SN74LVC1G57DCKR.md) + [SN74LVC1G58DCKR](SN74LVC1G58DCKR.md)). Partly UNVERIFIED
 
 ## Summary
 

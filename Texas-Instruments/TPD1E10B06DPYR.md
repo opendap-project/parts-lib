@@ -2,7 +2,7 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** Single-channel bidirectional TVS ESD protection diode
-- **BOM v1 lines:** 36 (Audio, headphone output and detect-line ESD), quantity 8; 74 (Protection, button ESD: Power, Action, Vol+, Vol−), quantity 4
+- **BOM v1 lines:** 36 (Audio, headphone output and detect-line ESD), quantity 8; 74 (Protection, button ESD: Power, Action, Vol+, Vol−), quantity 4; 69 (HAT line-level audio, bidirectional), quantity 4, since BOM v1.1
 - **Package:** DPY, 2-pin X1SON, 1.0 × 0.6 mm (0402)
 - **Datasheet:** TI TPD1E10B06 Single-Channel ESD Protection Diode, SLLSEB1G, February 2012, revised August 2024, 33 pages (cited as "SLLSEB1G"); sha256 in `manifest.toml`
 - **Status:** Partly UNVERIFIED

@@ -106,7 +106,7 @@ No model is listed in `manifest.toml`. A TI PSpice or TINA model is **UNVERIFIED
 ## Design notes for the T1
 
 - **1.8 V rails (DAC_DIG_1V8, FP_1V8, MIC_1V8, RP_IOVDD_1V8):** VIN = 1.8 V is inside the 1.6 V minimum, but RON rises to 105 mΩ typ / 300 mΩ max at 25 °C and 500 mΩ max at 125 °C (p. 5). At 13 mA (DAC_DIG_1V8, power tree §3) the drop is under 7 mV even at 500 mΩ (calculation).
-- **DAC_VP from VSYS (3.5–4.4 V):** inside the 5.5 V operating limit. VP must be first on and last off for the CS43198 (power tree §6.2); the 1.5–2 ms tON delays VP, so the sequence must wait for it before enabling the other DAC rails.
+- **DAC_VP from VSYS (3.4–4.4 V; on battery VSYS follows VBAT below the 3.5 V VSYSMIN, power tree v0 §3):** inside the 5.5 V operating limit. VP must be first on and last off for the CS43198 (power tree §6.2); the 1.5–2 ms tON delays VP, so the sequence must wait for it before enabling the other DAC rails.
 - **Default off:** the smart pull-down keeps ON low only while ON is below VIL and is weak (530 kΩ). Keep an external pull-down on each enable net so the default state in power tree §5 holds when the driving GPIO or expander is in reset.
 - **QOD:** power tree §5 assumes QOD active on every switch; tie QOD to VOUT (or through RQOD) in the schematic, otherwise the output floats when off (p. 14, Table 2).
 - **Back-powering:** the datasheet does not state reverse-current blocking. Any rail fed back through IO pins of a powered-off block (I2S into the DAC, faceplate IO) must be parked low before the switch opens, as power tree §5 already requires. Reverse-current behaviour is **UNVERIFIED**.

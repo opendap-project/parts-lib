@@ -6,7 +6,7 @@
 - **Package:** SOT-23-5 (DBV0005A)
 - **Datasheet:** *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H". File sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
   - Same datasheet as [TPS7A2018PDBVR](TPS7A2018PDBVR.md); this sheet repeats only what differs for the 3.3 V version and the clock supply.
-- **Status:** Partly UNVERIFIED
+- **Status:** Not in the current BOM (replaced in BOM v1.1 by TPS7A2031PDBVR). Partly UNVERIFIED
 
 ## Summary
 

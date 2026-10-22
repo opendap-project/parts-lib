@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 53 (Power), TPS61169 backlight boost rectifier, status Proposed
 - **Package:** SOD123F (from the `EH` suffix, **UNVERIFIED**)
 - **Datasheet:** PMEG4010CEH data sheet, revision and date **UNVERIFIED**, <https://assets.nexperia.com/documents/data-sheet/PMEG4010CEH.pdf>
-- **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL returned HTTP 403 (Access Denied) to curl and to WebFetch on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
+- **Status:** Not in the current BOM (replaced in BOM v1.1 by PMEG6010CEH). Datasheet not downloaded: every field UNVERIFIED. The manifest URL returned HTTP 403 (Access Denied) to curl and to WebFetch on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.
 
 ## Summary
 

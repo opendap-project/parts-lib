@@ -9,7 +9,7 @@
 
 ## Summary
 
-The BAT54 is a planar Schottky barrier diode with an integrated guard ring in SOT23 (BAT54 v.6 §1, p. 1). In the T1 it isolates the RK809 PWRON node from the MaskROM combo logic: cathode on PWRON, anode on the NOR input of the SN74LVC1G27, which has a pull-up to vcca1v8_pmu (BOM v1 line 78). The ",215" suffix is Nexperia's packing code. v.6 removed packing information (Revision history, p. 8), so the ",215" reel details are **UNVERIFIED** from this document.
+The BAT54 is a planar Schottky barrier diode with an integrated guard ring in SOT23 (BAT54 v.6 §1, p. 1). In the T1 it isolates the RK809 PWRON node from the MaskROM combo logic: cathode on PWRON, anode on the In2 input of the SN74LVC1G57 configured as a NOR (BOM v1.1 line 98; it replaced the SN74LVC1G27), which has a pull-up to vcca1v8_pmu (BOM v1 line 78). The ",215" suffix is Nexperia's packing code. v.6 removed packing information (Revision history, p. 8), so the ",215" reel details are **UNVERIFIED** from this document.
 
 ## Absolute maximum ratings
 
@@ -89,7 +89,7 @@ None listed in `manifest.toml`. Whether Nexperia publishes a SPICE model for BAT
 
 ## Design notes for the T1
 
-- Isolation function: when PWRON is pressed (low), the diode conducts and pulls the NOR input to about VF above PWRON. At the µA–mA currents set by a pull-up from 1.8 V, VF max is 240 mV at 0.1 mA and 320 mV at 1 mA (Table 7, p. 4). The SN74LVC1G27 VIL limit at 1.8 V supply must be checked against PWRON-low + VF (see its sheet).
+- Isolation function: when PWRON is pressed (low), the diode conducts and pulls the NOR input to about VF above PWRON. At the µA–mA currents set by a pull-up from 1.8 V, VF max is 240 mV at 0.1 mA and 320 mV at 1 mA (Table 7, p. 4). The SN74LVC1G57 negative-going threshold at 1.8 V supply must be checked against PWRON-low + VF (see [its sheet](../Texas-Instruments/SN74LVC1G57DCKR.md)).
 - When PWRON is released, the diode must stay off: the RK809 PWRON idle voltage must be at or above the NOR input's pull-up level minus a few hundred mV. The BOM marks the RK809 PWRON idle voltage **UNVERIFIED**. If it is well below 1.8 V, the diode forward-biases at idle, the NOR sees a low input and the combo logic is defeated (BOM v1 line 78 note).
 - Reverse leakage at 25 V is ≤ 2 µA at 25 °C (Table 7). At the ≤ 1.8 V reverse bias in this circuit it is lower, but it rises with temperature (Fig. 2, p. 4). Size the pull-up so the leakage at 85 °C cannot pull the NOR input below VIH. The 85 °C value at 1.8 V is not tabulated, only plotted (**UNVERIFIED** numeric value).
 - v.6 states the product moved to non-automotive qualification (p. 8); no impact for the T1.

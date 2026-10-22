@@ -9,7 +9,7 @@
 
 ## Summary
 
-The TLV62569 is a 1.5 MHz synchronous buck converter with integrated 100 mΩ / 60 mΩ switches, a 2.5–5.5 V input range, power-save mode at light load, 100 % duty-cycle dropout operation and a sub-2 µA shutdown current (SLVSDG1C p. 1, §1). The DBV variant has no power-good pin (p. 3, Pin Functions). The T1 uses two: one makes `vcc3v3_sys` (3.3 V, 2 A) from VSYS for the eMMC, the RK809 VCC9 switch input and the 3.3 V logic, enabled by the RK809 `EXT_EN` (BOM line 6); the other makes `HAT_3V3` from VSYS ahead of eFuse #B (BOM line 38, power tree §3).
+The TLV62569 is a 1.5 MHz synchronous buck converter with integrated 100 mΩ / 60 mΩ switches, a 2.5–5.5 V input range, power-save mode at light load, 100 % duty-cycle dropout operation and a sub-2 µA shutdown current (SLVSDG1C p. 1, §1). The DBV variant has no power-good pin (p. 3, Pin Functions). The T1 uses two: one makes `vcc3v3_sys` (3.3 V, 2 A) from VSYS for RK809 VCC5–VCC9, the eMMC, the RP2354A and the 3.3 V logic, always on with EN tied to VSYS (BOM v1.1 line 6; RK809 `EXT_EN` unused); the other makes `HAT_3V3` from VSYS ahead of eFuse #B (BOM line 38, power tree §3).
 
 ## Absolute maximum ratings
 
@@ -91,7 +91,7 @@ The EN thresholds accept 1.8 V and 3.3 V logic. The device starts into a pre-bia
 
 ## Linux driver
 
-None required. In the device tree the rails are `regulator-fixed` nodes: `vcc3v3_sys` with its enable owned by the RK809 `EXT_EN` (no GPIO), `HAT_3V3` with `gpio` = `HAT3V3_EN` (power tree §5). This mapping is OpenDAP's design, not a datasheet statement.
+None required. In the device tree the rails are `regulator-fixed` nodes: `vcc3v3_sys` always on (`regulator-always-on`, EN tied to VSYS, no GPIO), `HAT_3V3` with `gpio` = `HAT3V3_EN` (power tree §5). This mapping is OpenDAP's design, not a datasheet statement.
 
 ## Simulation models
 
@@ -99,12 +99,13 @@ No model is listed in `manifest.toml`. The datasheet points to a WEBENCH model (
 
 ## Design notes for the T1
 
-- **Dropout near VSYSMIN.** In 100 % duty cycle VIN(MIN) = VOUT + IOUT × (RDS(ON) + RL) (p. 6, §7.3.2, Equation 1). With VSYSMIN = 3.5 V and 0.1 Ω high-side RDS(ON), 3.3 V holds only while IOUT × (0.1 Ω + DCR) ≤ 0.2 V, i.e. below about 2 A minus the DCR share. At the expected `vcc3v3_sys` peak of 1.3 A (est., power tree §3) the margin is about 0.07 V minus 1.3 A × DCR. Pick a low-DCR inductor and check `vcc3v3_sys` at VSYSMIN.
+- **Dropout at low battery.** In 100 % duty cycle VIN(MIN) = VOUT + IOUT × (RDS(ON) + RL) (p. 6, §7.3.2, Equation 1). On battery VSYS follows VBAT below the BQ25895 VSYSMIN of 3.5 V; power tree v0 §3 gives VSYS 3.4–4.4 V. At VSYS = 3.4 V with 0.1 Ω high-side RDS(ON), 3.3 V holds only while IOUT × (0.1 Ω + DCR) ≤ 0.1 V, i.e. below 1 A even with a zero-DCR inductor. At the `vcc3v3_sys` peak of 1.6–1.8 A (est., BOM v1.1 line 6, power tree §3) the output sags to about VSYS − IOUT × (0.1 Ω + DCR) ≈ 3.2 V or less. Check the minimum input voltages of the `vcc3v3_sys` loads (RK809 VCC9 3.0 V minimum, p. 16 of its datasheet; eMMC VCC) against that sag, and size the inductor DCR with it (**UNVERIFIED** until the loads are re-summed from the schematic).
+- **Peak load.** 1.6–1.8 A (est.) against the 2 A rating now that the rail feeds RK809 VCC5–VCC9 (BOM v1.1 line 6); the 3 A TPS62A03 (SOT-563) is the named fallback.
 - **HAT_3V3 (line 38):** the eFuse #B ILIM of 1.0 A sits below this converter's 2 A rating, so the converter is never the limiting element.
 - **Thermal:** RθJA 188 °C/W is a JEDEC figure; use copper on VIN, GND and SW (p. 13, §10.3).
-- **EN not floating:** both EN nets need a defined level with no software running (pull-down on `HAT3V3_EN`; RK809 `EXT_EN` drives `vcc3v3_sys`).
+- **EN not floating:** both EN nets need a defined level with no software running (pull-down on `HAT3V3_EN`; `vcc3v3_sys` EN tied to VSYS; VIN and EN share the 6 V absolute maximum, p. 3, §6.1).
 
 ## Sources
 
 - TI, TLV62569 / TLV62569P datasheet, SLVSDG1C, revised October 2017, <https://www.ti.com/lit/ds/symlink/tlv62569.pdf>, sha256 `1ba6f55dfe678d06d563acd6632f1f950a497d812270806021097b55cd81d3c4` (manifest). Page numbers are PDF page numbers.
-- OpenDAP board BOM v1 lines 6, 7, 38 and power tree v0 §3, §5 (T1 context).
+- OpenDAP board BOM v1 (v1.1) lines 6, 7, 38 and power tree v0 §2, §3, §5 (T1 context).
