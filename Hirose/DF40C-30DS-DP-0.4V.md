@@ -5,7 +5,7 @@
 - **BOM v1 lines:** 66 (power (VHAT, 3V3 and returns); 2 + 2 per end, Proposed, picked in ADR 0009)
 - **Package:** SMT, double row. Header 7.52 × 2.97 mm, 1.14 mm high; receptacle 8.6 × 3.38 mm, 1.45 mm high
 - **Datasheet:** DF40 Series catalog, edition May 1, 2020 (catalog 2020.2); DF40C-*DP-0.4V(51) header drawing EDC3-311351-00 (revision 7, 2018-11-19) and specification sheet ELC4-311351-01 (2008-06-27). Copies obtained from the LCSC datasheet mirror.
-- **Status:** Partly UNVERIFIED
+- **Status:** Partly UNVERIFIED. Not in the current BOM (replaced in BOM v1.2 by the [DF40C-50DP-0.4V(51) + DF40C-50DS-0.4V(51)](DF40C-50DS-DP-0.4V.md) pair, line 66)
 
 ## Summary
 

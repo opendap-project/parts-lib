@@ -2,7 +2,7 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 2 A synchronous step-down converter, adjustable output, SOT-23-5
-- **BOM v1 lines:** 6 (Core, `vcc3v3_sys`) and line 38 (Power, `HAT_3V3`), status Proposed
+- **BOM v1 lines:** 38 (Power, `HAT_3V3`), status Proposed. Line 6 (Core, `vcc3v3_sys`) used it until BOM v1.1; BOM v1.2 replaced it there by the [TPS62826DMQR](TPS62826DMQR.md)
 - **Package:** SOT-23 5-pin (DBV, drawing DBV0005A)
 - **Datasheet:** TLV62569 2-A High Efficiency Synchronous Buck Converter in SOT Package, SLVSDG1C (December 2016, revised October 2017), <https://www.ti.com/lit/ds/symlink/tlv62569.pdf>
 - **Status:** Partly UNVERIFIED
@@ -100,7 +100,7 @@ No model is listed in `manifest.toml`. The datasheet points to a WEBENCH model (
 ## Design notes for the T1
 
 - **Dropout at low battery.** In 100 % duty cycle VIN(MIN) = VOUT + IOUT × (RDS(ON) + RL) (p. 6, §7.3.2, Equation 1). On battery VSYS follows VBAT below the BQ25895 VSYSMIN of 3.5 V; power tree v0 §3 gives VSYS 3.4–4.4 V. At VSYS = 3.4 V with 0.1 Ω high-side RDS(ON), 3.3 V holds only while IOUT × (0.1 Ω + DCR) ≤ 0.1 V, i.e. below 1 A even with a zero-DCR inductor. At the `vcc3v3_sys` peak of 1.6–1.8 A (est., BOM v1.1 line 6, power tree §3) the output sags to about VSYS − IOUT × (0.1 Ω + DCR) ≈ 3.2 V or less. Check the minimum input voltages of the `vcc3v3_sys` loads (RK809 VCC9 3.0 V minimum, p. 16 of its datasheet; eMMC VCC) against that sag, and size the inductor DCR with it (**UNVERIFIED** until the loads are re-summed from the schematic).
-- **Peak load.** 1.6–1.8 A (est.) against the 2 A rating now that the rail feeds RK809 VCC5–VCC9 (BOM v1.1 line 6); the 3 A TPS62A03 (SOT-563) is the named fallback.
+- **Peak load.** 1.6–1.8 A (est.) against the 2 A rating now that the rail feeds RK809 VCC5–VCC9 (BOM v1.1 line 6); the 3 A TPS62A03 (SOT-563) is the named fallback. Superseded in BOM v1.2: line 6 moved to the 3 A TPS62826DMQR and the TPS62A03 fallback was dropped; this note applies to the v1.1 line 6 only.
 - **HAT_3V3 (line 38):** the eFuse #B ILIM of 1.0 A sits below this converter's 2 A rating, so the converter is never the limiting element.
 - **Thermal:** RθJA 188 °C/W is a JEDEC figure; use copper on VIN, GND and SW (p. 13, §10.3).
 - **EN not floating:** both EN nets need a defined level with no software running (pull-down on `HAT3V3_EN`; `vcc3v3_sys` EN tied to VSYS; VIN and EN share the 6 V absolute maximum, p. 3, §6.1).
