@@ -1,0 +1,12 @@
+# External part files: fetched into ~/.cache/opendap/parts/<manufacturer>/<mpn>/ and verified.
+# Never commit these files unless their licence allows redistribution (ADR 0001).
+#
+# [[file]]
+# mpn = "CS43198-CNZR"
+# manufacturer = "Cirrus Logic"
+# kind = "datasheet"            # datasheet | step | ibis | spice | touchstone | thermal | other
+# url = "https://…"
+# revision = "DS1147F2"
+# date = "2024-01-01"
+# sha256 = "…"
+# redistributable = false
