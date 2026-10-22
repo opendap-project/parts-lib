@@ -29,7 +29,7 @@ kind = "datasheet"
 url = "https://dl.radxa.com/rock3/docs/hw/datasheet/Rockchip-RK3568-Datasheet-V1.0-20201210.pdf"
 revision = "V1.0"
 date = "2020-12-10"
-sha256 = "1f97b585f023ee6e4183800650af09bf89abf7ec53bcee974674c371932bf697"
+sha256 = "a51fff0392e03d35ca39ad3d27e1718395cdd8f48187ce855b025b1169d0b2fe"
 # full, RK3568 family
 redistributable = false
 
@@ -505,7 +505,7 @@ mpn = "FUSB302BMPX"
 manufacturer = "onsemi"
 kind = "datasheet"
 url = "https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf"
-# sha256 pending: not downloaded yet
+sha256 = "bdea0857f98f931f42d2522359e9df8a2b83da9e5525efe076cd2091d32ff66a"
 redistributable = false
 
 [[file]]
@@ -711,7 +711,7 @@ mpn = "LSM6DSV16XTR"
 manufacturer = "STMicroelectronics"
 kind = "datasheet"
 url = "https://www.st.com/resource/en/datasheet/lsm6dsv16x.pdf"
-# sha256 pending: not downloaded yet
+sha256 = "ec53c0e5952fc0c9587ed32b56d066016c2954bc6e9d18355b13a1c4cda17894"
 redistributable = false
 
 [[file]]
@@ -838,7 +838,7 @@ mpn = "KMR221GLFS"
 manufacturer = "C&K"
 kind = "datasheet"
 url = "https://www.ckswitches.com/media/1479/kmr2.pdf"
-# sha256 pending: not downloaded yet
+sha256 = "2720f475dd31d921fcb70d1d32dd02bd52de8c88554f63b59809a1b744fb7a26"
 redistributable = false
 
 [[file]]
@@ -846,7 +846,7 @@ mpn = "PTS815SJM250SMTRLFS"
 manufacturer = "C&K"
 kind = "datasheet"
 url = "https://www.ckswitches.com/media/2768/pts815.pdf"
-# sha256 pending: not downloaded yet
+sha256 = "858ecdb21e9c8ce7146be4f3512defc531f6ffc4c67dd152d41d80c3a1c5d915"
 redistributable = false
 
 [[file]]
@@ -986,8 +986,8 @@ redistributable = false
 mpn = "TCA9406DCUR"
 manufacturer = "Texas Instruments"
 kind = "datasheet"
-url = "https://www.ti.com/lit/ds/symlink/pca9306.pdf"
-sha256 = "1cd97c734729f2bfca26ccaa93521c04c373568e4ebe6d892267dba2571e21e6"
+url = "https://www.ti.com/lit/ds/symlink/tca9406.pdf"
+# sha256 pending: not downloaded yet
 redistributable = false
 
 [[file]]
@@ -1002,24 +1002,24 @@ redistributable = false
 mpn = "SN74AXC4T774PWR"
 manufacturer = "Texas Instruments"
 kind = "datasheet"
-url = "https://www.ti.com/lit/ds/symlink/sn74axc8t245.pdf"
-sha256 = "6cf4003c438c0546fb86f0932613896197dd19a75bdb307f385eb6e75535126e"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc4t774.pdf"
+# sha256 pending: not downloaded yet
 redistributable = false
 
 [[file]]
 mpn = "SN74AXC2T45DCUR"
 manufacturer = "Texas Instruments"
 kind = "datasheet"
-url = "https://www.ti.com/lit/ds/symlink/sn74axc8t245.pdf"
-sha256 = "6cf4003c438c0546fb86f0932613896197dd19a75bdb307f385eb6e75535126e"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc2t45.pdf"
+# sha256 pending: not downloaded yet
 redistributable = false
 
 [[file]]
 mpn = "SN74AXC1T45DCKR"
 manufacturer = "Texas Instruments"
 kind = "datasheet"
-url = "https://www.ti.com/lit/ds/symlink/sn74axc8t245.pdf"
-sha256 = "6cf4003c438c0546fb86f0932613896197dd19a75bdb307f385eb6e75535126e"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf"
+# sha256 pending: not downloaded yet
 redistributable = false
 
 [[file]]
@@ -1043,7 +1043,7 @@ mpn = "BAT54"
 manufacturer = "Nexperia"
 kind = "datasheet"
 url = "https://assets.nexperia.com/documents/data-sheet/BAT54_SER.pdf"
-# sha256 pending: not downloaded yet
+sha256 = "40b7447c4bbe3a9153d07a28620275322e1b4a7375c89de312d1f4b8c7325847"
 redistributable = false
 
 [[file]]
