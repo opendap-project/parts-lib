@@ -3,6 +3,7 @@
 - **Manufacturer:** Texas Instruments
 - **Function:** Dual-output DC-DC converter: boost for the positive output, inverting buck-boost for the negative output
 - **BOM v1 lines:** 22 (HP-amp pre-rails ±7.0 V; v1.3: ±6.0 → ±7.0 V, ADR 0012), quantity 1; inductors on line 23, rectifiers on line 24, feedback and output network on line 111
+- **BOM v1.6:** board ADR 0015 uses only the boost half (+7 V, from VSYS_LV); the inverter needs 101 % of its 1.8 A minimum switch limit at the full-scale peak ([output-stage simulation](https://github.com/opendap-project/board/blob/main/docs/research/2026-10-output-stage-simulation.md)) and is unused: ENN and PSN to GND, INN on VIN with its input capacitor, VNEG and FBN to AGND, OUTN open (connection not in SLVS493E, **UNVERIFIED**, to confirm with TI). Boost at 56–78 % in operation, ≈ 99 % at the positive LDO pair's maximum trip. −7 V comes from an [LMR33630CRNXR](LMR33630CRNXR.md).
 - **Package:** VQFN-24 (RGE), 4 × 4 mm, exposed thermal pad
 - **Datasheet:** *TPS6513x Dual, Positive and Negative Output DC-DC Converter*, SLVS493E, March 2004, revised April 2022. Cited below as "SLVS493E". File sha256 `e8360b9509047317416cfd9163a09d8cdf5c8accbd4e702ad6a43292ef48e0ed` (matches the BOM v1 Datasheets table).
 - **Status:** Partly UNVERIFIED

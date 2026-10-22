@@ -3,6 +3,7 @@
 - **Manufacturer:** Analog Devices
 - **Function:** 1-cell fuel gauge (ModelGauge m5 EZ per the vendor's product naming, **UNVERIFIED**)
 - **BOM v1 lines:** 42 (Power, battery fuel gauge), status Proposed; sense resistor line 43, optional thermistor line 101
+- **BOM v1.5:** removed from line 42 by board ADR 0014 (a 1-cell gauge cannot gauge a 2S pack); replaced by the [BQ28Z610DRZR-R1](../Texas-Instruments/BQ28Z610DRZR-R1.md); line 101 removed. Kept for traceability.
 - **Package:** WLP (the `EWL` suffix; ball count and pitch **UNVERIFIED**)
 - **Datasheet:** MAX17055 datasheet, revision and date **UNVERIFIED**, <https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17055.pdf>
 - **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL timed out from this host on 2026-10-22 (curl and WebFetch, three attempts). Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.

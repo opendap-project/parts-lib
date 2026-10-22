@@ -3,6 +3,7 @@
 - **Manufacturer:** Analog Devices (Linear Technology)
 - **Function:** −20 V, 500 mA ultralow-noise, ultrahigh-PSRR negative linear regulator, output set by one resistor on a 100 µA SET current
 - **BOM v1 lines:** 26 (Audio, −6.0 V HP-amp LDO, HPA_N6V0), quantity 1, Proposed (v1.3: replaces the TPS7A3001DGNR, ADR 0012, D30; LT3094EDD#PBF, the same part in tube, is the listed alternative), paired with the [LT3045EDD#TRPBF](LT3045EDD-TRPBF.md) on line 25. Its RSET, RILIM and capacitors are on lines 109–110
+- **BOM v1.6 (board ADR 0015):** quantity 2 on line 26, in parallel (Rev. B p. 25, Figure 15): SET tied with RSET 2 × 60.4 kΩ, CSET 2 × 0.47 µF, each OUT through a 20 mΩ ballast; **RILIM 13.0 kΩ per device** (288 mA nominal, pair 519–646 mA). Input pre-rail now from an [LMR33630CRNXR](../Texas-Instruments/LMR33630CRNXR.md) inverting buck-boost (−7.06 V).
 - **Package:** 12-lead DFN (DD), 3 mm × 3 mm, 0.45 mm pitch, 0.75 mm height, exposed pad = IN
 - **Datasheet:** *LT3094 −20V, 500mA, Ultralow Noise, Ultrahigh PSRR Negative Linear Regulator*, Rev. B, 01/20. Cited below as "LT3094 Rev. B". Obtained from the LCSC datasheet mirror; analog.com did not answer from this host.
 - **Status:** Partly UNVERIFIED

@@ -3,6 +3,7 @@
 - **Manufacturer:** Texas Instruments
 - **Function:** 2 A synchronous step-down converter, adjustable output, SOT-23-5
 - **BOM v1 lines:** 38 (Power, `HAT_3V3`), status Proposed. Line 6 (Core, `vcc3v3_sys`) used it until BOM v1.1; BOM v1.2 replaced it there by the [TPS62826DMQR](TPS62826DMQR.md)
+- **BOM v1.5:** removed from line 38 by board ADR 0014 (5.5 V input maximum, below a 2S VSYS); replaced by the [TPS62903RPJR](TPS62903RPJR.md). Kept for traceability.
 - **Package:** SOT-23 5-pin (DBV, drawing DBV0005A)
 - **Datasheet:** TLV62569 2-A High Efficiency Synchronous Buck Converter in SOT Package, SLVSDG1C (December 2016, revised October 2017), <https://www.ti.com/lit/ds/symlink/tlv62569.pdf>
 - **Status:** Partly UNVERIFIED

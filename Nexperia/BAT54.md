@@ -3,6 +3,7 @@
 - **Manufacturer:** Nexperia
 - **Function:** Single Schottky barrier diode, 30 V, 200 mA
 - **BOM v1 lines:** 78 (MaskROM combo, PWRON isolation diode)
+- **BOM v1.6:** the PWRON_N pull-up goes from 20 kΩ to 100 kΩ: pressed level 261 mV at −20 °C against the 350 mV SN74LVC1G57 VT− minimum (89 mV margin) ([boost and MaskROM simulation](https://github.com/opendap-project/board/blob/main/docs/research/2026-10-boost-and-maskrom-simulation.md) §5.4).
 - **Package:** SOT23 (TO-236AB), 2.9 × 1.3 × 1 mm body; ordered as BAT54,215
 - **Datasheet:** BAT54 Schottky barrier diode, product data sheet BAT54 v.6 (1 July 2022). Obtained from the LCSC mirror of the Nexperia document, sha256 `40b7447c4bbe3a9153d07a28620275322e1b4a7375c89de312d1f4b8c7325847`. The manifest URL (assets.nexperia.com) refused the download in this session.
 - **Status:** Partly UNVERIFIED

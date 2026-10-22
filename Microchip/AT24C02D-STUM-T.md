@@ -97,7 +97,7 @@ None found. IBIS for this part is not referenced in 8871F. `manifest.toml`: one 
 
 ## Design notes for the T1
 
-- **Address conflict with the BOM.** BOM v1 line 17 and the pin plan put this EEPROM at 0x57 "A2–A0 = 111". The -STUM-T (SOT23) part has no address pins and answers only at 0x50 (8871F, p. 7). Either keep the SOT23 part at 0x50 on I2C2 (no other I2C2 device listed in BOM §4 uses 0x50; the HAT ID EEPROM is on its own bus behind the PCA9306), or change the ordering code to a package with A0–A2 pins (SOIC 8S1 -SSHM-T, TSSOP 8X -XHM-T, UDFN 8MA2 -MAHM-T; 8871F, pp. 16–17) to get 0x57. To be decided by the maintainers.
+- **Address conflict with the BOM: resolved (board BOM v1.5, 2026-10-22).** BOM v1 line 17 and the pin plan put this EEPROM at 0x57 "A2–A0 = 111", but the -STUM-T (SOT23) part has no address pins and answers only at 0x50 (8871F, p. 7). Decision (taken by the lead under the maintainers' delegation): keep the SOT23 part at **0x50** on I2C2. No other I2C2 device in BOM §4 uses 0x50, and the HAT ID EEPROM, also at 0x50, sits on its own bus (I2C4 behind the PCA9306), so the two never share a bus. The packages with A0–A2 pins (SOIC 8S1 -SSHM-T, TSSOP 8X -XHM-T, UDFN 8MA2 -MAHM-T; 8871F, pp. 16–17) are not needed.
 - VIH = 0.7 × VCC: with VCC = 1.8 V on the PMUIO2 bank, the bus is level-compatible without translation.
 - Power-up: the 1.8 V rail must rise no faster than 0.1 V/µs, and software must wait 100 µs after the rail is stable (8871F, p. 15).
 - Write-protect strategy (WP strapped high after factory programming, or driven from a GPIO) is open.

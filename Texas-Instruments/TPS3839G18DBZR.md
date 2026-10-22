@@ -3,6 +3,7 @@
 - **Manufacturer:** Texas Instruments
 - **Function:** Ultralow-power supply voltage supervisor, 1.67 V threshold, push-pull active-low RESET, 200 ms typical reset delay
 - **BOM v1 lines:** 97 (MaskROM combo power-on window supervisor)
+- **BOM v1.6:** removed from line 97: its 120–350 ms window on vcc_1v8 was too short to be guaranteed and reopened at every resume ([boost and MaskROM simulation](https://github.com/opendap-project/board/blob/main/docs/research/2026-10-boost-and-maskrom-simulation.md) §5); replaced by the [TPS3808G01DBVR](TPS3808G01DBVR.md) on vcca1v8_pmu. Kept for traceability.
 - **Package:** SOT-23-3 (DBZ)
 - **Datasheet:** TPS3831, TPS3839, SBVS193D (June 2012, revised July 2015), sha256 `a18940237afc…` in `manifest.toml`
 - **Status:** Partly UNVERIFIED

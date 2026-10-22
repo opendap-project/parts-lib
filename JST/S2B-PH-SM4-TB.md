@@ -3,6 +3,7 @@
 - **Manufacturer:** JST
 - **Function:** 2-circuit, 2.0 mm pitch wire-to-board header, side entry, surface mount (PH series)
 - **BOM v1 lines:** 47 (Power), battery connector mating the Adafruit 328 JST PHR-2 lead, status Proposed
+- **BOM v1.5:** removed from line 47 by board ADR 0014; replaced by the Molex Micro-Fit 3.0 [43650-0400](../Molex/43650-0400.md). Kept for traceability.
 - **Package:** SMT side-entry header, 2 contacts plus 2 tin-plated reinforcement tabs, 7.9 mm wide
 - **Datasheet:** JST PH Connector catalog (2.0 mm pitch wire-to-board, crimp style), 5 pages, <https://www.jst-mfg.com/product/pdf/eng/ePH.pdf>; revision and date not printed (**UNVERIFIED**)
 - **Status:** Partly UNVERIFIED

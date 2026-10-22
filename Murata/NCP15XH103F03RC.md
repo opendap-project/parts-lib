@@ -3,6 +3,7 @@
 - **Manufacturer:** Murata
 - **Function:** 10 kΩ NTC thermistor, 0402, B = 3380 K (per the BOM)
 - **BOM v1 lines:** 48 (Power, battery NTC on the BQ25895 TS pin) and line 101 (optional MAX17055 TH thermistor), status Proposed
+- **BOM v1.5:** line 48 moves to the BQ28Z610-R1 TS1 input (the BQ25798 TS takes the pack NTC); line 101 is removed (board ADR 0014).
 - **Package:** 0402 (1005 metric) chip NTC (`15` size code, **UNVERIFIED**)
 - **Datasheet:** Murata product page <https://www.murata.com/en-us/products/productdetail?partno=NCP15XH103F03RC> (redirects to pim.murata.com); PDF datasheet **UNVERIFIED**
 - **Status:** Datasheet not downloaded: every field UNVERIFIED. The manifest URL is a product page that redirects to pim.murata.com, which renders by script; no PDF was retrieved on 2026-10-22. Every value below comes from the OpenDAP BOM v1 or power tree v0 and is **UNVERIFIED** until the datasheet is read.

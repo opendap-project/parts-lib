@@ -3,6 +3,7 @@
 - **Manufacturer:** Adafruit
 - **Function:** Single-cell lithium-ion polymer pack, 2500 mAh, with protection circuit module (PCM) and 2-pin JST PH lead; Adafruit lists it as a lithium-ion polymer battery, 3.7 V 2500 mAh
 - **BOM v1 lines:** 46 (Power), the T1 battery, status Decided (board ADR 0007); connector line 47, board NTC line 48, gauge line 42
+- **BOM v1.5:** removed from line 46 by board ADR 0014: the Adafruit 328 is no longer a T1 pack (the T1 runs on a quoted 2S pack). Kept for traceability.
 - **Package:** Pouch cell 785060 with PCM and wire leads; pack 7.9 × 50.5 × 60.5 mm maximum with PCM
 - **Datasheet:** Polymer Lithium-ion Battery Product Specification, model 785060 2500mAh, Q/WAPL785060-1011, edition 1.0, Hunan Sounddon New Energy Co., Ltd (cell maker's sheet published by Adafruit), <https://cdn-shop.adafruit.com/datasheets/785060-2500mAh_specification_sheet.pdf>
 - **Status:** Partly UNVERIFIED

@@ -3,6 +3,7 @@
 - **Manufacturer:** Texas Instruments
 - **Function:** 12.6 V, 7 A fully integrated synchronous boost converter, adjustable switching frequency and peak current limit, PFM at light load
 - **BOM v1 lines:** 91 (HAT_5V / USB-C source 5.1 V boost from VSYS, qty 1; v1.1 replacement for the TPS61088RHLR); feeds eFuses #A and #C of line 44; inductor on line 92
+- **BOM v1.5:** removed from line 91 by board ADR 0014 (a boost cannot run from a 2S VSYS); replaced by the [TPS62903RPJR](TPS62903RPJR.md) buck. Kept for traceability.
 - **Package:** VQFN-HR 11 pins (RNR0011A), 2.0 × 2.5 mm nominal, 1 mm max height, 0.5 mm pitch
 - **Datasheet:** *TPS61089x 12.6-V, 7-A Fully-Integrated Synchronous Boost Converters in 2.0-mm x 2.5-mm VQFN Package*, SLVSD38C, November 2015, revised August 2021. Cited below as "SLVSD38C"; "p. n" is the printed page, "PDF p. n" the addendum and drawing pages. File sha256 `863eda98cbb0853553e7cfd4f199027fcca5b80a5e0fb57448aeccabce061e0d` (matches the BOM v1 Datasheets table).
 - **Status:** Partly UNVERIFIED

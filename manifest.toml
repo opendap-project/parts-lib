@@ -1406,3 +1406,199 @@ date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
 # RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 100 kΩ
 redistributable = false
+
+# Board BOM v1.5 (board ADR 0014, two-cell battery), 2026-10-22.
+
+[[file]]
+mpn = "BQ25798RQMR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/bq25798.pdf"
+revision = "SLUSDV2C"
+date = "2026-06"
+sha256 = "163e45683f62f208545920e1470054b352b4a4b0cdc201e1f19fcb1007f1e222"
+redistributable = false
+
+[[file]]
+mpn = "BQ28Z610DRZR-R1"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/bq28z610-r1.pdf"
+revision = "SLUSE07B"
+date = "2022-01"
+sha256 = "d7506515380a903d0e911d3ce523f950c409848f7f1523874db5379d981c4da0"
+redistributable = false
+
+[[file]]
+mpn = "TPS62136RGXR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62136.pdf"
+revision = "SLVSDV2"
+date = "2017-03"
+sha256 = "b445aeace2de2d6b9f657bb692104d848c17b8158f727f8e15a6ac738a13a70a"
+redistributable = false
+
+[[file]]
+mpn = "TPS62903RPJR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62903.pdf"
+revision = "SLVSES3A"
+date = "2021-03"
+sha256 = "323bfe650fdef2fa2c361f1264391a4e0d75c30772a49ee46f6741370250dcee"
+redistributable = false
+
+[[file]]
+mpn = "XGL4020-102MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+revision = "Document 1529"
+date = "2026-02-19"
+sha256 = "1e050d7e4f44f7e1f3ae3be38de87b15e4d72b2ef463c7b1f4edc292f83ad2c0"
+# same file for XGL4020-152MEC
+redistributable = false
+
+[[file]]
+mpn = "XGL4020-152MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+revision = "Document 1529"
+date = "2026-02-19"
+sha256 = "1e050d7e4f44f7e1f3ae3be38de87b15e4d72b2ef463c7b1f4edc292f83ad2c0"
+redistributable = false
+
+[[file]]
+mpn = "XEL4020-152MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/3c7caaa2-c1ed-4ff8-84e5-0b1b14a30417/xel4020.pdf"
+revision = "Document 1302"
+date = "2026-02-19"
+sha256 = "1c28ca6c85d755ad87bdf5c258131d6706d60572d592b5647810efd8bab2c3be"
+# second source for XGL4020-152MEC (BOM v1.5 line 114); TI-listed for the TPS62136
+redistributable = false
+
+[[file]]
+mpn = "0451004.MRL"
+manufacturer = "Littelfuse"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222.pdf"
+revision = "451/453 Series, Revised 06/15/17"
+date = "2017-06-15"
+sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
+# LCSC mirror of the 451/453 Series datasheet (same file as 045102.5MRL); littelfuse.com returned HTTP 403 from this host
+redistributable = false
+
+[[file]]
+mpn = "WSL12065L000FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "43650-0400"
+manufacturer = "Molex"
+kind = "datasheet"
+url = "https://www.molex.com/en-us/products/part-detail/436500400"
+# sha256 pending: molex.com unreachable from this host on 2026-10-22; drawing and product specification not downloaded
+redistributable = false
+
+[[file]]
+mpn = "0451005.MRL"
+manufacturer = "Littelfuse"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222.pdf"
+revision = "451/453 Series, Revised 06/15/17"
+date = "2017-06-15"
+sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
+# board BOM v1.5 line 104 (supersedes 0451004.MRL); same 451/453 file as 045102.5MRL
+redistributable = false
+
+# Board BOM v1.6 (board ADR 0015, ADR 0014 item 6, MaskROM fix), 2026-10-22.
+
+[[file]]
+mpn = "LMR33630CRNXR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/lmr33630.pdf"
+revision = "SNVSAN3F"
+date = "2020-11"
+sha256 = "3b0920a4e56a0b3f5f214a6317d3c06cff6e541e5054024adc31c30acc50c04a"
+redistributable = false
+
+[[file]]
+mpn = "LMR33630CRNXR"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/an/snva856b/snva856b.pdf"
+revision = "SNVA856B"
+date = "2022-10"
+sha256 = "806345f00ea5d4bd5148149e96a73941d791c04746f12b0316d5f983c47c3478"
+# application note: Working With Inverting Buck-Boost Converters
+redistributable = false
+
+[[file]]
+mpn = "XGL4020-222MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+revision = "Document 1529"
+date = "2026-02-19"
+sha256 = "1e050d7e4f44f7e1f3ae3be38de87b15e4d72b2ef463c7b1f4edc292f83ad2c0"
+redistributable = false
+
+[[file]]
+mpn = "TPS3808G01DBVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps3808.pdf"
+revision = "SBVS050N"
+date = "2026-08"
+sha256 = "74d889c0f68af88032f1633c26381817cc03e10d9fd3b4c177a044ad3ed86eed"
+redistributable = false
+
+[[file]]
+mpn = "CSD17575Q3"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/csd17575q3.pdf"
+revision = "SLPS489A"
+date = "2014-08"
+sha256 = "77a41b522836eb087795c7f9ecdd85794fdb8117fdd8295efede8e24537e869a"
+redistributable = false
+
+[[file]]
+mpn = "CSD17575Q3"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/pdf/SLUUCB5"
+revision = "SLUUCB5E"
+date = "2022-07"
+sha256 = "a653d3bae48cf0f0cc9f705968d309b90e1f003d50f51b53bee273e874bebfbd"
+# BQ25792EVM / BQ25798EVM user guide; BOM lists the CSD17575Q3 as the ship FET (Q5)
+redistributable = false
+
+[[file]]
+mpn = "DMP3099L-7"
+manufacturer = "Diodes Inc."
+kind = "datasheet"
+url = "https://www.diodes.com/assets/Datasheets/DMP3099L.pdf"
+revision = "DS36081 Rev. 5-2"
+date = "2025-05"
+sha256 = "06f3030318ba16b229928e1766aa85ade37b92dba7cdcb99a06b6eb9566b442c"
+redistributable = false
+
+[[file]]
+mpn = "GRM32ER71E226KE15L"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=GRM32ER71E226KE15%23"
+# sha256 pending: product page renders by script; PDF and DC-bias curve not retrieved on 2026-10-22
+redistributable = false

@@ -3,6 +3,7 @@
 - **Manufacturer:** Nexperia
 - **Function:** 20 V, 1 A planar Schottky barrier rectifier with very low forward voltage
 - **BOM v1 lines:** 24 (Audio, TPS65131 rectifiers), quantity 2
+- **BOM v1.6:** quantity 2 → 1 (TPS65131 boost rectifier only; the inverter half is unused, board ADR 0015).
 - **Package:** SOD123F, 2 leads, flat
 - **Datasheet:** NXP/Nexperia "PMEG2010AEH; PMEG2010AET 1 A very low VF MEGA Schottky barrier rectifiers", Rev. 03, 2007-03-28, product data sheet, 11 pages plus a Nexperia cover notice (cited as "Rev. 03"). Obtained from the LCSC-hosted copy of the manufacturer document (<https://datasheet.lcsc.com/datasheet/pdf/0048ef3cc1cc47f2a46f601985c58027.pdf?productCode=C110921>); the manifest URL returned HTTP 403 from this host.
 - **Status:** Partly UNVERIFIED

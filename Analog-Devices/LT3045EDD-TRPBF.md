@@ -3,6 +3,7 @@
 - **Manufacturer:** Analog Devices (Linear Technology)
 - **Function:** 20 V, 500 mA ultralow-noise, ultrahigh-PSRR positive linear regulator, output set by one resistor on a 100 µA SET current
 - **BOM v1 lines:** 25 (Audio, +6.0 V HP-amp LDO, HPA_P6V0), quantity 1, Proposed (v1.3: replaces the TPS7A4901DGNR, ADR 0012, D30), paired with the [LT3094EDD#TRPBF](LT3094EDD-TRPBF.md) on line 26. Its RSET, RILIM and capacitors are on lines 109–110
+- **BOM v1.6 (board ADR 0015):** quantity 2 on line 25, in parallel (Rev. D p. 21, Figure 7): SET pins tied with RSET 2 × 60.4 kΩ, CSET 2 × 0.47 µF, each OUT through a 20 mΩ ballast; **RILIM 523 Ω per device** (287 mA nominal, pair 516–631 mA against the 457 mA design peak). 165 mA per device continuous (33 %), 315 mA at the maximum trip (63 %).
 - **Package:** 10-lead DFN (DD), 3 mm × 3 mm, 0.5 mm pitch, 0.75 mm height, exposed pad = GND
 - **Datasheet:** *LT3045 20V, 500mA, Ultralow Noise, Ultrahigh PSRR Linear Regulator*, Rev. D, 11/22. Cited below as "LT3045 Rev. D". Obtained from the LCSC datasheet mirror; analog.com did not answer from this host.
 - **Status:** Partly UNVERIFIED

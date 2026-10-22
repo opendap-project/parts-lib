@@ -3,6 +3,7 @@
 - **Manufacturer:** Texas Instruments
 - **Function:** I2C-controlled single-cell 5 A buck charger with NVDC power path, integrated BATFET and 4.5–5.5 V boost (OTG)
 - **BOM v1 lines:** 39 (Power, charger and power-path controller), status Proposed; related lines 40 (charger inductor, Coilcraft XAL4020-102MEC) and 48 (board NTC, Murata NCP15XH103F03RC, on TS)
+- **BOM v1.5:** removed from line 39 by board ADR 0014 (two-cell battery); replaced by the [BQ25798RQMR](BQ25798RQMR.md). Kept for traceability.
 - **Package:** WQFN-24 (RTW), 4 × 4 mm, 0.5 mm pitch, 0.8 mm maximum height, exposed PowerPAD
 - **Datasheet:** BQ25895 I2C Controlled Single Cell 5-A Fast Charger with MaxCharge for High Input Voltage and Adjustable Voltage 3.1-A Boost Operation, SLUSC88C (March 2015, revised October 2022), <https://www.ti.com/lit/ds/symlink/bq25895.pdf>
 - **Status:** Partly UNVERIFIED
