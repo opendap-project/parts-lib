@@ -89,7 +89,7 @@ Package 5TS1: body D = 2.90 mm BSC × E1 = 1.60 mm BSC, E = 2.80 mm BSC, pitch e
 
 ## Linux driver
 
-Mainline `at24` (drivers/misc/eeprom/at24.c), `EEPROM_AT24=m` in Debian (BOM v1 line 17 and §3). Device-tree compatible `"atmel,24c02"` with `reg` = the 7-bit address and `pagesize = <8>`; `read-only` if WP is tied high. The exposed nvmem cell layout is defined by OpenDAP OS.
+Mainline `at24` (drivers/misc/eeprom/at24.c), `EEPROM_AT24=m` in Debian (BOM v1 line 17 and §3). Device-tree compatible `"atmel,24c02"` with `reg` = the 7-bit address and `pagesize = <8>`; `read-only` if WP is tied high. The exposed nvmem cell layout is defined by Blackbird OS.
 
 ## Simulation models
 

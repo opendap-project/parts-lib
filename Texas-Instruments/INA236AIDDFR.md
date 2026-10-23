@@ -133,7 +133,7 @@ No model is listed in `manifest.toml`. Vendor models are **UNVERIFIED**; the dev
 - **General call:** a general-call reset (00h, 06h) on I2C1 resets all four INA236 to defaults (p. 18). No T1 software should issue it on that bus.
 - **Full-scale currents** with ADCRANGE = 0 (81.92 mV): 10 mΩ → 8.19 A, 100 mΩ → 0.82 A, 20 mΩ → 4.10 A (calculation from p. 5). All exceed the design maxima in the power tree §3 (VSYS 3.5 A on adapter, HAT 1.5 + 1.0 A); the 100 mΩ audio and display blocks are limited to 0.82 A, to check against the display block peak with full backlight (0.33 A input, power tree §4.5) and the audio block peak.
 - **Bus voltage on IN−:** in bus-measurement mode IN− sees about 1 MΩ to ground (p. 13, §7.3.3), about 4 µA at 4.4 V per device. Shunt-only mode (MODE = 101b) avoids it.
-- **Default state (power tree §5):** the power tree lists the instrumentation default as "power-down"; the device actually powers up converting continuously (MODE = 111b, p. 20), about 300 µA each, 1.2 mA for four, until software writes MODE = 000b. The power-down default therefore depends on OpenDAP OS or the boot loader, not on hardware.
+- **Default state (power tree §5):** the power tree lists the instrumentation default as "power-down"; the device actually powers up converting continuously (MODE = 111b, p. 20), about 300 µA each, 1.2 mA for four, until software writes MODE = 000b. The power-down default therefore depends on Blackbird OS or the boot loader, not on hardware.
 - **Supply sequencing:** none required; bus voltage may be present with VS off (p. 12, §7.3.1).
 
 ## Sources

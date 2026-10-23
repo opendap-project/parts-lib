@@ -110,7 +110,7 @@ The T1 drops the FETs and the fuse driver (protection in the pack); how PACK and
 
 ## Linux driver
 
-Mainline `drivers/power/supply/bq27xxx_battery_i2c.c` binds `ti,bq28z610` (board 2S study §3.3). Debian sets `BATTERY_BQ27XXX=m`, but `BATTERY_BQ27XXX_I2C` is explicitly not set and arm64 does not override it (board 2S pre-freeze note): the I2C front end ships through DKMS (board ADR 0014, opendap-os OS-023).
+Mainline `drivers/power/supply/bq27xxx_battery_i2c.c` binds `ti,bq28z610` (board 2S study §3.3). Debian sets `BATTERY_BQ27XXX=m`, but `BATTERY_BQ27XXX_I2C` is explicitly not set and arm64 does not override it (board 2S pre-freeze note): the I2C front end ships through DKMS (board ADR 0014, blackbird-os OS-023).
 
 ## Simulation models
 

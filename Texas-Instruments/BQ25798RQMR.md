@@ -122,7 +122,7 @@ TI package outline, land pattern and stencil for RQM: SLUSDV2C, pp. 148–150. D
 
 ## Linux driver
 
-Mainline `drivers/mfd/bq257xx.c` and `drivers/power/supply/bq257xx_charger.c` bind only `ti,bq25703a` and `ti,bq25792`; the BQ25798 has no ID entry, and Debian leaves `MFD_BQ257XX` unset (board 2S study §3.1). Board ADR 0014 item 5: add the BQ25798 ID upstream after confirming its register map against the BQ25792 support, and ship it through DKMS meanwhile (opendap-os ADR 0007, OS-023). Register compatibility with the BQ25792 is **UNVERIFIED**.
+Mainline `drivers/mfd/bq257xx.c` and `drivers/power/supply/bq257xx_charger.c` bind only `ti,bq25703a` and `ti,bq25792`; the BQ25798 has no ID entry, and Debian leaves `MFD_BQ257XX` unset (board 2S study §3.1). Board ADR 0014 item 5: add the BQ25798 ID upstream after confirming its register map against the BQ25792 support, and ship it through DKMS meanwhile (blackbird-os ADR 0007, OS-023). Register compatibility with the BQ25792 is **UNVERIFIED**.
 
 ## Simulation models
 

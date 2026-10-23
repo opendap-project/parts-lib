@@ -129,7 +129,7 @@ Typical application with charge pump (SNVS441I, p. 36, Figure 26; p. 37, §8.2.1
 
 ## Linux driver
 
-Mainline `leds-lp5521` (`LEDS_LP55XX_COMMON`, `LEDS_LP5521`), devicetree compatible `national,lp5521`; Debian trixie-backports 7.2 does not set these options, so it ships as DKMS (BOM v1 line 105 and §3; opendap-os ADR 0007). No local Linux tree was opened for this sheet: the binding properties (clock mode, per-channel current and maximum current, multicolor grouping) are **UNVERIFIED**.
+Mainline `leds-lp5521` (`LEDS_LP55XX_COMMON`, `LEDS_LP5521`), devicetree compatible `national,lp5521`; Debian trixie-backports 7.2 does not set these options, so it ships as DKMS (BOM v1 line 105 and §3; blackbird-os ADR 0007). No local Linux tree was opened for this sheet: the binding properties (clock mode, per-channel current and maximum current, multicolor grouping) are **UNVERIFIED**.
 
 ## Simulation models
 

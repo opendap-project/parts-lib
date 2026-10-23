@@ -44,7 +44,7 @@ I2C (2-wire) at 0x36 on the 1.8 V I2C1 bus (BOM line 42). Input thresholds at 1.
 
 ## Linux driver
 
-Mainline `max17042_battery` (drivers/power/supply/max17042_battery.c, Kconfig `BATTERY_MAX17042`) supports the MAX17055 with compatible `maxim,max17055`. The BOM states that Debian does not enable `BATTERY_MAX17042`, so the T1 builds it as DKMS (opendap-os ADR 0007). The compatible string and the driver's handling of the MAX17055 model registers are from memory of the mainline source and are **UNVERIFIED**.
+Mainline `max17042_battery` (drivers/power/supply/max17042_battery.c, Kconfig `BATTERY_MAX17042`) supports the MAX17055 with compatible `maxim,max17055`. The BOM states that Debian does not enable `BATTERY_MAX17042`, so the T1 builds it as DKMS (blackbird-os ADR 0007). The compatible string and the driver's handling of the MAX17055 model registers are from memory of the mainline source and are **UNVERIFIED**.
 
 ## Simulation models
 

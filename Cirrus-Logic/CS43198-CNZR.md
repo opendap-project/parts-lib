@@ -177,8 +177,8 @@ Power sequencing (DS1156F2, §5.2, p. 55): VP first; the other supplies in any o
 
 - Mainline driver `sound/soc/codecs/cs43130.c` (`SND_SOC_CS43130`), which matches `cirrus,cs43130`, `cirrus,cs4399`, `cirrus,cs43131` and `cirrus,cs43198` (checked in the mainline source on 2026-10-22).
 - Device-tree binding: `Documentation/devicetree/bindings/sound/cs43130.txt` — required `reg`, `VA-supply`, `VP-supply`, `VL-supply`, `VCP-supply`, `VD-supply`; optional `reset-gpios`, `cirrus,xtal-ibias`, `cirrus,dc-measure`, `cirrus,ac-measure`, `cirrus,dc-threshold`, `cirrus,ac-freq` (checked in the mainline source on 2026-10-22).
-- The driver exposes ASP PCM, ASP DoP and XSP DoP DAIs, 1–2 channels. PCM rates are constrained to 32, 44.1, 48, 88.2, 96, 176.4, 192, 352.8 and 384 kHz; DoP rates to 176.4 and 352.8 kHz, i.e. DSD64 and DSD128 (mainline source, 2026-10-22). This is the DSD128 cap noted in opendap-os ADR 0006.
-- Debian: `SND_SOC_CS43130` is not enabled in the trixie-backports arm64 config, so the T1 builds it through DKMS (BOM v1 line 18; opendap-os ADR 0007).
+- The driver exposes ASP PCM, ASP DoP and XSP DoP DAIs, 1–2 channels. PCM rates are constrained to 32, 44.1, 48, 88.2, 96, 176.4, 192, 352.8 and 384 kHz; DoP rates to 176.4 and 352.8 kHz, i.e. DSD64 and DSD128 (mainline source, 2026-10-22). This is the DSD128 cap noted in blackbird-os ADR 0006.
+- Debian: `SND_SOC_CS43130` is not enabled in the trixie-backports arm64 config, so the T1 builds it through DKMS (BOM v1 line 18; blackbird-os ADR 0007).
 - Mono-mode (one device per channel) configuration through the driver: **UNVERIFIED**.
 
 ## Simulation models
@@ -199,4 +199,4 @@ No IBIS, SPICE or other model is listed in `manifest.toml` for this part. Availa
 
 - Cirrus Logic, CS43198 data sheet, DS1156F2, December 2022, <https://www.cirrus.com/docs/ds/cs43198-datasheet.pdf>, sha256 `e2da18e07a5683ee9eb134154a31ac7f8a197587c01c250c42286ea604dd351d`.
 - Linux mainline, `sound/soc/codecs/cs43130.c` and `Documentation/devicetree/bindings/sound/cs43130.txt`, read 2026-10-22.
-- OpenDAP board BOM v1, line 18; board ADR 0001, ADR 0010; opendap-os ADR 0006, ADR 0007.
+- OpenDAP board BOM v1, line 18; board ADR 0001, ADR 0010; blackbird-os ADR 0006, ADR 0007.
