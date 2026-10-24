@@ -772,8 +772,84 @@ redistributable = false
 mpn = "LBES5PL2EL-923"
 manufacturer = "Murata"
 kind = "datasheet"
-url = "https://www.murata.com/en-us/products/productdetail?partno=LBES5PL2EL-923"
-# sha256 pending: not downloaded yet
+url = "https://pim.murata.com/asset/pim4/wifiBluetoothModule/TYPE2EL_PDF"
+# sha256 pending: not downloaded
+# Type 2EL Datasheet, linked from the product page; 403 to non-browser fetches (2026-10-24)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-hw-application-note.ashx?la=en-us&cvid=20260604010000000000"
+revision = "E2B-09-1413 Rev. 9.0"
+date = "2026-05-21"
+sha256 = "aade44c588030b5bc4e9e436b6fe01d5ad21826d369849ede8dae6b3b27476ea"
+# Type 2EL/2DL Hardware Application Note (36 pages)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-2ll-2kl-unified-design-guide.ashx?la=en-us&cvid=20250925054431000000"
+revision = "E2B-54-1953 Rev. 2.0"
+date = "2025-08-21"
+sha256 = "eaecfe5d476c7027f4fc3718bb13f727348346eb084c44eb97724ebe447b0443"
+# Type 2EL/2DL/2LL/2KL Unified Design Guide (19 pages)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type-2el-radio-law-approval-application-note.ashx?la=en-us&cvid=20250421010000000000"
+revision = "CER-0248 Rev. 6.0"
+date = "2025-03-04"
+sha256 = "f37a17254d420bedec628e284cc12ac83c48141589ba0de03ce573973e7a69ed"
+# Type 2EL Radio Law Certification Application Note (75 pages)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-product-brief.ashx?la=en-us&cvid=20230713010000000000"
+revision = "Product Brief"
+date = "2023-03"
+sha256 = "73077ec9d01d6661796ac6cf67f796e707f6fad08a4b61156d52323e4b4eb598"
+# Type 2EL Product Brief
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-module-footprint-topview.ashx?la=en-us&cvid=20230713010000000000"
+date = "2023-07-13"
+sha256 = "b9979fee8cb0ad645944f82bdc85baac4b92061e385d450f8130526bcb4c4970"
+# module footprint, top view (DXF)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-u-fl.ashx?la=en-us&cvid=20230713010000000000"
+date = "2023-07-13"
+sha256 = "a8387fa54dba76e6f73c261cad7df9bc927cd30fae8b5daa2cf5d9fcd38754f3"
+# RF trace to u.FL layout (DXF)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://atta.szlcsc.com/upload/public/pdf/source/20241017/047927140A685FF6C66B6B417FB86DA7.pdf"
+revision = "PA4"
+date = "2024-08-05"
+sha256 = "b5b0ce7c22855e326151b4923e6a334d0d7eefc48b1558f17c94f1b3c41b4308"
+# Embedded Artists 2EL / 2DL M.2 Module Datasheet (carrier board, secondary), LCSC mirror
 redistributable = false
 
 [[file]]
