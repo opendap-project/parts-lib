@@ -34,6 +34,81 @@ sha256 = "a51fff0392e03d35ca39ad3d27e1718395cdd8f48187ce855b025b1169d0b2fe"
 redistributable = false
 
 [[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://dl.xkwy2018.com/downloads/RK3568/Rockchip-RK3566-Datasheet-V1.1-20210305.pdf"
+revision = "Rev 1.1"
+date = "2021-03-05"
+sha256 = "1bc4aa39464c3481d1c82a171498104b9ccd34a61110e97fd9678288e7451280"
+# full RK3566 datasheet (59 pages): package FCCSP565L, ball map, pin list, electrical; board-maker mirror
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://files.pine64.org/doc/quartz64/Rockchip%20RK3566%20Datasheet%20V1.0-20201210.pdf"
+revision = "Rev 1.0"
+date = "2020-12-10"
+sha256 = "c8874a165b50e82b199cd13eb620a1ab95c8bd8a0db5cdbfb7b0a7b09156b7d4"
+# superseded by Rev 1.1; Pine64 hosts it with Rockchip's release permission, licence terms not stated
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://dl.xkwy2018.com/downloads/RK3568/RK356X/Hardware/Rockchip_RK3566_Hardware_Design_Guide_V1.1_EN.pdf"
+revision = "V1.1.0"
+date = "2022-02-06"
+sha256 = "27063af9183cd9a17f71d9aa66f64eb2514427e490c3cc8f9336e11eacf1d9d1"
+# RK3566 Hardware Design Guide (102 pages); board-maker mirror
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://raw.githubusercontent.com/hqnicolas/RK3568-hardware-design/main/01_Common%20Document/Rockchip_RK3568_High_Speed_PCB_Design_Guide_V10_EN_2021-4-12.pdf"
+revision = "V1.0.0 (RK-YH-YJ-6012)"
+date = "2021-04-12"
+sha256 = "ba3b7aa055b641f59688f2fd0133094b71f06bc928786d4e1444c3c63b5ff513"
+# RK3568 High Speed PCB Design Guide (45 pages); the RK3566 edition named in the RK3566 guide was not found
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://raw.githubusercontent.com/hqnicolas/RK3568-hardware-design/main/02_DDR%20Template/RK3568_Template_LP4XD200P132SD6_43x28_1600MHz/RK3568_Template_LP4XD200P132SD6_43x28_1600MHz_V10_20210201%E6%A0%B8%E5%BF%83%E6%9D%BF%E8%AE%BE%E8%AE%A1%E9%87%8D%E7%82%B9%E8%AF%B4%E6%98%8E.doc"
+revision = "Template V10"
+date = "2021-02-01"
+sha256 = "05452a69c16b1c610ea43aaa4d16d172efc9bbc8eeb135a4097fe4ae3e9e9038"
+# RK3568 LPDDR4X core-board template design notes (Chinese, Word .doc): layers, via size, copper
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://dl.xkwy2018.com/downloads/RK3568/RK356X/Hardware/Rockchip_RK3566_EVB2_User_Guide_V1.1_EN.pdf"
+revision = "V1.1"
+date = "2021-02-02"
+sha256 = "ba69e1a16ccbd2e90b306a414df945f35b9a2a9241d1dc2e070b5ad99e12ff4c"
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://dl.xkwy2018.com/downloads/RK3568/RK356X/Rockchip_RK356X_Introduction_IO_Power_Domains_Configuration_EN.pdf"
+revision = "V1.0.2 (RK-SM-YF-905)"
+date = "2021-06-02"
+sha256 = "f9cefa6110ba5503495304266a3928767d2189427d5e970950468009e9a08622"
+redistributable = false
+
+[[file]]
 mpn = "RK809-5"
 manufacturer = "Rockchip"
 kind = "datasheet"
@@ -241,6 +316,18 @@ url = "https://www.ti.com/lit/ds/symlink/opa1622.pdf"
 revision = "SBOS727B"
 date = "2016-05"
 sha256 = "505556d18113e86aed84f20c1dbcfc6b4ad66ccdc5202998bd883f7a7eac9824"
+redistributable = false
+
+[[file]]
+mpn = "OPA1622IDRCR"
+manufacturer = "Texas Instruments"
+kind = "spice"
+url = "https://www.ti.com/lit/zip/SBOM958"
+revision = "SBOM958D"
+date = "2022-07-11"
+sha256 = "1bafa50b657ea2ece0c1d3e1ab7684556093d824a7d749aaaf07a933b81e49b8"
+# PSpice model; OPA1622.LIB inside, sha256 9dfaf17ed53e37d8930376f042379e828d96bc7d10349fed0dc058daf695223e
+# date: newest entry of the archive; downloaded without login on 2026-10-24 (redirects to sbom958d.zip)
 redistributable = false
 
 [[file]]
@@ -1440,6 +1527,19 @@ sha256 = "b445aeace2de2d6b9f657bb692104d848c17b8158f727f8e15a6ac738a13a70a"
 redistributable = false
 
 [[file]]
+mpn = "TPS62136RGXR"
+manufacturer = "Texas Instruments"
+kind = "spice"
+url = "https://www.ti.com/lit/zip/SLVMC09"
+revision = "SLVMC09A"
+date = "2020-11-17"
+sha256 = "764f65e3e817b73ef0690637fb1a08ab7fa04ec5a1858b203dc7cf555a04ad99"
+# PSpice unencrypted transient model ("Final 1.1"); TPS62136_PSPICE_TRANS/TPS62136_TRANS.lib inside,
+# sha256 252dce79505a414bd31e4bd2209334de90761d277894c759c3f88da003439a56
+# date: newest entry of the archive; downloaded without login on 2026-10-24 (redirects to slvmc09a.zip)
+redistributable = false
+
+[[file]]
 mpn = "TPS62903RPJR"
 manufacturer = "Texas Instruments"
 kind = "datasheet"
@@ -1545,6 +1645,19 @@ sha256 = "806345f00ea5d4bd5148149e96a73941d791c04746f12b0316d5f983c47c3478"
 redistributable = false
 
 [[file]]
+mpn = "LMR33630CRNXR"
+manufacturer = "Texas Instruments"
+kind = "spice"
+url = "https://www.ti.com/lit/zip/SNVMBG5"
+revision = "SNVMBG5A"
+date = "2020-08-31"
+sha256 = "bf3d8f3b2d33a7e957147972194555b7883da88efde2ba4275be0a23c69bc2b7"
+# PSpice unencrypted transient model (inverting and non-inverting); LMR33630C_PSPICE_TRANS/LMR33630C_TRANS.lib
+# inside, sha256 b6ca4171f65db8d9f5c70ad0f06d6da9c164d84ef134c095dd220bb47ef70906
+# date: newest entry of the archive; downloaded without login on 2026-10-24 (redirects to snvmbg5a.zip)
+redistributable = false
+
+[[file]]
 mpn = "XGL4020-222MEC"
 manufacturer = "Coilcraft"
 kind = "datasheet"
@@ -1600,5 +1713,6 @@ mpn = "GRM32ER71E226KE15L"
 manufacturer = "Murata"
 kind = "datasheet"
 url = "https://www.murata.com/en-us/products/productdetail?partno=GRM32ER71E226KE15%23"
-# sha256 pending: product page renders by script; PDF and DC-bias curve not retrieved on 2026-10-22
+# sha256 pending: product page renders by script; PDF not retrieved on 2026-10-22
+# DC-bias curve read from Murata SimSurfing on 2026-10-24 (spec sheet, Recommended operating conditions)
 redistributable = false
