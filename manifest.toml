@@ -870,6 +870,46 @@ url = "https://www.molex.com/en-us/products/part-detail/1461870050"
 redistributable = false
 
 [[file]]
+mpn = "146153-0050"
+manufacturer = "Molex"
+kind = "datasheet"
+url = "https://www.molex.com/en-us/products/part-detail/1461530050"
+# sha256 pending: molex.com refused automated fetches (2026-10-24); sales drawing, PS-146153-100-001 and AS-146153-100-001 not obtained
+redistributable = false
+
+[[file]]
+mpn = "146153-0050"
+manufacturer = "Molex"
+kind = "other"
+url = "https://datasheet.lcsc.com/datasheet/pdf/23abb347781ae39a1ac044ca72bd54ef.pdf?productCode=C3284102"
+revision = "1461531050 rev. B1"
+date = "2019-04-03"
+sha256 = "4bb15eb60149c8948841a603aa14e5b46fc2d3eff0d85ce457dd8ce2793d674f"
+# product customer drawing of the same flex with MHF4L plug (146153-1050 ... -1300), LCSC mirror
+redistributable = false
+
+[[file]]
+mpn = "146153-0050"
+manufacturer = "Molex"
+kind = "other"
+url = "https://datasheet.lcsc.com/datasheet/pdf/adc3b9714c331b3236f06bfb1c203eb9.pdf?productCode=C6991332"
+revision = "2196110100 rev. A1"
+date = "2022-08-03"
+sha256 = "207fd73b2212b4729ad69ff5ea91e635712a97bd8836a9bd20dbf321acd03c8f"
+# 219611 series drawing (listed alternative; shows Molex's L1/L2 cable-length convention), LCSC mirror
+redistributable = false
+
+[[file]]
+mpn = "W24P-U"
+manufacturer = "Inventek"
+kind = "datasheet"
+url = "https://www.inventeksys.com/wp-content/uploads/W24P-U_2.4Ghz_-Antenna_Specification.pdf"
+revision = "DOC-DS-20075-1.0"
+date = "2013-10-01"
+sha256 = "68cde1cc9ebc00631efe68414a5c1dce6e3f248c57385f4c0f66edbb11dfecbc"
+redistributable = false
+
+[[file]]
 mpn = "LSM6DSV16XTR"
 manufacturer = "STMicroelectronics"
 kind = "datasheet"
