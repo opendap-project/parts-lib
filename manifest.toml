@@ -199,8 +199,11 @@ redistributable = false
 mpn = "K4UBE3D4AB-MGCL"
 manufacturer = "Samsung"
 kind = "datasheet"
-url = ""
-# sha256 pending: not downloaded yet
+url = "https://datasheet.lcsc.com/datasheet/pdf/68493aa292745ce2f51b9d2d9103c14d.pdf?productCode=C5827966"
+revision = "Rev. 1.0"
+date = "2021-08"
+sha256 = "7bb0223d5490109c2ebd9e8f25641e1d2dccd2df0952b04c02553fd078a06e04"
+# Samsung datasheet (108 pages), distributor copy (LCSC C5827966); Samsung lists the part as discontinued
 redistributable = false
 
 [[file]]
@@ -225,8 +228,22 @@ redistributable = false
 mpn = "KLMBG2JETD-B041"
 manufacturer = "Samsung"
 kind = "datasheet"
-url = ""
-# sha256 pending: not downloaded yet
+url = "https://datasheet.lcsc.com/datasheet/pdf/8cca530d6d5054b226dcd9a69d076028.pdf?productCode=C2803245"
+revision = "Rev. 1.0"
+date = "2016-11"
+sha256 = "f9d8f6f855ee15df6748a388a5287ac8306ab06d250673ace45067d52d9058ca"
+# Samsung KLMxGxJETD-B041 eMMC 5.1 datasheet (26 pages, 16/32/64 GB), distributor copy (LCSC C2803245)
+redistributable = false
+
+[[file]]
+mpn = "KLMAG1JETD-B041"
+manufacturer = "Samsung"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/d4518653d9abcd1b59554b92cea5e788.pdf"
+revision = "Rev. 1.0"
+date = "2016-11"
+sha256 = "015be236158087add125892756a7ef7d63eaa7c0c55969c241597755eb784bd0"
+# the same Samsung KLMxGxJETD-B041 datasheet, distributor copy for this part (LCSC C499919)
 redistributable = false
 
 [[file]]
