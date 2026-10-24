@@ -1885,3 +1885,27 @@ revision = "catalog 1703A"
 sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
 # NZ2520SDA, 3.3 V
 redistributable = false
+
+# Battery contacts (board ADR 0020, 2026-10-24).
+
+[[file]]
+mpn = "70-9258-001-120-006"
+manufacturer = "KYOCERA AVX"
+kind = "datasheet"
+url = "https://datasheets.kyocera-avx.com/9258-100.pdf"
+revision = "TDS-BTB-0026 Rev 1"
+date = "2025-09-10"
+sha256 = "1b4e30aff4b7bf7a02d4c77edf9b6cca8020bf4094d9256b975ae5c8362bb34c"
+# 9258-100 series data sheet, 1 page (catalog "Board to Board Connectors 090325", p. 36)
+redistributable = false
+
+[[file]]
+mpn = "70-9258-001-120-006"
+manufacturer = "KYOCERA AVX"
+kind = "other"
+url = "https://www.kyocera-avx.com/download/connectors/Conn-Sales-Drawings/9XXX/9258-100.zip"
+revision = "Drawing 70-9258-001-1X0-00XS Rev F"
+date = "2025-02-27"
+sha256 = "c4907e39d0df15c20abe8db5fe3625bfe0e997d0dee40b89dd1b7b40ea1d2384"
+# sales drawing zip (one PDF, 3 sheets; sheet 2 is the -120); the PDF inside: sha256 2354523cafd9da19797b288adc2bc03fe1c01e38b54145671eecc498e4105aae
+redistributable = false
