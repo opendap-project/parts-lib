@@ -2,7 +2,7 @@
 
 - **Manufacturer:** Texas Instruments
 - **Function:** 300 mA ultra-low-noise LDO, fixed 1.8 V output, active output discharge
-- **BOM v1 lines:** 29 (DAC1 VA and DAC2 VA low-noise LDOs, 1.8 V, qty 2)
+- **BOM v1 lines:** 29 (DAC1 VA and DAC2 VA low-noise LDOs, 1.8 V, qty 2; board ADR 0019 adds a third for MCLK_1V8, the supply of the two SN74AUC1G74 MCLK dividers, from AUDIO_2V2 with EN on DAC_DIG_1V8, about 9 mA, pending the BOM edit)
 - **Package:** SOT-23-5 (DBV0005A), 2.9 × 2.8 mm nominal, 1.45 mm max height
 - **Datasheet:** *TPS7A20 300mA, Ultra-Low-Noise, Low-IQ, High PSRR LDO*, SBVS338H, March 2020, revised July 2024. Cited below as "SBVS338H". File sha256 `b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0` (matches the BOM v1 Datasheets table).
   - Same datasheet as [TPS7A2031PDBVR](TPS7A2031PDBVR.md) and [TPS7A2033PDBVR](TPS7A2033PDBVR.md).

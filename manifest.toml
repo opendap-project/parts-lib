@@ -1853,3 +1853,35 @@ url = "https://www.murata.com/en-us/products/productdetail?partno=GRM32ER71E226K
 # sha256 pending: product page renders by script; PDF not retrieved on 2026-10-22
 # DC-bias curve read from Murata SimSurfing on 2026-10-24 (spec sheet, Recommended operating conditions)
 redistributable = false
+
+# Master clock dividers and 2x oscillators (board ADR 0019, 2026-10-24).
+
+[[file]]
+mpn = "SN74AUC1G74DCUR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74auc1g74.pdf"
+revision = "SCES537D"
+date = "2007-06"
+sha256 = "78ef342668836a8c3bffdb203769e9e4404e1914badcff849016b7ff429445c6"
+redistributable = false
+
+[[file]]
+mpn = "NSC5083D-45.158M"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+revision = "catalog 1703A"
+sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
+# NZ2520SDA, 3.3 V
+redistributable = false
+
+[[file]]
+mpn = "NSC5083D-49.152M"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+revision = "catalog 1703A"
+sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
+# NZ2520SDA, 3.3 V
+redistributable = false
