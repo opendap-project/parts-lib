@@ -1593,6 +1593,17 @@ sha256 = "d7506515380a903d0e911d3ce523f950c409848f7f1523874db5379d981c4da0"
 redistributable = false
 
 [[file]]
+mpn = "BQ28Z610DRZR-R1"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/ug/sluuc81/sluuc81.pdf"
+revision = "SLUUC81"
+date = "2020-01"
+sha256 = "5663b323ede0ce095ff6d75ba83701b9d716eb22492e1f0f220a8fcfe2927bd9"
+# BQ28Z610-R1 Technical Reference (data flash, gauge-only configuration)
+redistributable = false
+
+[[file]]
 mpn = "TPS62136RGXR"
 manufacturer = "Texas Instruments"
 kind = "datasheet"
